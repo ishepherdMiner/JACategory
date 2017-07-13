@@ -1,0 +1,27 @@
+{
+  "name": "JACategory",
+  "version": "0.0.1",
+  "summary": "My collect category",
+  "description": "My collect category",
+  "homepage": "https://github.com/ishepherdMiner/JACategory",
+  "license": "MIT",
+  "authors": {
+    "Jason": "iJason92@yahoo.com"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "https://github.com/ishepherdMiner/JAProgressBar.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "JACategory/*.{h,m}",
+  "public_header_files": "JACategory/JACategory.h",
+  "frameworks": [
+    "UIKit",
+    "QuartzCore",
+    "Foundation"
+  ],
+  "requires_arc": true,
+  "module_name": "JACategory"
+}
