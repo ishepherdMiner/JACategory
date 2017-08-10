@@ -9,56 +9,56 @@
 /* Begin PBXBuildFile section */
 		01AFDD7027B66227F98D1F5A82DE4422 /* NSNumber+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF6BA6F6995E541FD8789A18BA7F13D /* NSNumber+JACoder.m */; };
 		0A4EC96972AC2C31EDEB8AA18E0CF5F0 /* UIScrollView+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B0D1921373836DE8A922510386AA55 /* UIScrollView+JACoder.m */; };
-		0DDE7979CF5497E04A85351633673511 /* UIScreen+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ACCBA1758870EDA3C87A1EFAC5D1A5D /* UIScreen+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0A5FDEDA59B7B1EDE1B77B7F0D09DD48 /* NSNumber+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D098C59AA0074E5BF2FA313264ED53 /* NSNumber+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0ECBE34EB98D1DA4EC862E797905B6BD /* UIImageView+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0C8903B44AB4ACBCA11DE620E9AB /* UIImageView+JACoder.m */; };
-		106FB8DE831CE70901976C3B96068A3A /* UIImageView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F80B3D05C8D98E988ECEB88754853960 /* UIImageView+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1999366DA0F680C1F73C97BA5F00D4D2 /* NSURL+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B65806653148062EF764DC0987418D32 /* NSURL+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		199DEDEF59EFDBE889091317398AA658 /* UIView+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A57C9234706AC3B9C03F3141DFE7FF3 /* UIView+JACoder.m */; };
 		1AB2427D663ACF4899064CFFA0AB9891 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7751D4D791D1183FB66D3CCA52CD8E /* QuartzCore.framework */; };
 		1D8717A5B7B322DFCC672F81C9DD69A3 /* UIColor+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CDFEDE13990BA9C88FEF2F962D4796 /* UIColor+JACoder.m */; };
+		2C6CE9A1E06443F56F3AE15F9EE20A48 /* NSFileManager+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D8CE8015DD9BC9B9146DACF3BF9C12 /* NSFileManager+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CD4E84416B760DD60F3A483C48ACCF5 /* UIDevice+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6743D85C9ED30F071F46FEA650562069 /* UIDevice+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E6A94281D8ACB26BFADD18A96C846B4 /* UINavigationController+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FF85F9E0B1FC8CC0CF9874B2D94F45 /* UINavigationController+JACoder.m */; };
-		2EE9DAEA0A3D286596FBAC98CDB8888C /* UINavigationController+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = D86C311CD49BA04A8301AE0C130D7D24 /* UINavigationController+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		30A330A6F1275AC220F9AC4D4BA109CB /* UIButton+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9780AA0BBF4F9D191CA75BD3158276A4 /* UIButton+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31E78A067876939829276D4FACF04168 /* UINavigationController+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = D86C311CD49BA04A8301AE0C130D7D24 /* UINavigationController+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34405353B6A6DC8AF6D837DAF3B9B716 /* NSArray+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BCB52C4CAA907D4AE4AA4CDB7E7B34E /* NSArray+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39DA9A30A8D46EE1D9A90BCF4960C128 /* UINavigationBar+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1FB3B83E809C815E606B035F8ED35A /* UINavigationBar+JACoder.m */; };
 		3E98AB146BA2D5CACD7529279417A36C /* UIButton+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BE85B81B548F29000834642E7CC2AB51 /* UIButton+JACoder.m */; };
-		3EB91378098889F2144F127FD3FA86E1 /* NSDate+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE2A9D17C109C06DE604AB8BA603146 /* NSDate+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		410C72D7FAE6CB7868D1C8E1279123F9 /* UIViewController+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0ECF1E441DA31077092E54A5D8D21D8 /* UIViewController+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41928B6732F74C4A024634CA677A85D7 /* UIScreen+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C13D2AF68360D4D912AB9B04BE21D78 /* UIScreen+JACoder.m */; };
-		47A137FF1FB8D458F7A571C73DFA6EB1 /* UIView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9010A824395485DD932998AFA9D33315 /* UIView+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		51A962951069AEF4ADAB417B47E1B143 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3917A50EB224EEDBC66971700D698782 /* UIKit.framework */; };
-		5628046D84F6FDD581945593E1FC55F1 /* UITableView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C964D28B3FCAA4BBC1A75F0B9D275AB /* UITableView+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		57829397E3F6B3517FBBB4CAE690AEA9 /* UICollectionView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 634211781078C97072B117BD75BDA25B /* UICollectionView+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		63BDEC1BD9BC65B6136D31FE0E23C5C0 /* UIView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9010A824395485DD932998AFA9D33315 /* UIView+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		656CF0D52F8F0DB823AF9DFA2F529380 /* NSBundle+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C119F760D6CD61DB0732BD04C1BE77 /* NSBundle+JACoder.m */; };
-		67F1A9C70F21C2D21A545FB0EB73DB59 /* UINavigationBar+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C48535DDCDD17917074BCF81A62E28B /* UINavigationBar+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6DCBBFC6EE91230204264586833F3F32 /* NSArray+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BCB52C4CAA907D4AE4AA4CDB7E7B34E /* NSArray+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		741009285D651FE93ABA58B2631003A6 /* NSObject+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		697935F5D1A3B9D8BB65D25A387B11F8 /* NSDictionary+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C9DA1643EDAA1F2D23F4B67BEB507E3 /* NSDictionary+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70A1D1FFBA5E7D102214C7467E0B5911 /* UIImageView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F80B3D05C8D98E988ECEB88754853960 /* UIImageView+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7546909F7E7CC7C53306E4771C8D003B /* NSString+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 67A2262F65215D0746A3A3F81B7C4F68 /* NSString+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A87C4AAA3A0B6015715EA1034A6D2A4 /* Pods-JACategoryDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5497718681D9395B9652FE117F7D2 /* Pods-JACategoryDemo-dummy.m */; };
 		7CE4F0666DCACF2784385FBACED8F5A5 /* NSDate+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 877E84D57C4A75F714A03F5D732AE3E7 /* NSDate+JACoder.m */; };
+		7DE8EFBEB9348EAAF76D09C16833CAD1 /* UIColor+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B48767BA592B129098F97643D2E838CB /* UIColor+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86F2916B269383872B65A99C3FD66953 /* NSDate+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE2A9D17C109C06DE604AB8BA603146 /* NSDate+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B7D3632524F0A32D5A5EF5E6E060EB2 /* NSURL+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B65806653148062EF764DC0987418D32 /* NSURL+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C770CBFD7CE41EC0F04C300C82C5997 /* NSData+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 809E884562FEF6B3CE945DC054FAF8E0 /* NSData+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92395F842774AE63368BBCF5460ED340 /* UIImage+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B8966B55CAF2D59FF0E28843DCDE1 /* UIImage+JACoder.m */; };
 		941A9131043F1D33380D5F3A15B9CA61 /* NSDictionary+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8CB0E0492D44E67FF059F950EC29E6 /* NSDictionary+JACoder.m */; };
-		972F3B9D93104C1B08B5FEB52E6CC415 /* NSFileManager+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D8CE8015DD9BC9B9146DACF3BF9C12 /* NSFileManager+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		99CB3E7DDDE8357E9A17EED571B76F86 /* NSDictionary+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C9DA1643EDAA1F2D23F4B67BEB507E3 /* NSDictionary+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		98B8F4355378761BE9A6D7F70E20BD11 /* UINavigationBar+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C48535DDCDD17917074BCF81A62E28B /* UINavigationBar+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C15B16D909D6BC66D6973E5CC5430E7 /* JACategory-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD81F0184BAB50DC13385D9E65E9139 /* JACategory-dummy.m */; };
-		AAE08588AD4B257E71EEF36CC894A660 /* UIDevice+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6743D85C9ED30F071F46FEA650562069 /* UIDevice+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		ADB276EE3E668F61D67F6249BD43B61A /* NSData+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 809E884562FEF6B3CE945DC054FAF8E0 /* NSData+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9DB14C65A61C53B01EEC177B2528E8CB /* UICollectionView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 634211781078C97072B117BD75BDA25B /* UICollectionView+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE08A0D671E3B1D67231E3687504011D /* NSFileManager+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF078DD9549B7656D34EF19121E74C15 /* NSFileManager+JACoder.m */; };
 		B02EFDD02EF0B9A98225DA546F37683C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
 		B599932B56CAF18E76186E6471766113 /* NSObject+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29877A5CB43E66B58DA294E5895F9C24 /* NSObject+JACoder.m */; };
-		B66E8002E54096D95C17956E2C643A0F /* UIViewController+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0ECF1E441DA31077092E54A5D8D21D8 /* UIViewController+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B95C3DC8CD11E2798533AC2E53CBDD0F /* UIDevice+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B033F70F7E0574A6914E7CF83A571 /* UIDevice+JACoder.m */; };
 		C6640AAC3A2FA5DADBE89645184931CA /* NSURL+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9060DDD6617B589DACF81BF9E6AE714 /* NSURL+JACoder.m */; };
-		C99AACF79F3A9C53D567B97D2C76648C /* UIImage+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDE899BDDC221CFFDB2819D47BC78E6 /* UIImage+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CB481BECFF93FCFD5CF3C5936D0F2F79 /* NSString+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 67A2262F65215D0746A3A3F81B7C4F68 /* NSString+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CDEAE149A96C24E5C54923675DA78449 /* UIScreen+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ACCBA1758870EDA3C87A1EFAC5D1A5D /* UIScreen+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3FAF5E47CFEC59C97A68991167C172C /* UIViewController+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C1C7DCF5476FA991D845D733057452 /* UIViewController+JACoder.m */; };
 		DA2B8B69448F477CE3B0EC5CA13ED33D /* NSArray+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DB63FF2AA2072101397FD2A73972E /* NSArray+JACoder.m */; };
-		E21A4EDE71BC5AEE2112477DDA00B608 /* UIButton+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9780AA0BBF4F9D191CA75BD3158276A4 /* UIButton+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E004E6E935E9768D91C0EBDA48704DE9 /* UIImage+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDE899BDDC221CFFDB2819D47BC78E6 /* UIImage+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3C356E43D81611E0B387B1E5000BF8B /* UITableView+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D9CE6B3240692F8EBA81D2667A7CA /* UITableView+JACoder.m */; };
-		E40412BE07C357D080FC0B7860B15C14 /* UIColor+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B48767BA592B129098F97643D2E838CB /* UIColor+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E66E98641359AEC5972F70CCB7252718 /* NSString+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC1C308E24845588EE2C106BC936F1 /* NSString+JACoder.m */; };
-		EA2BE356CF5911E7A29448E21B0A7B0B /* NSNumber+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D098C59AA0074E5BF2FA313264ED53 /* NSNumber+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E6E807F457673C3AB3B4EC9870515A6A /* UITableView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C964D28B3FCAA4BBC1A75F0B9D275AB /* UITableView+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EABA465EE0E766C62A7340A75B5D02A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
-		EE5D4D78B2498248CCDD169B55D87E88 /* UIScrollView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B69C8E10A2CCDCB986E2088FD6F2E707 /* UIScrollView+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EC5C141C885BC44E15F7CB558CEAC12D /* NSBundle+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD3133B32C82A2DFCC5044BD731B2CB /* NSBundle+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDC1C4F94A1C1E82EE70B10370EADC2F /* NSObject+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDE147933F61C56B146B5E966D671045 /* UIScrollView+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B69C8E10A2CCDCB986E2088FD6F2E707 /* UIScrollView+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEF578E047A67E506AC3944E6DED3263 /* JACategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E73E4BBF5DFA9670359225CE2F6CB08 /* JACategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFD898B43DB2F17234481F4F95EE8384 /* NSData+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 073293870E0BF92634DD43A7DD090C6E /* NSData+JACoder.m */; };
-		F10985B7D33DF862F3BD43343AE29E6B /* NSBundle+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD3133B32C82A2DFCC5044BD731B2CB /* NSBundle+JACoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FC04FF6FA8ABFBC8303BB843F850D54F /* UICollectionView+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 873B7C7265BCC6FFC3D33BC97367D770 /* UICollectionView+JACoder.m */; };
 /* End PBXBuildFile section */
 
@@ -313,29 +313,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF578E047A67E506AC3944E6DED3263 /* JACategory.h in Headers */,
-				6DCBBFC6EE91230204264586833F3F32 /* NSArray+JACoder.h in Headers */,
-				F10985B7D33DF862F3BD43343AE29E6B /* NSBundle+JACoder.h in Headers */,
-				ADB276EE3E668F61D67F6249BD43B61A /* NSData+JACoder.h in Headers */,
-				3EB91378098889F2144F127FD3FA86E1 /* NSDate+JACoder.h in Headers */,
-				99CB3E7DDDE8357E9A17EED571B76F86 /* NSDictionary+JACoder.h in Headers */,
-				972F3B9D93104C1B08B5FEB52E6CC415 /* NSFileManager+JACoder.h in Headers */,
-				EA2BE356CF5911E7A29448E21B0A7B0B /* NSNumber+JACoder.h in Headers */,
-				741009285D651FE93ABA58B2631003A6 /* NSObject+JACoder.h in Headers */,
-				CB481BECFF93FCFD5CF3C5936D0F2F79 /* NSString+JACoder.h in Headers */,
-				1999366DA0F680C1F73C97BA5F00D4D2 /* NSURL+JACoder.h in Headers */,
-				E21A4EDE71BC5AEE2112477DDA00B608 /* UIButton+JACoder.h in Headers */,
-				57829397E3F6B3517FBBB4CAE690AEA9 /* UICollectionView+JACoder.h in Headers */,
-				E40412BE07C357D080FC0B7860B15C14 /* UIColor+JACoder.h in Headers */,
-				AAE08588AD4B257E71EEF36CC894A660 /* UIDevice+JACoder.h in Headers */,
-				C99AACF79F3A9C53D567B97D2C76648C /* UIImage+JACoder.h in Headers */,
-				106FB8DE831CE70901976C3B96068A3A /* UIImageView+JACoder.h in Headers */,
-				67F1A9C70F21C2D21A545FB0EB73DB59 /* UINavigationBar+JACoder.h in Headers */,
-				2EE9DAEA0A3D286596FBAC98CDB8888C /* UINavigationController+JACoder.h in Headers */,
-				0DDE7979CF5497E04A85351633673511 /* UIScreen+JACoder.h in Headers */,
-				EE5D4D78B2498248CCDD169B55D87E88 /* UIScrollView+JACoder.h in Headers */,
-				5628046D84F6FDD581945593E1FC55F1 /* UITableView+JACoder.h in Headers */,
-				47A137FF1FB8D458F7A571C73DFA6EB1 /* UIView+JACoder.h in Headers */,
-				B66E8002E54096D95C17956E2C643A0F /* UIViewController+JACoder.h in Headers */,
+				34405353B6A6DC8AF6D837DAF3B9B716 /* NSArray+JACoder.h in Headers */,
+				EC5C141C885BC44E15F7CB558CEAC12D /* NSBundle+JACoder.h in Headers */,
+				8C770CBFD7CE41EC0F04C300C82C5997 /* NSData+JACoder.h in Headers */,
+				86F2916B269383872B65A99C3FD66953 /* NSDate+JACoder.h in Headers */,
+				697935F5D1A3B9D8BB65D25A387B11F8 /* NSDictionary+JACoder.h in Headers */,
+				2C6CE9A1E06443F56F3AE15F9EE20A48 /* NSFileManager+JACoder.h in Headers */,
+				0A5FDEDA59B7B1EDE1B77B7F0D09DD48 /* NSNumber+JACoder.h in Headers */,
+				EDC1C4F94A1C1E82EE70B10370EADC2F /* NSObject+JACoder.h in Headers */,
+				7546909F7E7CC7C53306E4771C8D003B /* NSString+JACoder.h in Headers */,
+				8B7D3632524F0A32D5A5EF5E6E060EB2 /* NSURL+JACoder.h in Headers */,
+				30A330A6F1275AC220F9AC4D4BA109CB /* UIButton+JACoder.h in Headers */,
+				9DB14C65A61C53B01EEC177B2528E8CB /* UICollectionView+JACoder.h in Headers */,
+				7DE8EFBEB9348EAAF76D09C16833CAD1 /* UIColor+JACoder.h in Headers */,
+				2CD4E84416B760DD60F3A483C48ACCF5 /* UIDevice+JACoder.h in Headers */,
+				E004E6E935E9768D91C0EBDA48704DE9 /* UIImage+JACoder.h in Headers */,
+				70A1D1FFBA5E7D102214C7467E0B5911 /* UIImageView+JACoder.h in Headers */,
+				98B8F4355378761BE9A6D7F70E20BD11 /* UINavigationBar+JACoder.h in Headers */,
+				31E78A067876939829276D4FACF04168 /* UINavigationController+JACoder.h in Headers */,
+				CDEAE149A96C24E5C54923675DA78449 /* UIScreen+JACoder.h in Headers */,
+				EDE147933F61C56B146B5E966D671045 /* UIScrollView+JACoder.h in Headers */,
+				E6E807F457673C3AB3B4EC9870515A6A /* UITableView+JACoder.h in Headers */,
+				63BDEC1BD9BC65B6136D31FE0E23C5C0 /* UIView+JACoder.h in Headers */,
+				410C72D7FAE6CB7868D1C8E1279123F9 /* UIViewController+JACoder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

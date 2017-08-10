@@ -1,13 +1,20 @@
 //
 //  JACategory.h
-//  Daily_modules
+//  JACategory
 //
-//  Created by Jason on 06/04/2017.
+//  Created by Jason on 10/08/2017.
 //  Copyright © 2017 Jason. All rights reserved.
 //
 
-#ifndef JACategory_h
-#define JACategory_h
+#import <UIKit/UIKit.h>
+
+//! Project version number for JACategory.
+FOUNDATION_EXPORT double JACategoryVersionNumber;
+
+//! Project version string for JACategory.
+FOUNDATION_EXPORT const unsigned char JACategoryVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <JACategory/PublicHeader.h>
 
 #import "NSObject+JACoder.h"
 #import "UIView+JACoder.h"
@@ -31,5 +38,6 @@
 #import "UIImageView+JACoder.h"
 #import "UIScrollView+JACoder.h"
 #import "UIViewController+JACoder.h"
+#import "NSData+JACoder.h"
+#import "NSFileManager+JACoder.h"
 
-#endif /* JACategory_h */
