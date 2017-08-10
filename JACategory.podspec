@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JACategory"
-  s.version      = "master"
+  s.version      = "0.0.3"
   s.summary      = "My collect category"
   s.description  = <<-DESC
   My collect category
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   s.license      = "MIT"
   s.author       = { "Jason" => "iJason92@yahoo.com" }
-  s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :branch => "#{s.version}" }
+  s.platform     = :ios, "7.0" # #{s.version}
+  s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :branch => "master" }
   s.source_files =  "JACategory/*.{h,m}"  
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
   s.public_header_files = "JACategory/*.h"
