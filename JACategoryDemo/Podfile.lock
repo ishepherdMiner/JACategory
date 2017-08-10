@@ -1,5 +1,5 @@
 PODS:
-  - JACategory (0.0.2)
+  - JACategory (0.0.3)
 
 DEPENDENCIES:
   - JACategory (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JACategory: 63f4c1293694426f47f4ead4271600f4bcbb9558
+  JACategory: f4e27adbd6d4b82953c2d72542547eafc87f5a4e
 
 PODFILE CHECKSUM: e4f62fc6ebeb8ca0802e600d85524ec3e5535875
 

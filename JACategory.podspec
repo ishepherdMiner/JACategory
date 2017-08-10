@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
   s.author       = { "Jason" => "iJason92@yahoo.com" }
   s.platform     = :ios, "7.0" # #{s.version}
   s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :branch => "master" }
-  s.source_files =  "JACategory/*.{h,m}"  
+  s.source_files =  "JACategory/JACategory/*.{h,m}"  
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
-  s.public_header_files = "JACategory/*.h"
+  s.public_header_files = "JACategory/JACategory/*.h"
   s.frameworks   = "UIKit", "QuartzCore","Foundation"
   s.requires_arc = true
   s.module_name  = "JACategory"
