@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JACategory.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
