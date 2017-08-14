@@ -41,7 +41,7 @@
 
 - (NSData *)ja_AES256DecryptWithKey:(NSString *)key;   // 解密
 
-- (NSString *)ja_newStringInBase64FromData;            // 追加base64编码
+// - (NSString *)ja_newStringInBase64FromData;            // 追加base64编码
 
 + (NSString *)ja_base64encode:(NSString*)str;          // 同上base64编码
 
