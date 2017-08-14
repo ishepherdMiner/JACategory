@@ -114,7 +114,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     
     const char *source = [str UTF8String];
     
-    int strlength  = strlen(source);
+    int strlength  = (int)strlen(source);
     
     char *characters = malloc(((strlength + 2) / 3) * 4);
     
