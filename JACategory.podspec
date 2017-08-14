@@ -3,15 +3,15 @@ Pod::Spec.new do |s|
   s.version      = "0.0.3"
   s.summary      = "My collect category"
   s.description  = <<-DESC
-  My collect category
+  My collect category.
                    DESC
   s.homepage     = "https://github.com/ishepherdMiner/JACategory"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   s.license      = "MIT"
   s.author       = { "Jason" => "iJason92@yahoo.com" }
   s.platform     = :ios, "7.0" # #{s.version}
-  s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :tag => s.version }
-  s.source_files =  "JACategory/*.{h,m}"
+  s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :tag => "#{s.version}" }
+  s.source_files =  "JACategory","JACategory/*.{h,m}"
   s.public_header_files = "JACategory/*.h"
   s.frameworks   = "UIKit", "QuartzCore","Foundation"
   s.requires_arc = true
