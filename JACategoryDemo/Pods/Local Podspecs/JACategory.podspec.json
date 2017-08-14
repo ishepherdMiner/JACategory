@@ -15,11 +15,11 @@
     "git": "https://github.com/ishepherdMiner/JAProgressBar.git",
     "branch": "master"
   },
-  "source_files": "JACategory/JACategory/*.{h,m}",
+  "source_files": "JACategory/*.{h,m}",
   "pod_target_xcconfig": {
     "OTHER_LDFLAGS": "-lObjC"
   },
-  "public_header_files": "JACategory/JACategory/*.h",
+  "public_header_files": "JACategory/*.h",
   "frameworks": [
     "UIKit",
     "QuartzCore",
