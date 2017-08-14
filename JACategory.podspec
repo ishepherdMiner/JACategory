@@ -10,9 +10,8 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Jason" => "iJason92@yahoo.com" }
   s.platform     = :ios, "7.0" # #{s.version}
-  s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :branch => #{s.version} }
-  s.source_files =  "JACategory/*.{h,m}"  
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  s.source       = { :git => "https://github.com/ishepherdMiner/JAProgressBar.git", :tag => '#{s.version}' }
+  s.source_files =  "JACategory/*.{h,m}"
   s.public_header_files = "JACategory/*.h"
   s.frameworks   = "UIKit", "QuartzCore","Foundation"
   s.requires_arc = true
