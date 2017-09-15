@@ -47,14 +47,13 @@
     
     NSError *error = nil;
     BOOL r = [self createDirectoryAtPath:directoryPath withIntermediateDirectories:true attributes:nil error:&error];
-#if DEBUG
+    
     if (r) {
         NSLog(@"%@",@"[JA]:成功创建文件夹");
     }else if (error) {
         NSLog(@"%@",[NSString stringWithFormat:@"[JA]:创建失败[%@]",error]);
     }
     
-#endif
     return directoryPath;
 }
 
@@ -68,14 +67,11 @@
     
     NSError *error = nil;
     BOOL r = [self createDirectoryAtPath:directoryPath withIntermediateDirectories:true attributes:nil error:&error];
-#if DEBUG
     if (r) {
         NSLog(@"%@",@"[JA]:成功创建文件夹");
     }else if (error) {
         NSLog(@"%@",[NSString stringWithFormat:@"[JA]:创建失败[%@]",error]);
     }
-    
-#endif
     return directoryPath;
 
 }

@@ -187,7 +187,7 @@
 				TargetAttributes = {
 					968B56E01F55428B005F61BF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZEY359R7A4;
+						DevelopmentTeam = W49XAY8UZ2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 969A1EEB1F3C37E80002F91F;
 					};
@@ -338,7 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZEY359R7A4;
+				DEVELOPMENT_TEAM = W49XAY8UZ2;
 				INFOPLIST_FILE = JACategoryDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -352,7 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZEY359R7A4;
+				DEVELOPMENT_TEAM = W49XAY8UZ2;
 				INFOPLIST_FILE = JACategoryDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -490,6 +490,7 @@
 				968B56E91F55428B005F61BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		969A1EE71F3C37E70002F91F /* Build configuration list for PBXProject "JACategoryDemo" */ = {
 			isa = XCConfigurationList;
