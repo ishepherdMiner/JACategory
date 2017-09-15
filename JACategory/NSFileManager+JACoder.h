@@ -10,20 +10,21 @@
 
 @interface NSFileManager (JACoder)
 
+/// shortcut
 /// .../sandbox/Document
-- (NSString *)documentOfPath;
+- (NSString *)ja_documentOfPath;
 
 /// .../sandbox/Library
-- (NSString *)libraryOfPath;
+- (NSString *)ja_libraryOfPath;
 
 /// .../sandbox/Library/Cache
-- (NSString *)cacheOfPath;
+- (NSString *)ja_cacheOfPath;
 
 /// .../sandbox/tmp
-- (NSString *)tmpOfPath;
+- (NSString *)ja_tmpOfPath;
 
 /// .../sandbox/Library/Documentation
-- (NSString *)documentationOfPath;
+- (NSString *)ja_documentationOfPath;
 
 
 /**
@@ -33,11 +34,11 @@
  @param directory 文件夹
  @return 文件路径
  */
-- (NSString *)appendFilePathFormat:(NSString *)filePath
+- (NSString *)ja_appendFilePathFormat:(NSString *)filePath
                          directory:(NSString *)directory;
 
 /// 在docuement文件夹下创建文件夹，若已存在，则返回路径
-- (NSString *)createDirectoryAtDocumentWithName:(NSString *)name;
-- (NSString *)createDirectoryAtCacheWithName:(NSString *)name;
+- (NSString *)ja_createDirectoryAtDocumentWithName:(NSString *)name;
+- (NSString *)ja_createDirectoryAtCacheWithName:(NSString *)name;
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DD9C56107C405DBC54F2DE7 /* libPods-JACategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9AE8F73379D2FDB2265808 /* libPods-JACategoryDemo.a */; };
+		968B56E41F55428B005F61BF /* JACategoryDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 968B56E31F55428B005F61BF /* JACategoryDemoTests.m */; };
 		969A1EF11F3C37E80002F91F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A1EF01F3C37E80002F91F /* main.m */; };
 		969A1EF41F3C37E80002F91F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A1EF31F3C37E80002F91F /* AppDelegate.m */; };
 		969A1EF71F3C37E80002F91F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A1EF61F3C37E80002F91F /* ViewController.m */; };
@@ -16,10 +17,23 @@
 		969A1EFF1F3C37E80002F91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A1EFD1F3C37E80002F91F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		968B56E61F55428B005F61BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 969A1EE41F3C37E70002F91F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 969A1EEB1F3C37E80002F91F;
+			remoteInfo = JACategoryDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0E9AE8F73379D2FDB2265808 /* libPods-JACategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JACategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1359543EEE9F53A78367DABF /* Pods-JACategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JACategoryDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JACategoryDemo/Pods-JACategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		75A137AA0A6C4AC592D3220D /* Pods-JACategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JACategoryDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JACategoryDemo/Pods-JACategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
+		968B56E11F55428B005F61BF /* JACategoryDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JACategoryDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		968B56E31F55428B005F61BF /* JACategoryDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACategoryDemoTests.m; sourceTree = "<group>"; };
+		968B56E51F55428B005F61BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		969A1EEC1F3C37E80002F91F /* JACategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JACategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		969A1EF01F3C37E80002F91F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		969A1EF21F3C37E80002F91F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		968B56DE1F55428B005F61BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969A1EE91F3C37E80002F91F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +74,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		968B56E21F55428B005F61BF /* JACategoryDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				968B56E31F55428B005F61BF /* JACategoryDemoTests.m */,
+				968B56E51F55428B005F61BF /* Info.plist */,
+			);
+			path = JACategoryDemoTests;
+			sourceTree = "<group>";
+		};
 		969A1EE31F3C37E70002F91F = {
 			isa = PBXGroup;
 			children = (
 				969A1EEE1F3C37E80002F91F /* JACategoryDemo */,
+				968B56E21F55428B005F61BF /* JACategoryDemoTests */,
 				969A1EED1F3C37E80002F91F /* Products */,
 				81AB606B2BCD32201015BD78 /* Pods */,
 				9B4463B5A57424B84C778334 /* Frameworks */,
@@ -67,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				969A1EEC1F3C37E80002F91F /* JACategoryDemo.app */,
+				968B56E11F55428B005F61BF /* JACategoryDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +138,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		968B56E01F55428B005F61BF /* JACategoryDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 968B56EA1F55428B005F61BF /* Build configuration list for PBXNativeTarget "JACategoryDemoTests" */;
+			buildPhases = (
+				968B56DD1F55428B005F61BF /* Sources */,
+				968B56DE1F55428B005F61BF /* Frameworks */,
+				968B56DF1F55428B005F61BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				968B56E71F55428B005F61BF /* PBXTargetDependency */,
+			);
+			name = JACategoryDemoTests;
+			productName = JACategoryDemoTests;
+			productReference = 968B56E11F55428B005F61BF /* JACategoryDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		969A1EEB1F3C37E80002F91F /* JACategoryDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 969A1F031F3C37E80002F91F /* Build configuration list for PBXNativeTarget "JACategoryDemo" */;
@@ -135,9 +185,15 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Jason;
 				TargetAttributes = {
-					969A1EEB1F3C37E80002F91F = {
+					968B56E01F55428B005F61BF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = ZEY359R7A4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 969A1EEB1F3C37E80002F91F;
+					};
+					969A1EEB1F3C37E80002F91F = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = HYUMRVJG68;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -156,11 +212,19 @@
 			projectRoot = "";
 			targets = (
 				969A1EEB1F3C37E80002F91F /* JACategoryDemo */,
+				968B56E01F55428B005F61BF /* JACategoryDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		968B56DF1F55428B005F61BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969A1EEA1F3C37E80002F91F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +286,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		968B56DD1F55428B005F61BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968B56E41F55428B005F61BF /* JACategoryDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		969A1EE81F3C37E80002F91F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +305,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		968B56E71F55428B005F61BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 969A1EEB1F3C37E80002F91F /* JACategoryDemo */;
+			targetProxy = 968B56E61F55428B005F61BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		969A1EF81F3C37E80002F91F /* Main.storyboard */ = {
@@ -254,6 +334,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		968B56E81F55428B005F61BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZEY359R7A4;
+				INFOPLIST_FILE = JACategoryDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coder.JACategoryDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JACategoryDemo.app/JACategoryDemo";
+			};
+			name = Debug;
+		};
+		968B56E91F55428B005F61BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZEY359R7A4;
+				INFOPLIST_FILE = JACategoryDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coder.JACategoryDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JACategoryDemo.app/JACategoryDemo";
+			};
+			name = Release;
+		};
 		969A1F011F3C37E80002F91F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,7 +457,7 @@
 			baseConfigurationReference = 1359543EEE9F53A78367DABF /* Pods-JACategoryDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZEY359R7A4;
+				DEVELOPMENT_TEAM = HYUMRVJG68;
 				INFOPLIST_FILE = JACategoryDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -363,7 +471,7 @@
 			baseConfigurationReference = 75A137AA0A6C4AC592D3220D /* Pods-JACategoryDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZEY359R7A4;
+				DEVELOPMENT_TEAM = HYUMRVJG68;
 				INFOPLIST_FILE = JACategoryDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -375,6 +483,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		968B56EA1F55428B005F61BF /* Build configuration list for PBXNativeTarget "JACategoryDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968B56E81F55428B005F61BF /* Debug */,
+				968B56E91F55428B005F61BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		969A1EE71F3C37E70002F91F /* Build configuration list for PBXProject "JACategoryDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

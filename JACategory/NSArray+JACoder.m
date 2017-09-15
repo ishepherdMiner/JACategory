@@ -29,7 +29,6 @@
  *  将数组拆分成固定长度的子数组
  *
  *  @param array 需要拆分的数组
- *
  *  @param subSize 指定长度
  *
  */
@@ -61,8 +60,7 @@
     return [arr copy];  
 }
 
-- (NSArray *)ja_allFilesAtPath:(NSString*)dirString {
-    
+- (NSArray *)ja_allFilesAtPath:(NSString*)dirString {    
     NSMutableArray* array = [NSMutableArray arrayWithCapacity:10];
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     NSArray* tempArray = [fileMgr contentsOfDirectoryAtPath:dirString error:nil];
@@ -79,49 +77,4 @@
     }
     return array;
 }
-
-- (NSArray *)ja_interSet:(NSArray *)listB {
-    NSArray *listA = self;
-    NSMutableArray *listC = [NSMutableArray arrayWithCapacity:[listB count] + [listA count]];
-    for (id obj  in listB) {
-        if ([listA indexOfObject:obj] != NSNotFound) {
-            [listC addObject:obj];
-        }
-    }
-    return [listC copy];
-}
-
-- (NSArray *)ja_unionSet:(NSArray *)listB {
-    NSArray *listA = self;
-    NSMutableArray *listC = [NSMutableArray arrayWithArray:listA];
-    for (id obj in listB) {
-        if ([listA indexOfObject:obj] == NSNotFound) {
-            [listC addObject:obj];
-        }
-    }
-    return [listC copy];
-}
-
-- (NSArray *)ja_differenceSet:(NSArray *)listB {
-    NSArray *listA = self;
-    NSMutableArray *listC = [NSMutableArray arrayWithArray:listA];
-    for (id obj in listB) {
-        // belong B Set && belong A Set,remove it
-        if ([listA indexOfObject:obj] != NSNotFound) {
-            [listC removeObject:obj];
-        }
-    }
-    return [listC copy];
-}
-
-- (BOOL)ja_isContains:(NSArray *)listB {
-    NSArray *listA = self;
-    for (id obj in listB) {
-        if ([listA indexOfObject:obj] == NSNotFound) {
-            return false;
-        }
-    }
-    return true;
-}
-
 @end

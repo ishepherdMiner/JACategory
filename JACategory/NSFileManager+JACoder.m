@@ -17,22 +17,22 @@
  *
  *  @return 返回指定沙盒文件夹下的文件名列表
  */
-- (NSArray *)directoryPathWithType:(NSSearchPathDirectory)type{
+- (NSArray *)ja_directoryPathWithType:(NSSearchPathDirectory)type{
     return NSSearchPathForDirectoriesInDomains(type, NSUserDomainMask, YES);
 }
 
-- (NSString *)appendFilePathFormat:(NSString *)filePath
+- (NSString *)ja_appendFilePathFormat:(NSString *)filePath
                          directory:(NSString *)directory {
     
     return [directory stringByAppendingPathComponent:filePath];
 }
 
-- (NSString *)createDirectoryAtDocumentWithName:(NSString *)name {
+- (NSString *)ja_createDirectoryAtDocumentWithName:(NSString *)name {
     NSString *directoryPath = nil;
     if (name) {
-        directoryPath = [self appendFilePathFormat:name directory:[self documentOfPath]];
+        directoryPath = [self ja_appendFilePathFormat:name directory:[self ja_documentOfPath]];
     }else {
-        directoryPath = [self documentOfPath];
+        directoryPath = [self ja_documentOfPath];
     }
     
     BOOL isDirectory = false;
@@ -58,12 +58,12 @@
     return directoryPath;
 }
 
-- (NSString *)createDirectoryAtCacheWithName:(NSString *)name {
+- (NSString *)ja_createDirectoryAtCacheWithName:(NSString *)name {
     NSString *directoryPath = nil;
     if (name) {
-        directoryPath = [self appendFilePathFormat:name directory:[self cacheOfPath]];
+        directoryPath = [self ja_appendFilePathFormat:name directory:[self ja_cacheOfPath]];
     }else {
-        directoryPath = [self cacheOfPath];
+        directoryPath = [self ja_cacheOfPath];
     }
     
     NSError *error = nil;
@@ -80,23 +80,23 @@
 
 }
 
-- (NSString *)documentOfPath {
-    return [[self directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
+- (NSString *)ja_documentOfPath {
+    return [[self ja_directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
 }
 
-- (NSString *)libraryOfPath {
-    return [[self directoryPathWithType:NSLibraryDirectory] objectAtIndex:0];
+- (NSString *)ja_libraryOfPath {
+    return [[self ja_directoryPathWithType:NSLibraryDirectory] objectAtIndex:0];
 }
 
-- (NSString *)cacheOfPath {
-    return [[self directoryPathWithType:NSCachesDirectory] objectAtIndex:0];
+- (NSString *)ja_cacheOfPath {
+    return [[self ja_directoryPathWithType:NSCachesDirectory] objectAtIndex:0];
 }
 
-- (NSString *)documentationOfPath {
-    return [[self directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
+- (NSString *)ja_documentationOfPath {
+    return [[self ja_directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
 }
 
-- (NSString *)tmpOfPath {
+- (NSString *)ja_tmpOfPath {
     return NSTemporaryDirectory();
 }
 

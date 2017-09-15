@@ -10,6 +10,6 @@
 
 @interface UIViewController (JACoder)
 
-+ (UIViewController*) currentViewController;
++ (UIViewController*)ja_currentViewController;
 
 @end

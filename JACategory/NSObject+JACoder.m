@@ -12,9 +12,9 @@
 @implementation NSObject (JACoder)
 
 + (void)ja_hookMethod:(Class)cls
-       OriginSelector:(SEL)originSel
-     SwizzledSelector:(SEL)swizzlSel
-{
+       originSelector:(SEL)originSel
+     swizzledSelector:(SEL)swizzlSel {
+    
     Method originalMethod = class_getInstanceMethod(cls, originSel);
     Method swizzledMethod = class_getInstanceMethod(cls, swizzlSel);
     BOOL didAddMethod =
@@ -36,7 +36,7 @@
 const void* propertiesKey = "com.coder.lldb-exclusive.propertiesKey";
 const void* ivarKey = "com.coder.lldb-exclusive.ivarKey";
 const void* methodKey = "com.coder.lldb-exclusive.methodKey";
-const void* propertyAndEncodeTypeKey = "com.coder.lldb-excelusive.propertyAndEncodeTypeKey";
+const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEncodeTypePairsKey";
 
 - (NSArray *)ja_propertyList:(BOOL)recursive {
     
@@ -69,9 +69,9 @@ const void* propertyAndEncodeTypeKey = "com.coder.lldb-excelusive.propertyAndEnc
     }() : glist;
 }
 
-- (NSDictionary *)ja_propertyAndEncodeTypeList:(BOOL)recursive {
+- (NSDictionary *)ja_propertyEncodeTypePairs:(BOOL)recursive {
     
-    NSDictionary *glist = objc_getAssociatedObject([self class], propertyAndEncodeTypeKey);
+    NSDictionary *glist = objc_getAssociatedObject([self class], propertyEncodeTypePairsKey);
     
     return glist == nil ? ^{
         
@@ -109,7 +109,7 @@ const void* propertyAndEncodeTypeKey = "com.coder.lldb-excelusive.propertyAndEnc
             free(list);
             cls = [cls superclass];
         } while (cls && recursive);
-        objc_setAssociatedObject([self class],propertyAndEncodeTypeKey, plistDicM, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject([self class],propertyEncodeTypePairsKey, plistDicM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         
         return plistDicM.copy;
         
@@ -138,7 +138,10 @@ const void* propertyAndEncodeTypeKey = "com.coder.lldb-excelusive.propertyAndEnc
             cls = [cls superclass];
         } while (cls && recursive);
         
+#if DEBUG
         NSLog(@"Found %ld ivar on %@",(unsigned long)plistM.count,[self class]);
+#endif
+        
         objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         return plistM.copy;
         
@@ -173,7 +176,11 @@ const void* propertyAndEncodeTypeKey = "com.coder.lldb-excelusive.propertyAndEnc
             free(methods);
             cls = [cls superclass];
         }while (cls && recursive);
+        
+#if DEBUG
         printf("Found %d methods on '%s'\n", methodCount, class_getName([self class]));
+#endif
+        
         objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         
         return plistM.copy;

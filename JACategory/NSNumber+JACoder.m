@@ -9,22 +9,23 @@
 #import "NSNumber+JACoder.h"
 
 @implementation NSNumber (JACoder)
-+ (instancetype)randomNumber:(NSUInteger)from to:(NSUInteger)to {
+
++ (instancetype)ja_randomNumber:(NSUInteger)from to:(NSUInteger)to {
     return @(from + (arc4random() % (to - from + 1)));
 }
 
 /// 当我在测试想让图片每次都不缓存时,可以使用这个,在url末尾添加?@(xxx).stringValue
-+ (instancetype)randomTimestamp:(NSUInteger)from to:(NSUInteger)to {
++ (instancetype)ja_randomTimestamp:(NSUInteger)from to:(NSUInteger)to {
     NSTimeInterval(^timestamp)() = ^() {
         NSDate* date = [NSDate date];
         return (NSTimeInterval)[date timeIntervalSince1970];
     };
     // int value  = arc4random() % (大数 - 小数 + 1) + 小数
-    return [NSNumber randomNumber:(timestamp() - from) to:(timestamp() + to)];
+    return [NSNumber ja_randomNumber:(timestamp() - from) to:(timestamp() + to)];
 }
 
 /// 当我想要截取数值又不想采用截取字符串的方式时,找到的方法
-+ (instancetype)notRounding:(CGFloat)price afterPoint:(int)position{
++ (instancetype)ja_notRounding:(CGFloat)price afterPoint:(int)position{
     
     NSDecimalNumberHandler* roundingBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:position raiseOnExactness:false raiseOnOverflow:false raiseOnUnderflow:false raiseOnDivideByZero:false];
     

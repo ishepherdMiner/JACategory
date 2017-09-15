@@ -27,7 +27,9 @@
  @param originSel 原始方法
  @param swizzlSel 目标方法
  */
-+ (void)ja_hookMethod:(Class)cls OriginSelector:(SEL)originSel SwizzledSelector:(SEL)swizzlSel;
++ (void)ja_hookMethod:(Class)cls
+       originSelector:(SEL)originSel
+     swizzledSelector:(SEL)swizzlSel;
 
 /**
  属性列表
@@ -47,7 +49,7 @@
  @param recursive 是否递归
  @return 保存属性与类型的字典对象
  */
-- (NSDictionary *)ja_propertyAndEncodeTypeList:(BOOL)recursive;
+- (NSDictionary *)ja_propertyEncodeTypePairs:(BOOL)recursive;
 
 /**
  变量列表

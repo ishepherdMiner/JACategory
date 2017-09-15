@@ -157,18 +157,3 @@
 }
 
 @end
-
-@implementation UIView (JAAdapter)
-
-- (instancetype)apdapter {
-    if ([self isKindOfClass:[UILabel class]]) {
-        
-    }
-    
-    if ([self isKindOfClass:[UIImageView class]]) {
-        
-    }
-    return self;
-}
-
-@end

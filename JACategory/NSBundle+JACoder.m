@@ -10,19 +10,7 @@
 
 @implementation NSBundle (JACoder)
 
-+ (instancetype)frameworkBundle {
-    
-    static id instance;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"JAFramework" ofType:@"bundle"]];
-    });
-    
-    return instance;
-}
-
-+ (instancetype)bundleWithName:(NSString *)name {
++ (instancetype)ja_bundleWithName:(NSString *)name {
     static id instance;
     instance = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"bundle"]];
     return instance;
@@ -39,6 +27,20 @@
     }
     UIImage *image = [UIImage imageWithContentsOfFile:[self pathForResource:imageNameWithSuffix ofType:@"png"]];
     return image;
+}
+
+
+#pragma mark private
++ (instancetype)frameworkBundle {
+    
+    static id instance;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"JAObjc" ofType:@"bundle"]];
+    });
+    
+    return instance;
 }
 
 @end

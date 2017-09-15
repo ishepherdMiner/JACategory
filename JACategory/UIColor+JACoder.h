@@ -19,7 +19,7 @@
  color components 3: 1.000000
  @return 颜色空间中的值的数组
  */
-- (NSArray *)colorComponents;
+- (NSArray *)ja_colorComponents;
 
 
 /**
@@ -31,9 +31,9 @@
  @param aEfficient 透明度的缩放比例
  @return 颜色对象
  */
-- (UIColor *)incrementDiffWithRed:(CGFloat)rEfficient
-                            green:(CGFloat)gEfficient
-                             blue:(CGFloat)bEfficient
-                            alpha:(CGFloat)aEfficient;
+- (UIColor *)ja_incrementDiffWithRed:(CGFloat)rEfficient
+                               green:(CGFloat)gEfficient
+                                blue:(CGFloat)bEfficient
+                               alpha:(CGFloat)aEfficient;
 
 @end

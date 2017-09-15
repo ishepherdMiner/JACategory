@@ -18,7 +18,7 @@
  *
  *  @return a random number between from with to number
  */
-+ (instancetype)randomNumber:(NSUInteger)from to:(NSUInteger)to;
++ (instancetype)ja_randomNumber:(NSUInteger)from to:(NSUInteger)to;
 
 /**
  *  create a random timestamp between from with to number (unit:second)
@@ -28,7 +28,7 @@
  *
  *  @return a random timestamp from with to number
  */
-+ (instancetype)randomTimestamp:(NSUInteger)from to:(NSUInteger)to;
++ (instancetype)ja_randomTimestamp:(NSUInteger)from to:(NSUInteger)to;
 
 /**
  *  create an assign decimal number
@@ -38,10 +38,6 @@
  *
  *  @return the assign decimal number
  */
-+ (instancetype)notRounding:(CGFloat)price afterPoint:(int)position;
-
-@end
-
-@interface NSNumber (Deprecated)
++ (instancetype)ja_notRounding:(CGFloat)price afterPoint:(int)position;
 
 @end

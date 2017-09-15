@@ -81,9 +81,3 @@ typedef NS_ENUM(NSUInteger,JASwingDirection){
              calculationMode:(NSString *)calculationMode
                 rotationMode:(NSString *)rotationMode;
 @end
-
-@interface UIView (JAAdapter)
-
-- (instancetype)apdapter;
-
-@end

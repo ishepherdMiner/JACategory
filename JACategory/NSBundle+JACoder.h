@@ -18,7 +18,7 @@
  @param name bundle名
  @return 指定bundle,如果没有则返回nil
  */
-+ (instancetype)bundleWithName:(NSString *)name;
++ (instancetype)ja_bundleWithName:(NSString *)name;
 - (UIImage *)ja_imageWithName:(NSString *)imageName;
 
 @end

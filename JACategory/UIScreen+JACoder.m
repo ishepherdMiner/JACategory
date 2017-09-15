@@ -21,4 +21,5 @@
 + (CGRect)mainBounds {
     return [UIScreen mainScreen].bounds;
 }
+
 @end

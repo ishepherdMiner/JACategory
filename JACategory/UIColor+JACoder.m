@@ -10,7 +10,7 @@
 
 @implementation UIColor (JACoder)
 
-- (NSArray *)colorComponents {
+- (NSArray *)ja_colorComponents {
     NSUInteger num = CGColorGetNumberOfComponents(self.CGColor);
     const CGFloat *colorComponents = CGColorGetComponents(self.CGColor);
     NSMutableArray *components = [NSMutableArray arrayWithCapacity:num];
@@ -20,12 +20,12 @@
     return [components copy];
 }
 
-- (UIColor *)incrementDiffWithRed:(CGFloat)rEfficient
-                            green:(CGFloat)gEfficient
-                             blue:(CGFloat)bEfficient
-                            alpha:(CGFloat)aEfficient{
+- (UIColor *)ja_incrementDiffWithRed:(CGFloat)rEfficient
+                               green:(CGFloat)gEfficient
+                                blue:(CGFloat)bEfficient
+                               alpha:(CGFloat)aEfficient{
     
-    NSArray *colors = [self colorComponents];
+    NSArray *colors = [self ja_colorComponents];
     NSAssert(colors.count >= 4, @"当前不是RGB颜色空间,不能使用该方法");
     UIColor *color = [UIColor colorWithRed:[colors[0] doubleValue] * rEfficient green:[colors[1] doubleValue] * gEfficient blue:[colors[2] doubleValue] * bEfficient alpha:aEfficient];
     return color;

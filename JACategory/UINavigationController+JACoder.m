@@ -12,8 +12,8 @@
 @implementation UINavigationController (JACoder)
 
 + (void)load {
-    [self ja_hookMethod:[self class] OriginSelector:@selector(pushViewController:animated:) SwizzledSelector:@selector(ja_pushViewController:animated:)];
-    [self ja_hookMethod:[self class] OriginSelector:@selector(popViewControllerAnimated:) SwizzledSelector:@selector(ja_popViewControllerAnimated:)];
+    [self ja_hookMethod:[self class] originSelector:@selector(pushViewController:animated:) swizzledSelector:@selector(ja_pushViewController:animated:)];
+    [self ja_hookMethod:[self class] originSelector:@selector(popViewControllerAnimated:) swizzledSelector:@selector(ja_popViewControllerAnimated:)];
 }
 
 - (void)ja_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

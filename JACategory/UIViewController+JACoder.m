@@ -9,7 +9,8 @@
 #import "UIViewController+JACoder.h"
 
 @implementation UIViewController (JACoder)
-+ (UIViewController *) findBestViewController:(UIViewController*)vc {
+
++ (UIViewController *)findBestViewController:(UIViewController*)vc {
     if (vc.presentedViewController) {
         // Return presented view controller
         return [UIViewController findBestViewController:vc.presentedViewController];
@@ -41,7 +42,7 @@
         return vc;
     }
 }
-+ (UIViewController *) currentViewController {
++ (UIViewController *)ja_currentViewController {
     // Find best view controller
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     return [UIViewController findBestViewController:viewController];

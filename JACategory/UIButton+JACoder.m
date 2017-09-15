@@ -10,7 +10,7 @@
 
 @implementation UIButton (JACoder)
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
++ (UIImage *)ja_imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -28,7 +28,7 @@
 
 @implementation UIButton (JAMImagePosition)
 
-- (void)setImagePosition:(JAMImagePosition)postion spacing:(CGFloat)spacing {
+- (void)ja_setImagePosition:(JAMImagePosition)postion spacing:(CGFloat)spacing {
     [self setTitle:self.currentTitle forState:UIControlStateNormal];
     [self setImage:self.currentImage forState:UIControlStateNormal];
     

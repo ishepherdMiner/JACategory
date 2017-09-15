@@ -91,8 +91,8 @@
  *  @return 文本尺寸
  */
 - (CGSize)ja_multiLineWithFont:(UIFont *)font
-                withinWidth:(CGFloat)width
-                    options:(NSStringDrawingOptions)options __IOS_AVAILABLE(7.0);
+                   withinWidth:(CGFloat)width
+                       options:(NSStringDrawingOptions)options __IOS_AVAILABLE(7.0);
 
 - (CGSize)ja_multiLineWithAttrs:(NSDictionary *)attrs
                     withinWidth:(CGFloat)width
@@ -106,7 +106,7 @@
  @return 根据正则处理后的NSAttributeString对象
  */
 - (NSAttributedString *)ja_matchWithRegex:(NSString *)regex
-                                 attrs:(NSDictionary *)attrs;
+                                    attrs:(NSDictionary *)attrs;
 
 /**
  *  返回base64编码的字符串内容

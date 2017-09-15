@@ -10,7 +10,7 @@
 
 @interface UIButton (JACoder)
 
-+ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage *)ja_imageWithColor:(UIColor *)color;
 
 @end
 
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, JAMImagePosition) {
  *
  *  @param spacing 图片和文字的间隔
  */
-- (void)setImagePosition:(JAMImagePosition)postion spacing:(CGFloat)spacing;
+- (void)ja_setImagePosition:(JAMImagePosition)postion spacing:(CGFloat)spacing;
 
 @end
 

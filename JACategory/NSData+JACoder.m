@@ -78,7 +78,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     return nil;
 }
 
-- (NSData *)convertHexStrToData:(NSString *)str {
++ (NSData *)ja_convertHexStrToData:(NSString *)str {
     if (!str || [str length] == 0) {
         return nil;
     }
@@ -160,7 +160,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     
 }
 
-- (NSString *)convertDataToHexStr:(NSData *)data {
+- (NSString *)ja_convertDataToHexStr:(NSData *)data {
     if (!data || [data length] == 0) {
         return @"";
     }
