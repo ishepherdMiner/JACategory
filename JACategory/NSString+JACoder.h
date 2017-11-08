@@ -98,6 +98,16 @@
                     withinWidth:(CGFloat)width
                         options:(NSStringDrawingOptions)options __IOS_AVAILABLE(7.0);
 
+
+/**
+ 字节转换成NSString对象
+
+ @param bytes 字节
+ @param length 字节的长度
+ @return NSString对象
+ */
+- (NSString *)ja_stringWithBytes:(uint8_t *)bytes length:(int)length;
+
 /**
  设置字符串属性
 
@@ -107,6 +117,14 @@
  */
 - (NSAttributedString *)ja_matchWithRegex:(NSString *)regex
                                     attrs:(NSDictionary *)attrs;
+
+
+/**
+ 遍历当前字符串
+
+ @param execBlock 执行回调,每次传递当前遍历的字符
+ */
+- (void)ja_map:(void (^)(NSString *c))execBlock;
 
 /**
  *  返回base64编码的字符串内容

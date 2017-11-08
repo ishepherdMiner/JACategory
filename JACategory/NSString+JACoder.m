@@ -24,7 +24,16 @@
     return [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];
 }
 
-- (NSString *)stringWithBytes:(uint8_t *)bytes length:(int)length {
+- (void)ja_map:(void (^)(NSString *c))execBlock {
+    NSRange range = NSMakeRange(0, self.length);
+    for(int i=0; i<self.length; i+=range.length){
+        range = [self rangeOfComposedCharacterSequenceAtIndex:i];
+        NSString *s = [self substringWithRange:range];
+        execBlock(s);
+    }
+}
+
+- (NSString *)ja_stringWithBytes:(uint8_t *)bytes length:(int)length {
     NSMutableString *strM = [NSMutableString string];
     
     for (int i = 0; i < length; i++) {
@@ -160,7 +169,7 @@
     
     CC_MD5(str, (CC_LONG)strlen(str), buffer);
     
-    return [self stringWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_sha1String {
@@ -169,7 +178,7 @@
     
     CC_SHA1(str, (CC_LONG)strlen(str), buffer);
     
-    return [self stringWithBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_sha256String {
@@ -178,7 +187,7 @@
     
     CC_SHA256(str, (CC_LONG)strlen(str), buffer);
     
-    return [self stringWithBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_sha512String {
@@ -187,7 +196,7 @@
     
     CC_SHA512(str, (CC_LONG)strlen(str), buffer);
     
-    return [self stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
 #pragma mark - HMAC 散列函数
@@ -198,7 +207,7 @@
     
     CCHmac(kCCHmacAlgMD5, keyData, strlen(keyData), strData, strlen(strData), buffer);
     
-    return [self stringWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_hmacSHA1StringWithKey:(NSString *)key {
@@ -208,7 +217,7 @@
     
     CCHmac(kCCHmacAlgSHA1, keyData, strlen(keyData), strData, strlen(strData), buffer);
     
-    return [self stringWithBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_hmacSHA256StringWithKey:(NSString *)key {
@@ -218,7 +227,7 @@
     
     CCHmac(kCCHmacAlgSHA256, keyData, strlen(keyData), strData, strlen(strData), buffer);
     
-    return [self stringWithBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_hmacSHA512StringWithKey:(NSString *)key {
@@ -228,7 +237,7 @@
     
     CCHmac(kCCHmacAlgSHA512, keyData, strlen(keyData), strData, strlen(strData), buffer);
     
-    return [self stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
 #pragma mark - 文件散列函数
@@ -260,7 +269,7 @@
     uint8_t buffer[CC_MD5_DIGEST_LENGTH];
     CC_MD5_Final(buffer, &hashCtx);
     
-    return [self stringWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_MD5_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_fileSHA1Hash {
@@ -288,7 +297,7 @@
     uint8_t buffer[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1_Final(buffer, &hashCtx);
     
-    return [self stringWithBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA1_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_fileSHA256Hash {
@@ -316,7 +325,7 @@
     uint8_t buffer[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256_Final(buffer, &hashCtx);
     
-    return [self stringWithBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA256_DIGEST_LENGTH];
 }
 
 - (NSString *)ja_fileSHA512Hash {
@@ -344,7 +353,7 @@
     uint8_t buffer[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512_Final(buffer, &hashCtx);
     
-    return [self stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
+    return [self ja_stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
 

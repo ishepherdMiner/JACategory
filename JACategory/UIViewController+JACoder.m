@@ -10,6 +10,12 @@
 
 @implementation UIViewController (JACoder)
 
++ (UIViewController *)ja_currentViewController {
+    // Find best view controller
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    return [UIViewController findBestViewController:viewController];
+}
+
 + (UIViewController *)findBestViewController:(UIViewController*)vc {
     if (vc.presentedViewController) {
         // Return presented view controller
@@ -41,10 +47,5 @@
         // Unknown view controller type, return last child view controller
         return vc;
     }
-}
-+ (UIViewController *)ja_currentViewController {
-    // Find best view controller
-    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    return [UIViewController findBestViewController:viewController];
 }
 @end

@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#define fRect(x,y,w,h) CGRectMake(x,y,w,h)
+#define fSize(w,h) CGSizeMake(w,h)
+#define fPoint(x,y) CGPointMake(x,y)
+#define fRange(loc,len) NSRangeMake(loc,len)
+#define fMaxY(rect) CGRectGetMaxY(rect)
+#define fMaxX(rect) CGRectGetMaxX(rect)
+#define fMinY(rect) CGRectGetMinY(rect)
+#define fMinX(rect) CGRectGetMinX(rect)
+#define fMidY(rect) CGRectGetMidY(rect)
+#define fMidX(rect) CGRectGetMidX(rect)
+#define fWidth(rect) CGRectGetWidth(rect)
+#define fHeight(rect) CGRectGetHeight(rect)
+
 @interface UIView (JACoder)
 
 @property (nonatomic,assign) CGFloat x;

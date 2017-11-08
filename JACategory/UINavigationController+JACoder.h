@@ -10,4 +10,8 @@
 
 @interface UINavigationController (JACoder)
 
+/// origin methods
+- (void)ja_pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (UIViewController *)ja_popViewControllerAnimated:(BOOL)animated;
+
 @end
