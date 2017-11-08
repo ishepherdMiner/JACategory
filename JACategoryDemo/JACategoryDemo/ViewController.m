@@ -18,7 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [NSObject ja_getAllClasses];
+    id obj1 = NSClassFromString(@"PodsDummy_JACategory");
+    id obj2 = NSClassFromString(@"PodsDummy_Pods_JACategoryDemo");
+    NSLog(@"%@,%@",obj1,obj2);
 }
 
 

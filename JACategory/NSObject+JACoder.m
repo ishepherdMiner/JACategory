@@ -8,6 +8,8 @@
 
 #import "NSObject+JACoder.h"
 #import <objc/message.h>
+#import <dlfcn.h>
+#import <mach-o/ldsyms.h>
 
 @implementation NSObject (JACoder)
 
@@ -192,4 +194,62 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
     objc_removeAssociatedObjects([self class]);
 }
 
++ (NSArray *)ja_developerClasses {
+    NSMutableArray *dClasses = [NSMutableArray array];
+    unsigned int count;
+    const char **classes;
+    Dl_info info;
+    
+    // 1.获取app的路径
+    dladdr(&_mh_execute_header, &info);
+    
+    // 2.返回当前运行的app的所有类的名字，并传出个数
+    // classes：二维数组 存放所有类的列表名称
+    // count：所有的类的个数
+    classes = objc_copyClassNamesForImage(info.dli_fname, &count);
+    
+    for (int i = 0; i < count; i++) {
+        //3.遍历并打印，转换Objective-C的字符串
+        NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];
+        // Class class = NSClassFromString(className);
+        // NSLog(@"class name = %@", class);
+        [dClasses addObject:className];
+        
+#ifdef DEBUG
+        NSLog(@"[JA]:%@",className);
+#endif
+    }
+    return [dClasses copy];
+}
+
++ (NSArray *)ja_allClasses {
+    NSMutableArray *dClasses = [NSMutableArray array];
+    int numClasses;
+    Class * classes = NULL;
+    
+    // 1.获取当前app运行时所有的类，包括系统创建的类和开发者创建的类
+    numClasses = objc_getClassList(NULL, 0);
+    
+    if (numClasses > 0 ){
+        // 2.创建一个可以容纳numClasses个的大小空间
+        classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
+        
+        // 3.重新获取具体类的列表和个数
+        numClasses = objc_getClassList(classes, numClasses);
+        
+        // 4.遍历
+        for (int i = 0; i < numClasses; i++) {
+            Class class = classes[i];            
+            NSString *className = [NSString stringWithCString:class_getName(class) encoding:NSUTF8StringEncoding];
+            [dClasses addObject:className];
+            
+#ifdef DEBUG
+            NSLog(@"[JA]:%@", className);
+#endif
+            
+        }
+        free(classes);
+    }
+    return [dClasses copy];
+}
 @end

@@ -71,4 +71,12 @@
  */
 - (void)ja_cleanCacheList;
 
+/// 不支持C++的类的获取
+// ====================================
+/// 获得开发者创建的类的类名列表
++ (NSArray *)ja_developerClasses;
+
+/// 获得app所有的类名列表
++ (NSArray *)ja_allClasses;
+
 @end
