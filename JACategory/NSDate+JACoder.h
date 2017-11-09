@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (JACoder)
+
 /**
  *  字符串转NSDate
  *

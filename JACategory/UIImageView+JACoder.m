@@ -10,11 +10,12 @@
 
 @implementation UIImageView (JACoder)
 
-- (void)ja_shadow {
+- (void)ja_insertShadow {
     self.layer.shadowColor = [UIColor grayColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(1, 3);
     self.layer.shadowOpacity = 1.0;
     self.backgroundColor = [UIColor whiteColor];
     self.clipsToBounds = false;
 }
+
 @end

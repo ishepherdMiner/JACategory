@@ -10,6 +10,6 @@
 
 @interface UIImageView (JACoder)
 
-- (void)ja_shadow;
+- (void)ja_insertShadow;
 
 @end

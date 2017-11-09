@@ -9,11 +9,9 @@
 #import "NSData+JACoder.h"
 #import <CommonCrypto/CommonCryptor.h>
 
-static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-
 @implementation NSData (JACoder)
 
-- (NSData *)ja_AES256EncryptWithKey:(NSString *)key {
+- (NSData *)ja_aes256EncryptWithKey:(NSString *)key {
     // 'key' should be 32 bytes for AES256, will be null-padded otherwise
     char keyPtr[kCCKeySizeAES256+1]; // room for terminator (unused)
     bzero(keyPtr, sizeof(keyPtr)); // fill with zeroes (for padding)
@@ -45,7 +43,11 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     return nil;
 }
 
-- (NSData *)ja_AES256DecryptWithKey:(NSString *)key {
+- (NSString *)ja_toString {
+    return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
+}
+
+- (NSData *)ja_aes256DecryptWithKey:(NSString *)key {
     // 'key' should be 32 bytes for AES256, will be null-padded otherwise
     char keyPtr[kCCKeySizeAES256+1]; // room for terminator (unused)
     bzero(keyPtr, sizeof(keyPtr)); // fill with zeroes (for padding)
@@ -78,21 +80,19 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     return nil;
 }
 
-+ (NSData *)ja_convertHexStrToData:(NSString *)str {
-    if (!str || [str length] == 0) {
-        return nil;
-    }
++ (NSData *)ja_convertHexToData:(NSString *)content {
+    if (!content || [content length] == 0) { return nil; }
     
     NSMutableData *hexData = [[NSMutableData alloc] initWithCapacity:8];
     NSRange range;
-    if ([str length] % 2 == 0) {
+    if ([content length] % 2 == 0) {
         range = NSMakeRange(0, 2);
     } else {
         range = NSMakeRange(0, 1);
     }
-    for (NSInteger i = range.location; i < [str length]; i += 2) {
+    for (NSInteger i = range.location; i < [content length]; i += 2) {
         unsigned int anInt;
-        NSString *hexCharStr = [str substringWithRange:range];
+        NSString *hexCharStr = [content substringWithRange:range];
         NSScanner *scanner = [[NSScanner alloc] initWithString:hexCharStr];
         
         [scanner scanHexInt:&anInt];
@@ -106,61 +106,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     return hexData;
 }
 
-+ (NSString*)ja_base64encode:(NSString*)str {
-    
-    if ([str length] == 0)
-        
-        return @"";
-    
-    const char *source = [str UTF8String];
-    
-    int strlength  = (int)strlen(source);
-    
-    char *characters = malloc(((strlength + 2) / 3) * 4);
-    
-    if (characters == NULL)
-        
-        return nil;
-    
-    NSUInteger length = 0;
-    
-    NSUInteger i = 0;
-    
-    while (i < strlength) {
-        
-        char buffer[3] = {0,0,0};
-        
-        short bufferLength = 0;
-        
-        while (bufferLength < 3 && i < strlength)
-            
-            buffer[bufferLength++] = source[i++];
-        
-        characters[length++] = base64[(buffer[0] & 0xFC) >> 2];
-        
-        characters[length++] = base64[((buffer[0] & 0x03) << 4) | ((buffer[1] & 0xF0) >> 4)];
-        
-        if (bufferLength > 1)
-            
-            characters[length++] = base64[((buffer[1] & 0x0F) << 2) | ((buffer[2] & 0xC0) >> 6)];
-        
-        else characters[length++] = '=';
-        
-        if (bufferLength > 2)
-            
-            characters[length++] = base64[buffer[2] & 0x3F];
-        
-        else characters[length++] = '=';
-        
-    }
-    // NSString *g = [[NSString alloc] initWithBytesNoCopy:characters length:lengthencoding:NSASCIIStringEncoding freeWhenDone:YES];
-    NSString *g = [[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:true];
-    
-    return g;
-    
-}
-
-- (NSString *)ja_convertDataToHexStr:(NSData *)data {
++ (NSString *)ja_convertDataToHex:(NSData *)data {
     if (!data || [data length] == 0) {
         return @"";
     }

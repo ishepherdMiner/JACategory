@@ -35,13 +35,12 @@
     }
 }
 
-const void* propertiesKey = "com.coder.lldb-exclusive.propertiesKey";
-const void* ivarKey = "com.coder.lldb-exclusive.ivarKey";
-const void* methodKey = "com.coder.lldb-exclusive.methodKey";
-const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEncodeTypePairsKey";
+const void* propertiesKey = "com.coder.category.propertiesKey";
+const void* ivarKey = "com.coder.category.ivarKey";
+const void* methodKey = "com.coder.category.methodKey";
+// const void* propertyEncodeTypePairsKey = "com.coder.category.propertyEncodeTypePairsKey";
 
 - (NSArray *)ja_propertyList:(BOOL)recursive {
-    
     NSArray *glist = objc_getAssociatedObject([self class], propertiesKey);
     
     return glist == nil ? ^{
@@ -70,7 +69,7 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
         
     }() : glist;
 }
-
+/*
 - (NSDictionary *)ja_propertyEncodeTypePairs:(BOOL)recursive {
     
     NSDictionary *glist = objc_getAssociatedObject([self class], propertyEncodeTypePairsKey);
@@ -90,8 +89,10 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
                 NSString *pname_utf8 = [NSString stringWithUTF8String:pname];
                 NSString *pattr_utf8 = [NSString stringWithUTF8String:pattr];
                 
-                // https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1
-                if ([pattr_utf8 rangeOfString:@"NSString"].location != NSNotFound) {
+                /// https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1
+                if ([pattr_utf8 rangeOfString:@"c"].location != NSNotFound) {
+                    
+                }else if ([pattr_utf8 rangeOfString:@"NSString"].location != NSNotFound) {
                     pattr_utf8 = @"NSString";
                 }else if ([pattr_utf8 rangeOfString:@"NSNumber"].location != NSNotFound) {
                     pattr_utf8 = @"NSNumber";
@@ -117,7 +118,7 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
         
     }() : glist;
 }
-
+*/
 
 - (NSArray *)ja_ivarList:(BOOL)recursive{
     
@@ -141,7 +142,7 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
         } while (cls && recursive);
         
 #if DEBUG
-        NSLog(@"Found %ld ivar on %@",(unsigned long)plistM.count,[self class]);
+        NSLog(@"[JA]:Found %ld ivar on %@",(unsigned long)plistM.count,[self class]);
 #endif
         
         objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -151,7 +152,6 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
 }
 
 - (NSArray *)ja_methodList:(BOOL)recursive {
-    
     NSArray *glist = objc_getAssociatedObject([self class], methodKey);
     
     return glist == nil ? ^{
@@ -210,9 +210,7 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
     
     for (int i = 0; i < count; i++) {
         //3.遍历并打印，转换Objective-C的字符串
-        NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];
-        // Class class = NSClassFromString(className);
-        // NSLog(@"class name = %@", class);
+        NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];        
         [dClasses addObject:className];
         
 #ifdef DEBUG
@@ -239,7 +237,7 @@ const void* propertyEncodeTypePairsKey = "com.coder.lldb-excelusive.propertyEnco
         
         // 4.遍历
         for (int i = 0; i < numClasses; i++) {
-            Class class = classes[i];            
+            Class class = classes[i];
             NSString *className = [NSString stringWithCString:class_getName(class) encoding:NSUTF8StringEncoding];
             [dClasses addObject:className];
             

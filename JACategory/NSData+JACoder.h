@@ -10,10 +10,45 @@
 
 @interface NSData (JACoder)
 
-- (NSData *)ja_AES256EncryptWithKey:(NSString *)key;   // 加密
-- (NSData *)ja_AES256DecryptWithKey:(NSString *)key;   // 解密
+/**
+ 二进制转换为NSString对象,编码格式为UTF8
+ 
+ @return 字符串对象
+ */
+- (NSString *)ja_toString;
 
-+ (NSString *)ja_base64encode:(NSString*)str;          // 同上base64编码
-+ (NSData *)ja_convertHexStrToData:(NSString *)str;
+/// =====================================================
+/**
+ AES256加密
+
+ @param key 秘钥
+ @return 加密后的二进制数据
+ */
+- (NSData *)ja_aes256EncryptWithKey:(NSString *)key;
+
+/**
+ AES256解密
+
+ @param key 密匙
+ @return 解密后的二进制数据
+ */
+- (NSData *)ja_aes256DecryptWithKey:(NSString *)key;
+
+/// =====================================================
+/**
+ 十六进制字符串转换为NSData对象
+
+ @param content 16进制字符串
+ @return NSData对象
+ */
++ (NSData *)ja_convertHexToData:(NSString *)content;
+
+/**
+ NSData对象转换为十六进制字符串
+
+ @param data NSData对象
+ @return 十六进制字符串
+ */
++ (NSString *)ja_convertDataToHex:(NSData *)data;
 
 @end
