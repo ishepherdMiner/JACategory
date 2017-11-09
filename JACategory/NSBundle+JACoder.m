@@ -11,9 +11,8 @@
 @implementation NSBundle (JACoder)
 
 + (instancetype)ja_bundleWithName:(NSString *)name {
-    static id instance;
-    instance = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"bundle"]];
-    return instance;
+    NSBundle *b = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"bundle"]];
+    return b;
 }
 
 - (UIImage *)ja_imageWithName:(NSString *)name {    

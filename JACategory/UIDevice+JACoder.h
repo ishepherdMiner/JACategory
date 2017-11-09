@@ -31,9 +31,17 @@
 #endif
 
 /**
+ * 易理解的设备型号
+ * 若要拼成url,可以通过[NSString ja_encodeToPercentEscapeString:@"xxx"]过滤空格
+ @return 设备型号
+ */
++ (NSString *)ja_model;
+
+/**
  *  获取内网地址
  *
  *  @return ip地址
  */
-- (NSDictionary *)ja_ipAddr;
++ (NSDictionary *)ja_ip;
+
 @end
