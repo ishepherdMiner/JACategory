@@ -73,6 +73,9 @@
  */
 - (void)ja_cleanCacheList;
 
+/// 调试用
+#ifdef JADEBUG
+
 /// 不支持C++的类的获取
 // ====================================
 /// 获得开发者创建的类的类名列表
@@ -80,5 +83,7 @@
 
 /// 获得app所有的类名列表
 + (NSArray *)ja_allClasses;
+
+#endif
 
 @end

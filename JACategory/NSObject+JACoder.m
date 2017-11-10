@@ -194,6 +194,8 @@ const void* methodKey = "com.coder.category.methodKey";
     objc_removeAssociatedObjects([self class]);
 }
 
+#ifdef JADEBUG
+
 + (NSArray *)ja_developerClasses {
     NSMutableArray *dClasses = [NSMutableArray array];
     unsigned int count;
@@ -250,4 +252,7 @@ const void* methodKey = "com.coder.category.methodKey";
     }
     return [dClasses copy];
 }
+
+#endif
+
 @end
