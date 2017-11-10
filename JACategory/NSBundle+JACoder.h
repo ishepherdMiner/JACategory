@@ -26,4 +26,11 @@
  */
 - (UIImage *)ja_imageWithName:(NSString *)name;
 
+/**
+ 包名
+
+ @return 包名
+ */
++ (NSString *)ja_bundleId;
+
 @end

@@ -15,6 +15,10 @@
     return b;
 }
 
++ (NSString *)ja_bundleId {
+    return [[NSBundle mainBundle] bundleIdentifier];
+}
+
 - (UIImage *)ja_imageWithName:(NSString *)name {    
     NSString *imageNameWithSuffix = nil;
     

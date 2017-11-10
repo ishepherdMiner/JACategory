@@ -31,7 +31,7 @@
 #endif
 
 /**
- * 易理解的设备型号
+ * 可读的设备型号
  * 若要拼成url,可以通过[NSString ja_encodeToPercentEscapeString:@"xxx"]过滤空格
  @return 设备型号
  */
@@ -43,5 +43,33 @@
  *  @return ip地址
  */
 + (NSDictionary *)ja_ip;
+
+/**
+ 当前系统的首选语言
+
+ @return 首选语言
+ */
++ (NSString *)ja_lang;
+
+/**
+ idfa 广告标识符
+
+ @return 广告标识符对象
+ */
++ (NSString *)ja_idfa;
+
+/**
+ 当前wifi是否可用
+
+ @return wifi是否可用
+ */
++ (BOOL)ja_wifiAvailable;
+
+/**
+ 运行商
+
+ @return 运营商
+ */
++ (NSString *)ja_carrier;
 
 @end

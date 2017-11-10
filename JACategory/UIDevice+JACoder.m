@@ -13,7 +13,10 @@
 #import <arpa/inet.h>
 #import <net/if.h>
 #import <sys/utsname.h>
-#import "NSString+JACoder.h"
+#import <AdSupport/AdSupport.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
+
 
 #define IOS_CELLULAR    @"pdp_ip0"
 #define IOS_WIFI        @"en0"
@@ -158,6 +161,69 @@ const char *gyroKey = "gyroKey";
                             @"Watch3,4": @"Apple Watch Series 3",
     };
     return [mDics objectForKey:platform];
+}
+
++ (NSString *)ja_lang {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray* languages = [defaults objectForKey:@"AppleLanguages"];
+    NSString* currentLanguage = [languages objectAtIndex:0];
+    return currentLanguage;
+}
+
++ (NSString *)ja_idfa {
+    NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    
+    if (adId == nil||[adId isEqualToString:@""]||[adId isEqualToString:@"(null)"]) {
+        adId = @"";
+    }
+    
+    return adId;
+}
+
++ (BOOL)ja_wifiAvailable {
+    struct ifaddrs *addresses;
+    struct ifaddrs *cursor;
+    BOOL wiFiAvailable = NO;
+    if (getifaddrs(&addresses) != 0) return NO;
+    
+    cursor = addresses;
+    while (cursor != NULL) {
+        if (cursor -> ifa_addr -> sa_family == AF_INET
+            && !(cursor -> ifa_flags & IFF_LOOPBACK)) // Ignore the loopback address
+        {
+            // Check for WiFi adapter
+            if (strcmp(cursor -> ifa_name, "en0") == 0) {
+                wiFiAvailable = YES;
+                break;
+            }
+        }
+        cursor = cursor -> ifa_next;
+    }
+    
+    freeifaddrs(addresses);
+    return wiFiAvailable;
+}
+
++ (NSString *)ja_carrier {
+    CTTelephonyNetworkInfo *netInfo = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [netInfo subscriberCellularProvider];    
+    NSString *carrierCode;
+    
+    if (carrier == nil) {
+        carrierCode = @"WL";
+    }else {
+        carrierCode = [carrier carrierName];
+        if([@"中国移动" isEqualToString:carrierCode]) {
+            return @"CM";
+        } else if([@"中国联通" isEqualToString:carrierCode]) {
+            return @"CU";
+        } else if([@"中国电信" isEqualToString:carrierCode]) {
+            return @"CT";
+        } else
+            return @"false";
+    }
+    
+    return @"false";
 }
 
 + (NSString *)ja_ip:(BOOL)preferIPv4{

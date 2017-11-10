@@ -36,6 +36,8 @@
 		8C770CBFD7CE41EC0F04C300C82C5997 /* NSData+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 809E884562FEF6B3CE945DC054FAF8E0 /* NSData+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92395F842774AE63368BBCF5460ED340 /* UIImage+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B8966B55CAF2D59FF0E28843DCDE1 /* UIImage+JACoder.m */; };
 		941A9131043F1D33380D5F3A15B9CA61 /* NSDictionary+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8CB0E0492D44E67FF059F950EC29E6 /* NSDictionary+JACoder.m */; };
+		969285381FB5745D00F0CE31 /* UIApplication+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 969285361FB5745C00F0CE31 /* UIApplication+JACoder.h */; };
+		969285391FB5745D00F0CE31 /* UIApplication+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 969285371FB5745C00F0CE31 /* UIApplication+JACoder.m */; };
 		9C15B16D909D6BC66D6973E5CC5430E7 /* JACategory-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD81F0184BAB50DC13385D9E65E9139 /* JACategory-dummy.m */; };
 		AE08A0D671E3B1D67231E3687504011D /* NSFileManager+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF078DD9549B7656D34EF19121E74C15 /* NSFileManager+JACoder.m */; };
 		B02EFDD02EF0B9A98225DA546F37683C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
@@ -52,7 +54,6 @@
 		EABA465EE0E766C62A7340A75B5D02A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
 		EC5C141C885BC44E15F7CB558CEAC12D /* NSBundle+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD3133B32C82A2DFCC5044BD731B2CB /* NSBundle+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDC1C4F94A1C1E82EE70B10370EADC2F /* NSObject+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEF578E047A67E506AC3944E6DED3263 /* JACategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E73E4BBF5DFA9670359225CE2F6CB08 /* JACategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFD898B43DB2F17234481F4F95EE8384 /* NSData+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 073293870E0BF92634DD43A7DD090C6E /* NSData+JACoder.m */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +90,6 @@
 		4F21D5C17A772FDCACA7FCBADF96AD39 /* Pods-JACategoryDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JACategoryDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		54D8CE8015DD9BC9B9146DACF3BF9C12 /* NSFileManager+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+JACoder.h"; sourceTree = "<group>"; };
 		5A57C9234706AC3B9C03F3141DFE7FF3 /* UIView+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+JACoder.m"; sourceTree = "<group>"; };
-		5E73E4BBF5DFA9670359225CE2F6CB08 /* JACategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JACategory.h; sourceTree = "<group>"; };
 		647E0C8903B44AB4ACBCA11DE620E9AB /* UIImageView+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JACoder.m"; sourceTree = "<group>"; };
 		65C1C7DCF5476FA991D845D733057452 /* UIViewController+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JACoder.m"; sourceTree = "<group>"; };
 		6743D85C9ED30F071F46FEA650562069 /* UIDevice+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDevice+JACoder.h"; sourceTree = "<group>"; };
@@ -101,6 +101,9 @@
 		8DEC1C308E24845588EE2C106BC936F1 /* NSString+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+JACoder.m"; sourceTree = "<group>"; };
 		9010A824395485DD932998AFA9D33315 /* UIView+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+JACoder.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		969285361FB5745C00F0CE31 /* UIApplication+JACoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JACoder.h"; sourceTree = "<group>"; };
+		969285371FB5745C00F0CE31 /* UIApplication+JACoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JACoder.m"; sourceTree = "<group>"; };
+		9692853B1FB5786C00F0CE31 /* JACategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACategory.h; sourceTree = "<group>"; };
 		9780AA0BBF4F9D191CA75BD3158276A4 /* UIButton+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+JACoder.h"; sourceTree = "<group>"; };
 		99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+JACoder.h"; sourceTree = "<group>"; };
 		9C13D2AF68360D4D912AB9B04BE21D78 /* UIScreen+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+JACoder.m"; sourceTree = "<group>"; };
@@ -241,7 +244,7 @@
 		FA429478BCC656234465760F6EFB4411 /* JACategory */ = {
 			isa = PBXGroup;
 			children = (
-				5E73E4BBF5DFA9670359225CE2F6CB08 /* JACategory.h */,
+				9692853B1FB5786C00F0CE31 /* JACategory.h */,
 				99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */,
 				29877A5CB43E66B58DA294E5895F9C24 /* NSObject+JACoder.m */,
 				8BCB52C4CAA907D4AE4AA4CDB7E7B34E /* NSArray+JACoder.h */,
@@ -282,6 +285,8 @@
 				2C0D9CE6B3240692F8EBA81D2667A7CA /* UITableView+JACoder.m */,
 				A0ECF1E441DA31077092E54A5D8D21D8 /* UIViewController+JACoder.h */,
 				65C1C7DCF5476FA991D845D733057452 /* UIViewController+JACoder.m */,
+				969285361FB5745C00F0CE31 /* UIApplication+JACoder.h */,
+				969285371FB5745C00F0CE31 /* UIApplication+JACoder.m */,
 			);
 			path = JACategory;
 			sourceTree = "<group>";
@@ -293,11 +298,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF578E047A67E506AC3944E6DED3263 /* JACategory.h in Headers */,
 				34405353B6A6DC8AF6D837DAF3B9B716 /* NSArray+JACoder.h in Headers */,
 				EC5C141C885BC44E15F7CB558CEAC12D /* NSBundle+JACoder.h in Headers */,
 				8C770CBFD7CE41EC0F04C300C82C5997 /* NSData+JACoder.h in Headers */,
 				86F2916B269383872B65A99C3FD66953 /* NSDate+JACoder.h in Headers */,
+				969285381FB5745D00F0CE31 /* UIApplication+JACoder.h in Headers */,
 				697935F5D1A3B9D8BB65D25A387B11F8 /* NSDictionary+JACoder.h in Headers */,
 				2C6CE9A1E06443F56F3AE15F9EE20A48 /* NSFileManager+JACoder.h in Headers */,
 				0A5FDEDA59B7B1EDE1B77B7F0D09DD48 /* NSNumber+JACoder.h in Headers */,
@@ -361,7 +366,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -414,6 +419,7 @@
 				41928B6732F74C4A024634CA677A85D7 /* UIScreen+JACoder.m in Sources */,
 				E3C356E43D81611E0B387B1E5000BF8B /* UITableView+JACoder.m in Sources */,
 				199DEDEF59EFDBE889091317398AA658 /* UIView+JACoder.m in Sources */,
+				969285391FB5745D00F0CE31 /* UIApplication+JACoder.m in Sources */,
 				D3FAF5E47CFEC59C97A68991167C172C /* UIViewController+JACoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +447,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/JACategory/JACategory-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -463,7 +469,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -471,14 +479,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -489,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -507,7 +521,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -530,7 +544,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -538,15 +554,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -560,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -578,7 +600,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -602,7 +624,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/JACategory/JACategory-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";

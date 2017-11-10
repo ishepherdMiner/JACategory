@@ -12,6 +12,7 @@
 
 + (CGFloat)w;
 + (CGFloat)h;
-+ (CGRect)mainBounds;
++ (CGRect)ja_mainBounds;
++ (CGFloat)ja_brightness;
 
 @end

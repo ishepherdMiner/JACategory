@@ -18,8 +18,11 @@
     return [UIScreen mainScreen].bounds.size.height;
 }
 
-+ (CGRect)mainBounds {
++ (CGRect)ja_mainBounds {
     return [UIScreen mainScreen].bounds;
 }
 
++ (CGFloat)ja_brightness {
+    return [UIScreen mainScreen].brightness;
+}
 @end
