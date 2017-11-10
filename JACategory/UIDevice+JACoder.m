@@ -226,6 +226,19 @@ const char *gyroKey = "gyroKey";
     return @"false";
 }
 
++ (NSString *)ja_pid {
+    return [NSString stringWithFormat:@"%d",[[NSProcessInfo processInfo] processIdentifier]];
+}
+
++ (NSString *)ja_startupTime {
+    // 获取系统自开机算起的累计时间
+    NSProcessInfo *info = [NSProcessInfo processInfo] ;
+    NSDate *dat = [NSDate date];
+    NSTimeInterval curtime = [dat timeIntervalSince1970];
+    NSString *uptime = [[NSString alloc] initWithFormat:@"%ld", (long)curtime - (long)info.systemUptime];
+    return uptime;
+}
+
 + (NSString *)ja_ip:(BOOL)preferIPv4{
     NSArray *searchArray = preferIPv4 ?
     @[ IOS_VPN @"/" IP_ADDR_IPv4, IOS_VPN @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6 ] :

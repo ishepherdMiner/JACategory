@@ -16,7 +16,7 @@
 
 /// 当我在测试想让图片每次都不缓存时,可以使用这个,在url末尾添加?@(xxx).stringValue
 + (instancetype)ja_randomTimestamp:(NSUInteger)from to:(NSUInteger)to {
-    NSTimeInterval(^timestamp)() = ^() {
+    NSTimeInterval(^timestamp)(void) = ^() {
         NSDate* date = [NSDate date];
         return (NSTimeInterval)[date timeIntervalSince1970];
     };

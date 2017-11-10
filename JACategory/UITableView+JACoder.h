@@ -10,6 +10,6 @@
 
 @interface UITableView (JACoder)
 
-- (void)animateTableCellsWithDirection:(NSTimeInterval)duration completion:(void (^)())completion;
+- (void)animateTableCellsWithDirection:(NSTimeInterval)duration completion:(void (^)(void ))completion;
 
 @end

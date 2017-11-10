@@ -11,7 +11,7 @@
 
 @implementation UITableView (JACoder)
 
-- (void)animateTableCellsWithDirection:(NSTimeInterval)duration completion:(void (^)())completion{
+- (void)animateTableCellsWithDirection:(NSTimeInterval)duration completion:(void (^)(void))completion{
     for (int i = 0; i < self.visibleCells.count; ++i) {
         CGFloat delay = duration / self.visibleCells.count * i;
         CGFloat damping = 0.85;

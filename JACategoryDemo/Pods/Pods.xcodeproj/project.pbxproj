@@ -36,8 +36,6 @@
 		8C770CBFD7CE41EC0F04C300C82C5997 /* NSData+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 809E884562FEF6B3CE945DC054FAF8E0 /* NSData+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92395F842774AE63368BBCF5460ED340 /* UIImage+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B8966B55CAF2D59FF0E28843DCDE1 /* UIImage+JACoder.m */; };
 		941A9131043F1D33380D5F3A15B9CA61 /* NSDictionary+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8CB0E0492D44E67FF059F950EC29E6 /* NSDictionary+JACoder.m */; };
-		969285381FB5745D00F0CE31 /* UIApplication+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 969285361FB5745C00F0CE31 /* UIApplication+JACoder.h */; };
-		969285391FB5745D00F0CE31 /* UIApplication+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 969285371FB5745C00F0CE31 /* UIApplication+JACoder.m */; };
 		9C15B16D909D6BC66D6973E5CC5430E7 /* JACategory-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD81F0184BAB50DC13385D9E65E9139 /* JACategory-dummy.m */; };
 		AE08A0D671E3B1D67231E3687504011D /* NSFileManager+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF078DD9549B7656D34EF19121E74C15 /* NSFileManager+JACoder.m */; };
 		B02EFDD02EF0B9A98225DA546F37683C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
@@ -101,9 +99,7 @@
 		8DEC1C308E24845588EE2C106BC936F1 /* NSString+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+JACoder.m"; sourceTree = "<group>"; };
 		9010A824395485DD932998AFA9D33315 /* UIView+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+JACoder.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		969285361FB5745C00F0CE31 /* UIApplication+JACoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JACoder.h"; sourceTree = "<group>"; };
-		969285371FB5745C00F0CE31 /* UIApplication+JACoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JACoder.m"; sourceTree = "<group>"; };
-		9692853B1FB5786C00F0CE31 /* JACategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACategory.h; sourceTree = "<group>"; };
+		9691C82F1FB57B400025AA04 /* JACategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACategory.h; sourceTree = "<group>"; };
 		9780AA0BBF4F9D191CA75BD3158276A4 /* UIButton+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+JACoder.h"; sourceTree = "<group>"; };
 		99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+JACoder.h"; sourceTree = "<group>"; };
 		9C13D2AF68360D4D912AB9B04BE21D78 /* UIScreen+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+JACoder.m"; sourceTree = "<group>"; };
@@ -244,7 +240,7 @@
 		FA429478BCC656234465760F6EFB4411 /* JACategory */ = {
 			isa = PBXGroup;
 			children = (
-				9692853B1FB5786C00F0CE31 /* JACategory.h */,
+				9691C82F1FB57B400025AA04 /* JACategory.h */,
 				99321237E0A72509C9C8DA29DFB5AD59 /* NSObject+JACoder.h */,
 				29877A5CB43E66B58DA294E5895F9C24 /* NSObject+JACoder.m */,
 				8BCB52C4CAA907D4AE4AA4CDB7E7B34E /* NSArray+JACoder.h */,
@@ -285,8 +281,6 @@
 				2C0D9CE6B3240692F8EBA81D2667A7CA /* UITableView+JACoder.m */,
 				A0ECF1E441DA31077092E54A5D8D21D8 /* UIViewController+JACoder.h */,
 				65C1C7DCF5476FA991D845D733057452 /* UIViewController+JACoder.m */,
-				969285361FB5745C00F0CE31 /* UIApplication+JACoder.h */,
-				969285371FB5745C00F0CE31 /* UIApplication+JACoder.m */,
 			);
 			path = JACategory;
 			sourceTree = "<group>";
@@ -302,7 +296,6 @@
 				EC5C141C885BC44E15F7CB558CEAC12D /* NSBundle+JACoder.h in Headers */,
 				8C770CBFD7CE41EC0F04C300C82C5997 /* NSData+JACoder.h in Headers */,
 				86F2916B269383872B65A99C3FD66953 /* NSDate+JACoder.h in Headers */,
-				969285381FB5745D00F0CE31 /* UIApplication+JACoder.h in Headers */,
 				697935F5D1A3B9D8BB65D25A387B11F8 /* NSDictionary+JACoder.h in Headers */,
 				2C6CE9A1E06443F56F3AE15F9EE20A48 /* NSFileManager+JACoder.h in Headers */,
 				0A5FDEDA59B7B1EDE1B77B7F0D09DD48 /* NSNumber+JACoder.h in Headers */,
@@ -419,7 +412,6 @@
 				41928B6732F74C4A024634CA677A85D7 /* UIScreen+JACoder.m in Sources */,
 				E3C356E43D81611E0B387B1E5000BF8B /* UITableView+JACoder.m in Sources */,
 				199DEDEF59EFDBE889091317398AA658 /* UIView+JACoder.m in Sources */,
-				969285391FB5745D00F0CE31 /* UIApplication+JACoder.m in Sources */,
 				D3FAF5E47CFEC59C97A68991167C172C /* UIViewController+JACoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
