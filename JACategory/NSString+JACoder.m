@@ -20,7 +20,7 @@
     return resultCString;
 }
 
-- (NSString *)ja_ocString:(const char*)cString {
++ (NSString *)ja_ocString:(const char*)cString {
     return [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];
 }
 

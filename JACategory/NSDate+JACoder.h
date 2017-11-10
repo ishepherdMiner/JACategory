@@ -38,7 +38,7 @@
  *
  *  @return 返回字符串格式时间
  */
-+ (NSString *)ja_dateStrFromCstampTime:(NSInteger)timeStamp
++ (NSString *)ja_dateStrFromCStampTime:(NSInteger)timeStamp
                         withDateFormat:(NSString *)format;
 
 /**

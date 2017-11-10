@@ -24,7 +24,7 @@
  *
  *  @return OC字符串
  */
-- (NSString *)ja_ocString:(const char*)cString;
++ (NSString *)ja_ocString:(const char*)cString;
 
 /**
  *  去除字符串两端空格后的字符串

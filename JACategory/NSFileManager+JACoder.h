@@ -26,7 +26,6 @@
 /// .../sandbox/Library/Documentation
 - (NSString *)ja_documentationOfPath;
 
-
 /**
  追加文件路径格式的路径,主要是自动追加分隔符
 
@@ -40,5 +39,6 @@
 /// 在docuement文件夹下创建文件夹，若已存在，则返回路径
 - (NSString *)ja_createDirectoryAtDocumentWithName:(NSString *)name;
 - (NSString *)ja_createDirectoryAtCacheWithName:(NSString *)name;
+- (NSString *)ja_createDirectoryAtTmpWithName:(NSString *)name;
 
 @end

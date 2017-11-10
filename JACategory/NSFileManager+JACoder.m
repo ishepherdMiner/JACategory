@@ -76,6 +76,25 @@
 
 }
 
+- (NSString *)ja_createDirectoryAtTmpWithName:(NSString *)name {
+    NSString *directoryPath = nil;
+    if (name) {
+        directoryPath = [self ja_appendFilePathFormat:name directory:[self ja_tmpOfPath]];
+    }else {
+        directoryPath = [self ja_tmpOfPath];
+    }
+    
+    NSError *error = nil;
+    BOOL r = [self createDirectoryAtPath:directoryPath withIntermediateDirectories:true attributes:nil error:&error];
+    if (r) {
+        NSLog(@"%@",@"[JA]:成功创建文件夹");
+    }else if (error) {
+        NSLog(@"%@",[NSString stringWithFormat:@"[JA]:创建失败[%@]",error]);
+    }
+    return directoryPath;
+    
+}
+
 - (NSString *)ja_documentOfPath {
     return [[self ja_directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
 }
