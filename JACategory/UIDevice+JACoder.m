@@ -13,9 +13,14 @@
 #import <arpa/inet.h>
 #import <net/if.h>
 #import <sys/utsname.h>
+#import <sys/mount.h>
 #import <AdSupport/AdSupport.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
+#import <sys/sysctl.h>
+#import <mach/processor_info.h>
+#import <mach/mach_host.h>
+#import <mach/vm_map.h>
 
 
 #define IOS_CELLULAR    @"pdp_ip0"
@@ -39,7 +44,6 @@ const char *gyroKey = "gyroKey";
     return instance;
 }
 
-#if DEBUG
 + (void)ja_gyroWithStartBlock:(void (^)(CMGyroData *gyroData,NSError *error))handler {
     
     CMMotionManager *manager = nil;
@@ -71,8 +75,6 @@ const char *gyroKey = "gyroKey";
          }];
     }
 }
-
-#endif
 
 + (NSString *)ja_model {
     struct utsname systemInfo;
@@ -173,7 +175,7 @@ const char *gyroKey = "gyroKey";
 + (NSString *)ja_idfa {
     NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
-    if (adId == nil||[adId isEqualToString:@""]||[adId isEqualToString:@"(null)"]) {
+    if (adId == nil || [adId isEqualToString:@""] || [adId isEqualToString:@"(null)"]) {
         adId = @"";
     }
     
@@ -293,5 +295,121 @@ const char *gyroKey = "gyroKey";
         freeifaddrs(interfaces);
     }
     return [addresses count] ? addresses : nil;
+}
+
++ (NSArray *)ja_cpuUsage{
+    NSMutableArray *usage = [NSMutableArray array];
+    //    float usage = 0;
+    processor_info_array_t _cpuInfo, _prevCPUInfo = nil;
+    mach_msg_type_number_t _numCPUInfo, _numPrevCPUInfo = 0;
+    unsigned _numCPUs;
+    NSLock *_cpuUsageLock;
+    
+    int _mib[2U] = { CTL_HW, HW_NCPU };
+    size_t _sizeOfNumCPUs = sizeof(_numCPUs);
+    int _status = sysctl(_mib, 2U, &_numCPUs, &_sizeOfNumCPUs, NULL, 0U);
+    if(_status)
+        _numCPUs = 1;
+    
+    _cpuUsageLock = [[NSLock alloc] init];
+    
+    natural_t _numCPUsU = 0U;
+    kern_return_t err = host_processor_info(mach_host_self(), PROCESSOR_CPU_LOAD_INFO, &_numCPUsU, &_cpuInfo, &_numCPUInfo);
+    if(err == KERN_SUCCESS) {
+        [_cpuUsageLock lock];
+        
+        for(unsigned i = 0U; i < _numCPUs; ++i) {
+            Float32 _inUse, _total;
+            if(_prevCPUInfo) {
+                _inUse = (
+                          (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER]   - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER])
+                          + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM] - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM])
+                          + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE]   - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE])
+                          );
+                _total = _inUse + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE] - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE]);
+            } else {
+                _inUse = _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER] + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM] + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE];
+                _total = _inUse + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE];
+            }
+            
+            // NSLog(@"Core : %u, Usage: %.2f%%", i, _inUse / _total * 100.f);
+            float u = _inUse / _total * 100.f;
+            [usage addObject:[NSNumber numberWithFloat:u]];
+        }
+        
+        [_cpuUsageLock unlock];
+        
+        if(_prevCPUInfo) {
+            size_t prevCpuInfoSize = sizeof(integer_t) * _numPrevCPUInfo;
+            vm_deallocate(mach_task_self(), (vm_address_t)_prevCPUInfo, prevCpuInfoSize);
+        }
+        
+        _prevCPUInfo = _cpuInfo;
+        _numPrevCPUInfo = _numCPUInfo;
+        
+        _cpuInfo = nil;
+        _numCPUInfo = 0U;
+    } else {
+        NSLog(@"Error!");
+    }
+    return usage;
+}
+
++ (NSUInteger)ja_totalMemoryBytes {
+    return [self getSysInfo:HW_PHYSMEM];
+}
+
++ (NSUInteger)ja_freeMemoryBytes {
+    mach_port_t           host_port = mach_host_self();
+    mach_msg_type_number_t   host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t               pagesize;
+    vm_statistics_data_t     vm_stat;
+    
+    host_page_size(host_port, &pagesize);
+    
+    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) NSLog(@"Failed to fetch vm statistics");
+    
+    natural_t  mem_free = (natural_t)(vm_stat.free_count * pagesize);
+    
+    return mem_free;
+}
+
++ (long long)ja_freeDiskSpaceBytes {
+    struct statfs buf;
+    long long freespace;
+    freespace = 0;
+    if(statfs("/private/var", &buf) >= 0){
+        freespace = (long long)buf.f_bsize * buf.f_bfree;
+    }
+    return freespace;
+}
+
++ (long long)ja_totalDiskSpaceBytes {
+    struct statfs buf;
+    long long totalspace;
+    totalspace = 0;
+    if(statfs("/private/var", &buf) >= 0){
+        totalspace = (long long)buf.f_bsize * buf.f_blocks;
+    }
+    return totalspace;
+}
+
++ (BOOL)ja_isNotSafe {
+    int res = access("/var/mobile/Library/AddressBook/AddressBook.sqlitedb", F_OK);
+    if (res != 0)
+        return false;
+    return true;
+}
+
++ (NSUInteger)ja_cpuCount {
+    return [self getSysInfo:HW_NCPU];
+}
+
++ (NSUInteger)getSysInfo: (uint) typeSpecifier {
+    size_t size = sizeof(int);
+    int results;
+    int mib[2] = {CTL_HW, typeSpecifier};
+    sysctl(mib, 2, &results, &size, NULL, 0);
+    return (NSUInteger) results;
 }
 @end

@@ -28,10 +28,9 @@
 
 - (void)testObject {
     NSLog(@"成员变量列表:%@",[_objTest ja_ivarList:true]);
-    
     NSLog(@"属性列表:%@",[_objTest ja_propertyList:true]);
     NSLog(@"方法列表:%@",[_objTest ja_methodList:true]);
-    NSLog(@"自定义类列表:%@",[NSObject ja_developerClasses]);
+    // NSLog(@"自定义类列表:%@",[NSObject ja_developerClasses]);
     // NSLog(@"所有类列表:%@",[NSObject ja_allClasses]);     
 }
 
@@ -69,6 +68,7 @@
 
 - (void)testDevice {
     NSLog(@"设备model:%@",[UIDevice ja_model]);
+    NSLog(@"内网IP:%@",[UIDevice ja_ip]);
 }
 
 - (void)testString {

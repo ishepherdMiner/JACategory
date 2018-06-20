@@ -41,7 +41,4 @@
 /// 旋转图片
 - (UIImage*)ja_rotate:(UIImageOrientation)orient;
 
-/// 播放gif
-+ (UIImage *)ja_animatedGIFWithData:(NSData *)data;
-
 @end

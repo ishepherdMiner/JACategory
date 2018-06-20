@@ -21,7 +21,7 @@
     return newImage;
 }
 
-- (UIImage *)ja_imageWithCorner:(CGFloat)corner{
+- (UIImage *)ja_imageWithCorner:(CGFloat)corner {
     CGFloat WH = MIN(self.size.width, self.size.height);
     CGRect rect = CGRectMake(0, 0, WH, WH);
     UIGraphicsBeginImageContextWithOptions(self.size, false, 0);
@@ -53,8 +53,7 @@
 }
 
 /** 按给定的方向旋转图片 */
-- (UIImage*)ja_rotate:(UIImageOrientation)orient
-{
+- (UIImage*)ja_rotate:(UIImageOrientation)orient {
     CGRect bnds = CGRectZero;
     UIImage* copy = nil;
     CGContextRef ctxt = nil;
@@ -147,8 +146,8 @@
 }
 
 /** 交换宽和高 */
-static CGRect swapWidthAndHeight(CGRect rect)
-{
+static CGRect swapWidthAndHeight(CGRect rect){
+    
     CGFloat swap = rect.size.width;
     
     rect.size.width = rect.size.height;
@@ -157,40 +156,5 @@ static CGRect swapWidthAndHeight(CGRect rect)
     return rect;
 }
 
-
-+ (UIImage *)ja_animatedGIFWithData:(NSData *)data {
-    if (!data) {
-        return nil;
-    }
-    
-#if SD_MAC
-    return [[UIImage alloc] initWithData:data];
-#endif
-    
-    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
-    
-    size_t count = CGImageSourceGetCount(source);
-    
-    UIImage *staticImage;
-    
-    if (count <= 1) {
-        staticImage = [[UIImage alloc] initWithData:data];
-    } else {
-        // we will only retrieve the 1st frame. the full GIF support is available via the FLAnimatedImageView category.
-        // this here is only code to allow drawing animated images as static ones
-
-        CGFloat scale = 1;
-        scale = [UIScreen mainScreen].scale;
-        
-        CGImageRef CGImage = CGImageSourceCreateImageAtIndex(source, 0, NULL);
-        UIImage *frameImage = [UIImage imageWithCGImage:CGImage scale:scale orientation:UIImageOrientationUp];
-        staticImage = [UIImage animatedImageWithImages:@[frameImage] duration:0.0f];
-        CGImageRelease(CGImage);
-    }
-    
-    CFRelease(source);
-    
-    return staticImage;
-}
 
 @end

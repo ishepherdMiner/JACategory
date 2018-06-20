@@ -26,11 +26,29 @@
  */
 - (UIImage *)ja_imageWithName:(NSString *)name;
 
+@end
+
+@interface NSBundle (JAGetter)
+
 /**
  包名
 
  @return 包名
  */
 + (NSString *)ja_bundleId;
+
+/**
+ 应用名
+
+ @return 应用名
+ */
++ (NSString *)ja_appName;
+
+/**
+ 应用版本
+
+ @return 应用版本对象
+ */
++ (NSString *)ja_appVersion;
 
 @end

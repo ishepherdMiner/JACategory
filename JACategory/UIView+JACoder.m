@@ -22,87 +22,78 @@
     return nil;
 }
 
-- (CGFloat)x {
-    return self.frame.origin.x;
-}
-- (void)setX:(CGFloat)x {
-    CGRect frame = self.frame;
-    frame.origin.x = x;
-    self.frame = frame;
-}
-
-- (CGFloat)y {
-    return self.frame.origin.y;
-}
-
-- (void)setY:(CGFloat)y {
-    CGRect frame = self.frame;
-    frame.origin.y = y;
-    self.frame = frame;
-}
-
-- (CGFloat)h {
-    return self.frame.size.height;
-}
-
-- (void)setH:(CGFloat)h {
-    CGRect frame = self.frame;
-    frame.size.height = h;
-    self.frame = frame;
-}
-
-- (CGFloat)w{
+- (CGFloat)ja_width {
     return self.frame.size.width;
 }
 
-- (void)setW:(CGFloat)w{
-    CGRect frame = self.frame;
-    frame.size.width = w;
-    self.frame = frame;
+- (CGFloat)ja_height {
+    return self.frame.size.height;
 }
 
-- (CGSize)size {
-    return self.frame.size;
+- (CGFloat)ja_x {
+    return self.frame.origin.x;
 }
 
-- (void)setSize:(CGSize)size {
-    CGRect frame = self.frame;
-    frame.size = size;
-    self.frame = frame;
+- (CGFloat)ja_y {
+    return self.frame.origin.y;
 }
 
-- (CGFloat)centerX {
+- (void)setJa_y:(CGFloat)y {
+    CGRect r = self.frame;
+    r.origin.y = y;
+    self.frame = r;
+}
+
+- (void)setJa_x:(CGFloat)x {
+    CGRect r = self.frame;
+    r.origin.x = x;
+    self.frame = r;
+}
+
+- (void)setJa_width:(CGFloat)width {
+    CGRect r = self.frame;
+    r.size.width = width;
+    self.frame = r;
+}
+
+- (void)setJa_height:(CGFloat)height {
+    CGRect r = self.frame;
+    r.size.height = height;
+    self.frame = r;
+}
+
+- (CGFloat)ja_centerX {
     return self.center.x;
 }
 
-- (void)setCenterX:(CGFloat)centerX {
-    CGPoint point = self.center;
-    point.x = centerX;
-    self.center = point;
-}
-
-- (CGFloat)centerY {
+- (CGFloat)ja_centerY {
     return self.center.y;
 }
 
-- (void)setCenterY:(CGFloat)centerY {
-    CGPoint point = self.center;
-    point.y = centerY;
-    self.center = point;
+- (void)setJa_centerX:(CGFloat)centerX {
+    CGPoint center = self.center;
+    center.x = centerX;
+    self.center = center;
+}
+
+- (void)setJa_centerY:(CGFloat)centerY {
+    CGPoint center = self.center;
+    center.y = centerY;
+    self.center = center;
 }
 
 /** 
  * 水平居中 
  */
 - (void)ja_alignHor{
-    self.x = (self.superview.w - self.w) * 0.5;
+    self.ja_x = (self.superview.ja_width - self.ja_width) * 0.5;
 }
 
 /** 
  * 垂直居中 
  */
 - (void)ja_alignVer{
-    self.y = (self.superview.h - self.h) * 0.5;
+    self.ja_y = (self.superview.ja_height - self.ja_height) * 0.5;
 }
 
 @end

@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "JACategory"
-  s.version      = "0.0.5"
-  s.summary      = "My collect category"
+  s.version      = "0.0.6"
+  s.summary      = "Category"
   s.description  = <<-DESC
-  My collect category.
+  Daily collection of some categories
                    DESC
   s.homepage     = "https://github.com/ishepherdMiner/JACategory"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

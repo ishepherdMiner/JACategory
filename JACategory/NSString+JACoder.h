@@ -42,6 +42,14 @@
  */
 - (instancetype)ja_accuracyDigital:(NSUInteger)value;
 
+
+/**
+ 是否是有效的IP地址
+
+ @return 是否是有效的IP地址
+ */
+- (BOOL)ja_isValidIP;
+
 /**
  *  对网络请求的特殊字符进行编码
  *

@@ -8,30 +8,36 @@
 
 #import <UIKit/UIKit.h>
 
-#define fRect(x,y,w,h) CGRectMake(x,y,w,h)
-#define fSize(w,h) CGSizeMake(w,h)
-#define fPoint(x,y) CGPointMake(x,y)
+#define fRect(x,y,w,h)  CGRectMake(x,y,w,h)
+#define fSize(w,h)      CGSizeMake(w,h)
+#define fPoint(x,y)     CGPointMake(x,y)
 #define fRange(loc,len) NSRangeMake(loc,len)
-#define fMaxY(rect) CGRectGetMaxY(rect)
-#define fMaxX(rect) CGRectGetMaxX(rect)
-#define fMinY(rect) CGRectGetMinY(rect)
-#define fMinX(rect) CGRectGetMinX(rect)
-#define fMidY(rect) CGRectGetMidY(rect)
-#define fMidX(rect) CGRectGetMidX(rect)
-#define fWidth(rect) CGRectGetWidth(rect)
-#define fHeight(rect) CGRectGetHeight(rect)
+#define fMaxY(rect)     CGRectGetMaxY(rect)
+#define fMaxX(rect)     CGRectGetMaxX(rect)
+#define fMinY(rect)     CGRectGetMinY(rect)
+#define fMinX(rect)     CGRectGetMinX(rect)
+#define fMidY(rect)     CGRectGetMidY(rect)
+#define fMidX(rect)     CGRectGetMidX(rect)
+#define fWidth(rect)    CGRectGetWidth(rect)
+#define fHeight(rect)   CGRectGetHeight(rect)
 
 @interface UIView (JACoder)
 
-@property (nonatomic,assign) CGFloat x;
-@property (nonatomic,assign) CGFloat y;
-@property (nonatomic,assign) CGFloat w;
-@property (nonatomic,assign) CGFloat h;
+/// frame setter & getter
+- (CGFloat)ja_width;
+- (CGFloat)ja_height;
+- (CGFloat)ja_x;
+- (CGFloat)ja_y;
 
-@property (nonatomic,assign) CGSize size;
+- (void)setJa_y:(CGFloat)y;
+- (void)setJa_x:(CGFloat)x;
+- (void)setJa_width:(CGFloat)width;
+- (void)setJa_height:(CGFloat)height;
 
-@property (nonatomic,assign) CGFloat centerX;
-@property (nonatomic,assign) CGFloat centerY;
+- (CGFloat)ja_centerX;
+- (CGFloat)ja_centerY;
+- (void)setJa_centerX:(CGFloat)centerX;
+- (void)setJa_centerY:(CGFloat)centerY;
 
 /**
  * 水平居中(以父视图为准)

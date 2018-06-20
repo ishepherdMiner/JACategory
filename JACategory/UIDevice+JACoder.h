@@ -12,9 +12,6 @@
 
 @interface UIDevice (JACoder)
 
-
-#if DEBUG
-
 /**
  陀螺仪状态
 
@@ -27,8 +24,6 @@
  @param handler 开始监测后的回调
  */
 + (void)ja_gyroWithStartBlock:(void (^)(CMGyroData *gyroData,NSError *error))handler;
-
-#endif
 
 /**
  * 可读的设备型号
@@ -86,4 +81,53 @@
  */
 + (NSString *)ja_startupTime;
 
+/**
+ cpu利用率
+
+ @return cpu利用率
+ */
++ (NSArray *)ja_cpuUsage;
+
+
+/**
+ cpu个数
+
+ @return cpu个数
+ */
++ (NSUInteger)ja_cpuCount;
+
+/**
+ 获取手机内存总量,返回的是字节数
+
+ @return 内存总字节
+ */
++ (NSUInteger)ja_totalMemoryBytes;
+
+/**
+ 获取手机可用内存,返回的是字节数
+
+ @return 可用内容总字节
+ */
++ (NSUInteger)ja_freeMemoryBytes;
+
+/**
+ 获取手机sd卡空闲空间,返回的是字节数
+
+ @return sd卡空闲字节数
+ */
++ (long long)ja_freeDiskSpaceBytes;
+
+/**
+ 获取手机sd卡总空间,返回的是字节数
+
+ @return 手机sd卡总字节数
+ */
++ (long long)ja_totalDiskSpaceBytes;
+
+/**
+ 是否越狱
+ 
+ @return 是否越狱
+ */
++ (BOOL)ja_isNotSafe;
 @end

@@ -54,6 +54,13 @@
     return [self substringToIndex:(pointRange.location + 1 + pos)];
 }
 
+- (BOOL)ja_isValidIP {
+    /// https://stackoverflow.com/questions/18477153/c-compiler-warning-unknown-escape-sequence-using-regex-for-c-program
+    NSString *format = @"^((2[0-4]\\d|25[0-5]|[1-9]?\\d|1\\d{2})\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", format];
+    return [pred evaluateWithObject:self];
+}
+
 + (NSString *)ja_encodeToPercentEscapeString:(NSString *)input{
     
     // Encode all the reserved characters, per RFC 3986
@@ -107,7 +114,7 @@
 }
 
 - (CGSize)ja_multiLineWithFont:(UIFont *)font
-                withinWidth:(CGFloat)width {
+                   withinWidth:(CGFloat)width {
     
     return [self ja_multiLineWithFont:font
                           withinWidth:width
@@ -115,8 +122,8 @@
 }
 
 - (CGSize)ja_multiLineWithFont:(UIFont *)font
-                withinWidth:(CGFloat)width
-                    options:(NSStringDrawingOptions)options {
+                   withinWidth:(CGFloat)width
+                       options:(NSStringDrawingOptions)options {
     
     CGRect textRect = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
                                          options:options

@@ -10,8 +10,8 @@
 
 @interface UIScreen (JACoder)
 
-+ (CGFloat)w;
-+ (CGFloat)h;
++ (CGFloat)ja_width;
++ (CGFloat)ja_height;
 + (CGRect)ja_mainBounds;
 + (CGFloat)ja_brightness;
 

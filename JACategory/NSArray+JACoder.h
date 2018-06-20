@@ -22,16 +22,6 @@
 /**
  *  将数组拆分成固定长度的子数组
  *
- *  @param array 需要拆分的数组
- *
- *  @param subSize 指定长度
- *
- */
-// + (NSArray *)ja_splitArray:(NSArray *)array withSubSize:(int)subSize;
-
-/**
- *  将数组拆分成固定长度的子数组
- *
  *  @param subSize 指定长度
  *
  *  @return 分割后的子数组

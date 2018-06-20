@@ -10,11 +10,11 @@
 
 @implementation UIScreen (JACoder)
 
-+ (CGFloat)w {
++ (CGFloat)ja_width {
     return [UIScreen mainScreen].bounds.size.width;
 }
 
-+ (CGFloat)h {
++ (CGFloat)ja_height {
     return [UIScreen mainScreen].bounds.size.height;
 }
 

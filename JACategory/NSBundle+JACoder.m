@@ -19,6 +19,14 @@
     return [[NSBundle mainBundle] bundleIdentifier];
 }
 
++ (NSString *)ja_appName {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+}
+
++ (NSString *)ja_appVersion {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+}
+
 - (UIImage *)ja_imageWithName:(NSString *)name {    
     NSString *imageNameWithSuffix = nil;
     

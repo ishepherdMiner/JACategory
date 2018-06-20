@@ -38,7 +38,6 @@
 const void* propertiesKey = "com.coder.category.propertiesKey";
 const void* ivarKey = "com.coder.category.ivarKey";
 const void* methodKey = "com.coder.category.methodKey";
-// const void* propertyEncodeTypePairsKey = "com.coder.category.propertyEncodeTypePairsKey";
 
 - (NSArray *)ja_propertyList:(BOOL)recursive {
     NSArray *glist = objc_getAssociatedObject([self class], propertiesKey);
@@ -69,56 +68,6 @@ const void* methodKey = "com.coder.category.methodKey";
         
     }() : glist;
 }
-/*
-- (NSDictionary *)ja_propertyEncodeTypePairs:(BOOL)recursive {
-    
-    NSDictionary *glist = objc_getAssociatedObject([self class], propertyEncodeTypePairsKey);
-    
-    return glist == nil ? ^{
-        
-        unsigned int count = 0;
-        NSMutableDictionary *plistDicM = [NSMutableDictionary dictionaryWithCapacity:count];
-        
-        Class cls = [self class];
-        do {
-            objc_property_t *list = class_copyPropertyList(cls, &count);
-            for (int i = 0; i < count; ++i) {
-                objc_property_t pty = list[i];
-                const char *pname = property_getName(pty);
-                const char *pattr = property_getAttributes(pty);
-                NSString *pname_utf8 = [NSString stringWithUTF8String:pname];
-                NSString *pattr_utf8 = [NSString stringWithUTF8String:pattr];
-                
-                /// https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1
-                if ([pattr_utf8 rangeOfString:@"c"].location != NSNotFound) {
-                    
-                }else if ([pattr_utf8 rangeOfString:@"NSString"].location != NSNotFound) {
-                    pattr_utf8 = @"NSString";
-                }else if ([pattr_utf8 rangeOfString:@"NSNumber"].location != NSNotFound) {
-                    pattr_utf8 = @"NSNumber";
-                }else if ([pattr_utf8 rangeOfString:@"TQ"].location != NSNotFound) {
-                    pattr_utf8 = @"NSUInteger";
-                }else if ([pattr_utf8 rangeOfString:@"NSArray"].location != NSNotFound) {
-                    pattr_utf8 = @"NSArray";
-                }else if ([pattr_utf8 rangeOfString:@"@"].location != NSNotFound) {
-                    if ([pattr_utf8 componentsSeparatedByString:@"\""].count >= 2) {
-                        pattr_utf8 = [pattr_utf8 componentsSeparatedByString:@"\""][1];
-                    }
-                }
-                
-                // ...
-                [plistDicM setObject:pattr_utf8 forKey:pname_utf8];
-            }
-            free(list);
-            cls = [cls superclass];
-        } while (cls && recursive);
-        objc_setAssociatedObject([self class],propertyEncodeTypePairsKey, plistDicM, OBJC_ASSOCIATION_COPY_NONATOMIC);
-        
-        return plistDicM.copy;
-        
-    }() : glist;
-}
-*/
 
 - (NSArray *)ja_ivarList:(BOOL)recursive{
     
@@ -194,8 +143,6 @@ const void* methodKey = "com.coder.category.methodKey";
     objc_removeAssociatedObjects([self class]);
 }
 
-#ifdef JADEBUG
-
 + (NSArray *)ja_developerClasses {
     NSMutableArray *dClasses = [NSMutableArray array];
     unsigned int count;
@@ -252,7 +199,5 @@ const void* methodKey = "com.coder.category.methodKey";
     }
     return [dClasses copy];
 }
-
-#endif
 
 @end
