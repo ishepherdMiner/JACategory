@@ -35,6 +35,8 @@
     }
 }
 
+#if DEBUG
+
 const void* propertiesKey = "com.coder.category.propertiesKey";
 const void* ivarKey = "com.coder.category.ivarKey";
 const void* methodKey = "com.coder.category.methodKey";
@@ -200,4 +202,5 @@ const void* methodKey = "com.coder.category.methodKey";
     return [dClasses copy];
 }
 
+#endif
 @end

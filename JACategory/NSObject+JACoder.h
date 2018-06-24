@@ -33,6 +33,8 @@
        originSelector:(SEL)originSel
      swizzledSelector:(SEL)swizzlSel;
 
+#if DEBUG
+
 /**
  属性列表
  
@@ -68,5 +70,7 @@
 
 /// 获得app所有的类名列表
 + (NSArray *)ja_allClasses;
+
+#endif
 
 @end
