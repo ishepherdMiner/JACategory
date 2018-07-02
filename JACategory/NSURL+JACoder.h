@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface NSURL (JACoder)
 
 /**
@@ -18,3 +18,4 @@
 - (NSDictionary *)ja_splitQuery;
 
 @end
+NS_ASSUME_NONNULL_END

@@ -48,6 +48,7 @@
 + (instancetype)ja_imageWithUIColor:(UIColor *)color size:(CGSize)size{
     return [self ja_imageWithCGColor:color.CGColor size:size];
 }
+
 + (instancetype)ja_imageWithCGColor:(CGColorRef)colorref size:(CGSize)size{
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);

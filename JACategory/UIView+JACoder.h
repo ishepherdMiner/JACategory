@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 #define fRect(x,y,w,h)  CGRectMake(x,y,w,h)
 #define fSize(w,h)      CGSizeMake(w,h)
 #define fPoint(x,y)     CGPointMake(x,y)
@@ -59,3 +59,4 @@
 - (UIView*)ja_findViewRecursively:(BOOL(^)(UIView* subview, BOOL* stop))recurse;
 
 @end
+NS_ASSUME_NONNULL_END

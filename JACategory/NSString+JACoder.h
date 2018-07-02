@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @interface NSString (JACoder)
+
+/**
+ 快速判断是否一般有效的字符串对象
+ 非空,非Null,是字符串,有长度,不是空字符串
+ 
+ @param instance 待判断的对象
+ @return 是否是一般有效的字符串
+ */
++ (BOOL)ja_validString:(id)instance;
 
 /**
  *  OC字符串转换为C语言字符串
@@ -292,3 +302,4 @@
 - (NSString *)ja_fileSHA512Hash;
 
 @end
+NS_ASSUME_NONNULL_END

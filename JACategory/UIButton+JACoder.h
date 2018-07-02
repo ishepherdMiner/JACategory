@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface UIButton (JACoder)
 
 + (UIImage *)ja_imageWithColor:(UIColor *)color;
@@ -34,3 +34,4 @@ typedef NS_ENUM(NSInteger, JAMImagePosition) {
 
 @end
 
+NS_ASSUME_NONNULL_END

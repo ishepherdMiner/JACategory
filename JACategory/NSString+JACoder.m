@@ -11,6 +11,15 @@
 
 @implementation NSString (JACoder)
 
++ (BOOL)ja_validString:(id)instance {
+    if (instance && ![instance isKindOfClass:[NSNull class]] && [instance isKindOfClass:[NSString class]] && [instance length] && ![instance isEqualToString:@""]) {
+        return YES;
+    }else{
+        return NO;
+    }
+    return YES;
+}
+
 - (const char *)ja_cString{
     const char *resultCString = NULL;
     if ([self canBeConvertedToEncoding:NSUTF8StringEncoding]) {

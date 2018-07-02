@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface NSNumber (JACoder)
 
 /**
@@ -41,3 +41,4 @@
 + (instancetype)ja_notRounding:(CGFloat)price afterPoint:(int)position;
 
 @end
+NS_ASSUME_NONNULL_END

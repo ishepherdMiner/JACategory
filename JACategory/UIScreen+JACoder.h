@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface UIScreen (JACoder)
 
 + (CGFloat)ja_width;
@@ -16,3 +16,4 @@
 + (CGFloat)ja_brightness;
 
 @end
+NS_ASSUME_NONNULL_END
