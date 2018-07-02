@@ -37,8 +37,15 @@
  @return UIImage对象
  */
 - (UIImage *)ja_cropImageWithSize:(CGSize)size;
+- (UIImage *)ja_cropImageWithSize:(CGSize)size
+                            scale:(CGFloat)scale;
 
-/// 旋转图片
+/**
+ 旋转图片
+ 
+ @param orient 方向
+ @return 旋转完成后的图片
+ */
 - (UIImage*)ja_rotate:(UIImageOrientation)orient;
 
 @end

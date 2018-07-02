@@ -12,9 +12,16 @@
 @implementation UIImage (JACoder)
 
 - (UIImage *)ja_cropImageWithSize:(CGSize)size {
+    return [self ja_cropImageWithSize:size scale:0.0];
+}
+
+- (UIImage *)ja_cropImageWithSize:(CGSize)size
+                            scale:(CGFloat)scale {
     CGFloat WH = MIN(size.width, size.height);
     CGRect rect = CGRectMake(0, 0, WH, WH);
-    UIGraphicsBeginImageContextWithOptions(size, false, 0);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(size, false, scale);
     [self drawInRect:rect];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
