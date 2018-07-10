@@ -9,19 +9,19 @@
 
 @implementation UITextField (JACoder)
 
-- (void)ja_addUnderlineWithColor:(UIColor *)color {
-    [self ja_addUnderlineWithColor:color
-                             axisX:-1
-                              size:CGSizeZero];
+- (instancetype)ja_underlineWithColor:(UIColor *)color {
+    return [self ja_underlineWithColor:color
+                          axisX:NSNotFound
+                           size:CGSizeZero];
 }
 
-- (void)ja_addUnderlineWithColor:(UIColor *)color
-                           axisX:(CGFloat)axisX
-                            size:(CGSize)size {
+- (instancetype)ja_underlineWithColor:(UIColor *)color
+                                axisX:(CGFloat)axisX
+                                 size:(CGSize)size {
     
     UIView *underlineView = [[UIView alloc] init];
     
-    CGFloat x = axisX == -1 ? self.frame.origin.x : axisX;
+    CGFloat x = axisX == NSNotFound ? self.frame.origin.x : axisX;
     CGFloat y = self.frame.size.height + 3;
     CGFloat w = self.frame.size.width;
     CGFloat h = 1;
@@ -34,6 +34,7 @@
     underlineView.backgroundColor = color;
     [self addSubview:underlineView];
     self.clipsToBounds = NO;
+    return self;
 }
 
 @end
