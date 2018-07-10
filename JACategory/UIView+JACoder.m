@@ -96,4 +96,20 @@
     self.ja_y = (self.superview.ja_height - self.ja_height) * 0.5;
 }
 
+/**
+ 通过响应者链条获取view所在的控制器
+ 
+ @return view所在的控制器
+ */
+- (UIViewController *)ja_parentController{
+    UIResponder *responder = [self nextResponder];
+    while (responder) {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+        responder = [responder nextResponder];
+    }
+    return nil;
+}
+
 @end

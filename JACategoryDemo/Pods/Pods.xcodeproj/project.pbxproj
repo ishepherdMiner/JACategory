@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01AFDD7027B66227F98D1F5A82DE4422 /* NSNumber+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF6BA6F6995E541FD8789A18BA7F13D /* NSNumber+JACoder.m */; };
 		0A5FDEDA59B7B1EDE1B77B7F0D09DD48 /* NSNumber+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D098C59AA0074E5BF2FA313264ED53 /* NSNumber+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		131A48C520EAFB6C0088C50D /* UITextField+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 131A48C320EAFB6C0088C50D /* UITextField+JACoder.h */; };
+		131A48C620EAFB6C0088C50D /* UITextField+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 131A48C420EAFB6C0088C50D /* UITextField+JACoder.m */; };
 		199DEDEF59EFDBE889091317398AA658 /* UIView+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A57C9234706AC3B9C03F3141DFE7FF3 /* UIView+JACoder.m */; };
 		1AB2427D663ACF4899064CFFA0AB9891 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7751D4D791D1183FB66D3CCA52CD8E /* QuartzCore.framework */; };
 		2C6CE9A1E06443F56F3AE15F9EE20A48 /* NSFileManager+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D8CE8015DD9BC9B9146DACF3BF9C12 /* NSFileManager+JACoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,6 +65,8 @@
 		073293870E0BF92634DD43A7DD090C6E /* NSData+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+JACoder.m"; sourceTree = "<group>"; };
 		0DCA460CB92C9605FBBD116E467FC81A /* libJACategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJACategory.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		112F2BA0CA97850E1F841A1A6F75464A /* JACategory.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JACategory.xcconfig; sourceTree = "<group>"; };
+		131A48C320EAFB6C0088C50D /* UITextField+JACoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+JACoder.h"; sourceTree = "<group>"; };
+		131A48C420EAFB6C0088C50D /* UITextField+JACoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JACoder.m"; sourceTree = "<group>"; };
 		17D098C59AA0074E5BF2FA313264ED53 /* NSNumber+JACoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSNumber+JACoder.h"; sourceTree = "<group>"; };
 		19D281FBDEBF7D6142427881F808859E /* Pods-JACategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JACategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		29877A5CB43E66B58DA294E5895F9C24 /* NSObject+JACoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JACoder.m"; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				9C13D2AF68360D4D912AB9B04BE21D78 /* UIScreen+JACoder.m */,
 				A0ECF1E441DA31077092E54A5D8D21D8 /* UIViewController+JACoder.h */,
 				65C1C7DCF5476FA991D845D733057452 /* UIViewController+JACoder.m */,
+				131A48C320EAFB6C0088C50D /* UITextField+JACoder.h */,
+				131A48C420EAFB6C0088C50D /* UITextField+JACoder.m */,
 			);
 			path = JACategory;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				697935F5D1A3B9D8BB65D25A387B11F8 /* NSDictionary+JACoder.h in Headers */,
 				2C6CE9A1E06443F56F3AE15F9EE20A48 /* NSFileManager+JACoder.h in Headers */,
 				0A5FDEDA59B7B1EDE1B77B7F0D09DD48 /* NSNumber+JACoder.h in Headers */,
+				131A48C520EAFB6C0088C50D /* UITextField+JACoder.h in Headers */,
 				EDC1C4F94A1C1E82EE70B10370EADC2F /* NSObject+JACoder.h in Headers */,
 				7546909F7E7CC7C53306E4771C8D003B /* NSString+JACoder.h in Headers */,
 				8B7D3632524F0A32D5A5EF5E6E060EB2 /* NSURL+JACoder.h in Headers */,
@@ -386,6 +393,7 @@
 				B95C3DC8CD11E2798533AC2E53CBDD0F /* UIDevice+JACoder.m in Sources */,
 				92395F842774AE63368BBCF5460ED340 /* UIImage+JACoder.m in Sources */,
 				2E6A94281D8ACB26BFADD18A96C846B4 /* UINavigationController+JACoder.m in Sources */,
+				131A48C620EAFB6C0088C50D /* UITextField+JACoder.m in Sources */,
 				41928B6732F74C4A024634CA677A85D7 /* UIScreen+JACoder.m in Sources */,
 				199DEDEF59EFDBE889091317398AA658 /* UIView+JACoder.m in Sources */,
 				D3FAF5E47CFEC59C97A68991167C172C /* UIViewController+JACoder.m in Sources */,
