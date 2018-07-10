@@ -7,8 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+
 NS_ASSUME_NONNULL_BEGIN
 @interface NSDictionary (JACoder)
 
+/**
+ 从bundle中加载.json转成字典对象
+ 默认mainBundle
+ @param fileName 文件名
+ @return 字典对象
+ */
++ (NSDictionary*)ja_dictionaryWithFilename:(NSString *)fileName;
++ (NSDictionary*)ja_dictionaryWithFilename:(NSString *)fileName
+                                    bundle:(nullable NSBundle*)bundle;
 @end
 NS_ASSUME_NONNULL_END

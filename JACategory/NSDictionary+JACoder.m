@@ -10,6 +10,34 @@
 
 @implementation NSDictionary (JACoder)
 
++ (NSDictionary*)ja_dictionaryWithFilename:(NSString *)fileName {
+    return [self ja_dictionaryWithFilename:fileName bundle:nil];
+}
+
++ (NSDictionary *)ja_dictionaryWithFilename:(NSString *)fileName
+                                     bundle:(NSBundle *)bundle {
+    
+    NSParameterAssert(fileName);
+    NSString *filePath = nil;
+    if (bundle == nil) {
+        filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+    }else {
+        if ([fileName hasSuffix:@"json"]) {
+            filePath = [bundle pathForResource:fileName ofType:nil];
+        }else {
+            filePath = [bundle pathForResource:fileName ofType:@"json"];
+        }
+    }
+    NSData* data = [NSData dataWithContentsOfFile:filePath];
+    __autoreleasing NSError* error = nil;
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data
+                                                           options:0
+                                                             error:&error];
+    
+    if (error != nil) return nil;
+    return result;
+}
+
 #if DEBUG
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
     NSMutableString *desc = [NSMutableString string];
