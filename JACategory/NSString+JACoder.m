@@ -11,15 +11,6 @@
 
 @implementation NSString (JACoder)
 
-+ (BOOL)ja_validString:(id)instance {
-    if (instance && ![instance isKindOfClass:[NSNull class]] && [instance isKindOfClass:[NSString class]] && [instance length] && ![instance isEqualToString:@""]) {
-        return YES;
-    }else{
-        return NO;
-    }
-    return YES;
-}
-
 - (const char *)ja_cString{
     const char *resultCString = NULL;
     if ([self canBeConvertedToEncoding:NSUTF8StringEncoding]) {
@@ -33,7 +24,7 @@
     return [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];
 }
 
-- (void)ja_map:(void (^)(NSString *c))execBlock {
+- (void)ja_mapString:(void (^)(NSString *c))execBlock {
     NSRange range = NSMakeRange(0, self.length);
     for(int i=0; i<self.length; i+=range.length){
         range = [self rangeOfComposedCharacterSequenceAtIndex:i];
@@ -372,5 +363,17 @@
     return [self ja_stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
+
+@end
+
+@implementation NSString (JAConvenient)
+
++ (BOOL)ja_valid:(id)instance {
+    if (instance && ![instance isKindOfClass:[NSNull class]] && [instance isKindOfClass:[NSString class]] && [instance length] && ![instance isEqualToString:@""]) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
 
 @end

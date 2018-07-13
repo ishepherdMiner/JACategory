@@ -38,3 +38,19 @@
 }
 
 @end
+
+@implementation UITextField (Interceptor)
+
+//+ (void)load {
+//    
+//}
+//
+//- (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds {
+//    if ([[self interceptor] respondsToSelector:@selector(clearButtonRectForBounds:)]) {
+//        return [[self interceptor] clearButtonRectForBounds:bounds];
+//    }else {
+//        return [self ja_clearButtonRectForBounds:bounds];
+//    }
+//}
+
+@end

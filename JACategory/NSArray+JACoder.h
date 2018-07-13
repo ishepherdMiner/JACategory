@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
+
 @interface NSArray (JACoder)
 
 /**
@@ -29,4 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)ja_splitWithSubsize:(int)subSize;
 
 @end
+
+@interface NSArray (JAConvenient)
+
++ (BOOL)ja_valid:(id)instance;
+
+@end
+
 NS_ASSUME_NONNULL_END

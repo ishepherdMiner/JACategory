@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface UITextField (JACoder)
 
 /**
@@ -29,5 +30,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)ja_underlineWithColor:(UIColor *)color
                                 axisX:(CGFloat)axisX
                                  size:(CGSize)size;
+
 @end
+
+@interface UITextField (Interceptor)
+
+/// 设置拦截器
+//- (void)setInterceptor:(id)interceptor;
+//- (id)interceptor;
+
+//- (CGRect)ja_borderRectForBounds:(CGRect)bounds;
+//- (CGRect)ja_textRectForBounds:(CGRect)bounds;
+//- (CGRect)ja_placeholderRectForBounds:(CGRect)bounds;
+//- (CGRect)ja_editingRectForBounds:(CGRect)bounds;
+//- (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds;
+//- (CGRect)ja_leftViewRectForBounds:(CGRect)bounds;
+//- (CGRect)ja_rightViewRectForBounds:(CGRect)bounds;
+
+@end
+
 NS_ASSUME_NONNULL_END

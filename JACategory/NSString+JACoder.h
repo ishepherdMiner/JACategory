@@ -12,15 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (JACoder)
 
 /**
- 快速判断是否一般有效的字符串对象
- 非空,非Null,是字符串,有长度,不是空字符串
- 
- @param instance 待判断的对象
- @return 是否是一般有效的字符串
- */
-+ (BOOL)ja_validString:(id)instance;
-
-/**
  *  OC字符串转换为C语言字符串
  *
  *  @return C语言字符串
@@ -51,7 +42,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return double类型的数据
  */
 - (instancetype)ja_accuracyDigital:(NSUInteger)value;
-
 
 /**
  是否是有效的IP地址
@@ -142,7 +132,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param execBlock 执行回调,每次传递当前遍历的字符
  */
-- (void)ja_map:(void (^)(NSString *c))execBlock;
+- (void)ja_mapString:(void (^)(NSString *c))execBlock;
 
 /**
  *  返回base64编码的字符串内容
@@ -302,4 +292,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)ja_fileSHA512Hash;
 
 @end
+
+/// JAFormatter JAUI JAHTTP JASecurity
+@interface NSString (JAConvenient)
+
+/**
+ 快速判断是否一般有效的字符串对象
+ 非空,非Null,是字符串,有长度,不是空字符串
+ 
+ @param instance 待判断的对象
+ @return 是否是一般有效的字符串
+ */
++ (BOOL)ja_valid:(id)instance;
+
+@end
+
 NS_ASSUME_NONNULL_END
