@@ -41,8 +41,6 @@
     }
 }
 
-#if DEBUG
-
 const void* propertiesKey = "com.coder.category.propertiesKey";
 const void* ivarKey = "com.coder.category.ivarKey";
 const void* methodKey = "com.coder.category.methodKey";
@@ -145,30 +143,6 @@ const void* methodKey = "com.coder.category.methodKey";
     objc_removeAssociatedObjects([self class]);
 }
 
-+ (NSArray *)ja_developerClasses {
-    NSMutableArray *dClasses = [NSMutableArray array];
-    unsigned int count;
-    const char **classes;
-    Dl_info info;
-    
-    // 1.获取app的路径
-    dladdr(&_mh_execute_header, &info);
-    
-    // 2.返回当前运行的app的所有类的名字，并传出个数
-    // classes：二维数组 存放所有类的列表名称
-    // count：所有的类的个数
-    classes = objc_copyClassNamesForImage(info.dli_fname, &count);
-    
-    for (int i = 0; i < count; i++) {
-        //3.遍历并打印，转换Objective-C的字符串
-        NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];        
-        [dClasses addObject:className];
-        
-        NSLog(@"[JA]:%@",className);
-    }
-    return [dClasses copy];
-}
-
 + (NSArray *)ja_allClasses {
     NSMutableArray *dClasses = [NSMutableArray array];
     int numClasses;
@@ -198,5 +172,30 @@ const void* methodKey = "com.coder.category.methodKey";
     return [dClasses copy];
 }
 
+#ifdef CUSTOM_DEBUG
++ (NSArray *)ja_developerClasses {
+    NSMutableArray *dClasses = [NSMutableArray array];
+    unsigned int count;
+    const char **classes;
+    Dl_info info;
+    
+    // 1.获取app的路径
+    dladdr(&_mh_execute_header, &info);
+    
+    // 2.返回当前运行的app的所有类的名字，并传出个数
+    // classes：二维数组 存放所有类的列表名称
+    // count：所有的类的个数
+    classes = objc_copyClassNamesForImage(info.dli_fname, &count);
+    
+    for (int i = 0; i < count; i++) {
+        //3.遍历并打印，转换Objective-C的字符串
+        NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];        
+        [dClasses addObject:className];
+        
+        NSLog(@"[JA]:%@",className);
+    }
+    return [dClasses copy];
+}
 #endif
+
 @end
