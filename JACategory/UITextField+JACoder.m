@@ -6,6 +6,8 @@
 //
 
 #import "UITextField+JACoder.h"
+#import "NSObject+JACoder.h"
+#import <objc/message.h>
 
 @implementation UITextField (JACoder)
 
@@ -41,16 +43,113 @@
 
 @implementation UITextField (Interceptor)
 
-//+ (void)load {
-//    
-//}
-//
-//- (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds {
-//    if ([[self interceptor] respondsToSelector:@selector(clearButtonRectForBounds:)]) {
-//        return [[self interceptor] clearButtonRectForBounds:bounds];
-//    }else {
-//        return [self ja_clearButtonRectForBounds:bounds];
-//    }
-//}
++ (void)load {
+    
+    SEL originClearBtnSel = @selector(clearButtonRectForBounds:);
+    SEL swizzlClearBtnSel = @selector(ja_clearButtonRectForBounds:);
+    
+    SEL originLeftViewSel = @selector(leftViewRectForBounds:);
+    SEL swizzlLeftViewSel = @selector(ja_leftViewRectForBounds:);
+    
+    SEL originRightViewSel = @selector(rightViewRectForBounds:);
+    SEL swizzlRightViewSel = @selector(ja_rightViewRectForBounds:);
+    
+    SEL originBorderRectSel = @selector(borderRectForBounds:);
+    SEL swizzlBorderRectSel = @selector(ja_borderRectForBounds:);
+    
+    SEL originTextRectSel = @selector(textRectForBounds:);
+    SEL swizzlTextRectSel = @selector(ja_textRectForBounds:);
+    
+    SEL originPlaceHolderSel = @selector(placeholderRectForBounds:);
+    SEL swizzlPlaceHolderSel = @selector(ja_placeholderRectForBounds:);
+    
+    SEL originEditingRectSel = @selector(editingRectForBounds:);
+    SEL swizzlEditingRectSel = @selector(ja_editingRectForBounds:);
+    
+    NSArray *originSels = @[NSStringFromSelector(originClearBtnSel),
+                            NSStringFromSelector(originLeftViewSel),
+                            NSStringFromSelector(originRightViewSel),
+                            NSStringFromSelector(originBorderRectSel),
+                            NSStringFromSelector(originTextRectSel),
+                            NSStringFromSelector(originPlaceHolderSel),
+                            NSStringFromSelector(originEditingRectSel)];
+    
+    NSArray *swizzlSels = @[NSStringFromSelector(swizzlClearBtnSel),
+                            NSStringFromSelector(swizzlLeftViewSel),
+                            NSStringFromSelector(swizzlRightViewSel),
+                            NSStringFromSelector(swizzlBorderRectSel),
+                            NSStringFromSelector(swizzlTextRectSel),
+                            NSStringFromSelector(swizzlPlaceHolderSel),
+                            NSStringFromSelector(swizzlEditingRectSel),];
+    
+    for (int i = 0; i < originSels.count; ++i) {
+        [self ja_hookMethod:self
+             originSelector:NSSelectorFromString(originSels[i])
+           swizzledSelector:NSSelectorFromString(swizzlSels[i])];
+    }
+}
+
+static const char *interceptorKey = "interceptorKey";
+- (void)setInterceptor:(id)interceptor {
+    objc_setAssociatedObject(self.class, interceptorKey, interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (id)interceptor {
+    return objc_getAssociatedObject(self.class, interceptorKey);
+}
+
+- (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(clearButtonRectForBounds:)]) {
+        return [[self interceptor] clearButtonRectForBounds:bounds];
+    }else {
+        return [self ja_clearButtonRectForBounds:bounds];
+    }
+}
+
+- (CGRect)ja_leftViewRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(leftViewRectForBounds:)]) {
+        return [[self interceptor] leftViewRectForBounds:bounds];
+    }else {
+        return [self ja_leftViewRectForBounds:bounds];
+    }
+}
+- (CGRect)ja_rightViewRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(rightViewRectForBounds:)]) {
+        return [[self interceptor] rightViewRectForBounds:bounds];
+    }else {
+        return [self ja_rightViewRectForBounds:bounds];
+    }
+}
+
+- (CGRect)ja_borderRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(borderRectForBounds:)]) {
+        return [[self interceptor] borderRectForBounds:bounds];
+    }else {
+        return [self ja_borderRectForBounds:bounds];
+    }
+}
+
+- (CGRect)ja_textRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(textRectForBounds:)]) {
+        return [[self interceptor] textRectForBounds:bounds];
+    }else {
+        return [self ja_textRectForBounds:bounds];
+    }
+}
+
+- (CGRect)ja_placeholderRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(placeholderRectForBounds:)]) {
+        return [[self interceptor] placeholderRectForBounds:bounds];
+    }else {
+        return [self ja_placeholderRectForBounds:bounds];
+    }
+}
+
+- (CGRect)ja_editingRectForBounds:(CGRect)bounds {
+    if ([[self interceptor] respondsToSelector:@selector(editingRectForBounds:)]) {
+        return [[self interceptor] editingRectForBounds:bounds];
+    }else {
+        return [self ja_editingRectForBounds:bounds];
+    }
+}
 
 @end

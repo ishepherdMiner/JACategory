@@ -36,16 +36,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UITextField (Interceptor)
 
 /// 设置拦截器
-//- (void)setInterceptor:(id)interceptor;
-//- (id)interceptor;
+- (void)setInterceptor:(id)interceptor;
+- (id)interceptor;
 
-//- (CGRect)ja_borderRectForBounds:(CGRect)bounds;
-//- (CGRect)ja_textRectForBounds:(CGRect)bounds;
-//- (CGRect)ja_placeholderRectForBounds:(CGRect)bounds;
-//- (CGRect)ja_editingRectForBounds:(CGRect)bounds;
-//- (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds;
-//- (CGRect)ja_leftViewRectForBounds:(CGRect)bounds;
-//- (CGRect)ja_rightViewRectForBounds:(CGRect)bounds;
+/// 让拦截器重新设置子控件的位置
+/// 主要是为了解决clearButton和rightView的冲突问题
+- (CGRect)ja_borderRectForBounds:(CGRect)bounds;
+- (CGRect)ja_textRectForBounds:(CGRect)bounds;
+- (CGRect)ja_placeholderRectForBounds:(CGRect)bounds;
+- (CGRect)ja_editingRectForBounds:(CGRect)bounds;
+- (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds;
+- (CGRect)ja_leftViewRectForBounds:(CGRect)bounds;
+- (CGRect)ja_rightViewRectForBounds:(CGRect)bounds;
 
 @end
 

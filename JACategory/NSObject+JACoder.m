@@ -11,6 +11,12 @@
 #import <dlfcn.h>
 #import <mach-o/ldsyms.h>
 
+#ifdef DEBUG
+    #define NSLog(...) printf("%s -LineNumber:%d: %s\n",__PRETTY_FUNCTION__, __LINE__ ,[[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
+#else
+    #define NSLog(format, ...)
+#endif
+
 @implementation NSObject (JACoder)
 
 + (void)ja_hookMethod:(Class)cls
@@ -62,9 +68,7 @@ const void* methodKey = "com.coder.category.methodKey";
         } while (cls && recursive);
         objc_setAssociatedObject([self class],propertiesKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         
-#if DEBUG
         NSLog(@"[JA]:Found %ld properties on %@",(unsigned long)plistM.count,[self class]);
-#endif
         
         return plistM.copy;
         
@@ -92,9 +96,7 @@ const void* methodKey = "com.coder.category.methodKey";
             cls = [cls superclass];
         } while (cls && recursive);
         
-#if DEBUG
         NSLog(@"[JA]:Found %ld ivar on %@",(unsigned long)plistM.count,[self class]);
-#endif
         
         objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         return plistM.copy;
@@ -130,9 +132,7 @@ const void* methodKey = "com.coder.category.methodKey";
             cls = [cls superclass];
         }while (cls && recursive);
         
-#if DEBUG
         printf("Found %d methods on '%s'\n", methodCount, class_getName([self class]));
-#endif
         
         objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         
@@ -164,9 +164,7 @@ const void* methodKey = "com.coder.category.methodKey";
         NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];        
         [dClasses addObject:className];
         
-#ifdef DEBUG
         NSLog(@"[JA]:%@",className);
-#endif
     }
     return [dClasses copy];
 }
@@ -192,9 +190,7 @@ const void* methodKey = "com.coder.category.methodKey";
             NSString *className = [NSString stringWithCString:class_getName(class) encoding:NSUTF8StringEncoding];
             [dClasses addObject:className];
             
-#ifdef DEBUG
             NSLog(@"[JA]:%@", className);
-#endif
             
         }
         free(classes);
