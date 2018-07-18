@@ -35,3 +35,5 @@ FOUNDATION_EXPORT const unsigned char JACategoryVersionString[];
 #import "NSData+JACoder.h"
 #import "NSFileManager+JACoder.h"
 #import "UITextField+JACoder.h"
+#import "UITableViewCell+JACoder.h"
+

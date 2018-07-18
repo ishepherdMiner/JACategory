@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		135BB5D120F48B580023CA06 /* UITextField+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 135BB5CF20F48B580023CA06 /* UITextField+JACoder.m */; };
 		135BB5D220F48B580023CA06 /* UITextField+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 135BB5D020F48B580023CA06 /* UITextField+JACoder.h */; };
+		13680D2F20FEC97600033281 /* UITableViewCell+JACoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 13680D2D20FEC97600033281 /* UITableViewCell+JACoder.h */; };
+		13680D3020FEC97600033281 /* UITableViewCell+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 13680D2E20FEC97600033281 /* UITableViewCell+JACoder.m */; };
 		96A2DA201FC2AC1C00541CA0 /* JACategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A2DA1E1FC2AC1C00541CA0 /* JACategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96A2DA4E1FC2AC5900541CA0 /* NSArray+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A2DA261FC2AC4F00541CA0 /* NSArray+JACoder.m */; };
 		96A2DA4F1FC2AC5900541CA0 /* UIImage+JACoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A2DA271FC2AC4F00541CA0 /* UIImage+JACoder.m */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		135BB5CF20F48B580023CA06 /* UITextField+JACoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JACoder.m"; sourceTree = "<group>"; };
 		135BB5D020F48B580023CA06 /* UITextField+JACoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JACoder.h"; sourceTree = "<group>"; };
+		13680D2D20FEC97600033281 /* UITableViewCell+JACoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JACoder.h"; sourceTree = "<group>"; };
+		13680D2E20FEC97600033281 /* UITableViewCell+JACoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JACoder.m"; sourceTree = "<group>"; };
 		96A2DA1B1FC2AC1C00541CA0 /* JACategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JACategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A2DA1E1FC2AC1C00541CA0 /* JACategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACategory.h; sourceTree = "<group>"; };
 		96A2DA1F1FC2AC1C00541CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				96A2DA3F1FC2AC5400541CA0 /* UIViewController+JACoder.m */,
 				135BB5D020F48B580023CA06 /* UITextField+JACoder.h */,
 				135BB5CF20F48B580023CA06 /* UITextField+JACoder.m */,
+				13680D2D20FEC97600033281 /* UITableViewCell+JACoder.h */,
+				13680D2E20FEC97600033281 /* UITableViewCell+JACoder.m */,
 				96A2DA1F1FC2AC1C00541CA0 /* Info.plist */,
 			);
 			path = JACategory;
@@ -152,6 +158,7 @@
 			files = (
 				96A2DA201FC2AC1C00541CA0 /* JACategory.h in Headers */,
 				135BB5D220F48B580023CA06 /* UITextField+JACoder.h in Headers */,
+				13680D2F20FEC97600033281 /* UITableViewCell+JACoder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +245,7 @@
 				96A2DA591FC2AC5900541CA0 /* UIViewController+JACoder.m in Sources */,
 				96A2DA581FC2AC5900541CA0 /* NSString+JACoder.m in Sources */,
 				96A2DA5B1FC2AC5900541CA0 /* UIButton+JACoder.m in Sources */,
+				13680D3020FEC97600033281 /* UITableViewCell+JACoder.m in Sources */,
 				96A2DA5E1FC2AC5900541CA0 /* NSDictionary+JACoder.m in Sources */,
 				135BB5D120F48B580023CA06 /* UITextField+JACoder.m in Sources */,
 				96A2DA5C1FC2AC5900541CA0 /* NSURL+JACoder.m in Sources */,
