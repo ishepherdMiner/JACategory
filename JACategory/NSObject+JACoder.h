@@ -27,13 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  交换方法
 
- @param cls 类
  @param originSel 原始方法
  @param swizzlSel 目标方法
  */
-+ (void)ja_hookMethod:(Class)cls
-       originSelector:(SEL)originSel
-     swizzledSelector:(SEL)swizzlSel;
++ (void)ja_hookWithOriginSelector:(SEL)originSel
+                 swizzledSelector:(SEL)swizzlSel;
 
 /**
  属性列表

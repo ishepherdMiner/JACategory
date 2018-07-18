@@ -19,20 +19,19 @@
 
 @implementation NSObject (JACoder)
 
-+ (void)ja_hookMethod:(Class)cls
-       originSelector:(SEL)originSel
-     swizzledSelector:(SEL)swizzlSel {
++ (void)ja_hookWithOriginSelector:(SEL)originSel
+                 swizzledSelector:(SEL)swizzlSel {
     
-    Method originalMethod = class_getInstanceMethod(cls, originSel);
-    Method swizzledMethod = class_getInstanceMethod(cls, swizzlSel);
+    Method originalMethod = class_getInstanceMethod(self, originSel);
+    Method swizzledMethod = class_getInstanceMethod(self, swizzlSel);
     BOOL didAddMethod =
-    class_addMethod(cls,
+    class_addMethod(self,
                     originSel,
                     method_getImplementation(swizzledMethod),
                     method_getTypeEncoding(swizzledMethod));
     
     if (didAddMethod) {
-        class_replaceMethod(cls,
+        class_replaceMethod(self,
                             swizzlSel,
                             method_getImplementation(originalMethod),
                             method_getTypeEncoding(originalMethod));

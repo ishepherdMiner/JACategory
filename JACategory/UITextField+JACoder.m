@@ -83,18 +83,16 @@
                             NSStringFromSelector(swizzlEditingRectSel),];
     
     for (int i = 0; i < originSels.count; ++i) {
-        [self ja_hookMethod:self
-             originSelector:NSSelectorFromString(originSels[i])
-           swizzledSelector:NSSelectorFromString(swizzlSels[i])];
+        [UITextField ja_hookWithOriginSelector:NSSelectorFromString(originSels[i]) swizzledSelector:NSSelectorFromString(swizzlSels[i])];
     }
 }
 
-static const char *interceptorKey = "interceptorKey";
+static const char *interceptorTextFieldKey = "interceptorKey";
 - (void)setInterceptor:(id)interceptor {
-    objc_setAssociatedObject(self.class, interceptorKey, interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self.class, interceptorTextFieldKey, interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (id)interceptor {
-    return objc_getAssociatedObject(self.class, interceptorKey);
+    return objc_getAssociatedObject(self.class, interceptorTextFieldKey);
 }
 
 - (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds {
