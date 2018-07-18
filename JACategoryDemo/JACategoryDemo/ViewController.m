@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <JACategory.h>
+#import <JACategory/JACategory.h>
 
 @interface ViewController ()
 
@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self urlSplit];
 }
 
 - (void)urlSplit {

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <JACategory.h>
+#import <JACategory/JACategory.h>
 @interface AppDelegate ()
 
 @end

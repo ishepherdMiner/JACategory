@@ -1,9 +1,10 @@
 PODS:
-  - JACategory (0.0.8):
-    - JACategory/Foundation (= 0.0.8)
-    - JACategory/UIKit (= 0.0.8)
-  - JACategory/Foundation (0.0.8)
-  - JACategory/UIKit (0.0.8)
+  - JACategory (0.0.9):
+    - JACategory/Foundation (= 0.0.9)
+    - JACategory/UIKit (= 0.0.9)
+  - JACategory/Foundation (0.0.9)
+  - JACategory/UIKit (0.0.9):
+    - JACategory/Foundation
 
 DEPENDENCIES:
   - JACategory (from `../`)
@@ -13,8 +14,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JACategory: f246bf06cb0853189354a7afdd03f1d49a96f0ee
+  JACategory: 2d419e598ef543b12b926afb4968eb7132dfcb41
 
-PODFILE CHECKSUM: e4f62fc6ebeb8ca0802e600d85524ec3e5535875
+PODFILE CHECKSUM: 8fae1032bae0bb6ef976cc643c205c039dc55e08
 
 COCOAPODS: 1.5.3

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8DD9C56107C405DBC54F2DE7 /* libPods-JACategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9AE8F73379D2FDB2265808 /* libPods-JACategoryDemo.a */; };
 		96190A7A1FB4484D0002BE4C /* example.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96190A791FB4476A0002BE4C /* example.bundle */; };
 		968B56E41F55428B005F61BF /* JACategoryDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 968B56E31F55428B005F61BF /* JACategoryDemoTests.m */; };
 		969A1EF11F3C37E80002F91F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A1EF01F3C37E80002F91F /* main.m */; };
@@ -16,6 +15,7 @@
 		969A1EFA1F3C37E80002F91F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A1EF81F3C37E80002F91F /* Main.storyboard */; };
 		969A1EFC1F3C37E80002F91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969A1EFB1F3C37E80002F91F /* Assets.xcassets */; };
 		969A1EFF1F3C37E80002F91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A1EFD1F3C37E80002F91F /* LaunchScreen.storyboard */; };
+		FB63829DE33289EB55B33154 /* Pods_JACategoryDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6112FA8410CB78DB99CC1BCE /* Pods_JACategoryDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +28,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1362B53920FF09FD00C29F04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0E9AE8F73379D2FDB2265808 /* libPods-JACategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JACategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1359543EEE9F53A78367DABF /* Pods-JACategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JACategoryDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JACategoryDemo/Pods-JACategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		1362B54020FF0C0600C29F04 /* JACategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JACategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1362B54420FF0CF600C29F04 /* JACategory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JACategory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6112FA8410CB78DB99CC1BCE /* Pods_JACategoryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JACategoryDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A137AA0A6C4AC592D3220D /* Pods-JACategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JACategoryDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JACategoryDemo/Pods-JACategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
 		96190A791FB4476A0002BE4C /* example.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = example.bundle; sourceTree = "<group>"; };
 		9662207B1FCD62610026FDF0 /* libJACategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJACategory.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD9C56107C405DBC54F2DE7 /* libPods-JACategoryDemo.a in Frameworks */,
+				FB63829DE33289EB55B33154 /* Pods_JACategoryDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +149,10 @@
 		9B4463B5A57424B84C778334 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1362B54420FF0CF600C29F04 /* JACategory.framework */,
+				1362B54020FF0C0600C29F04 /* JACategory.framework */,
 				9662207B1FCD62610026FDF0 /* libJACategory.a */,
-				0E9AE8F73379D2FDB2265808 /* libPods-JACategoryDemo.a */,
+				6112FA8410CB78DB99CC1BCE /* Pods_JACategoryDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +186,8 @@
 				969A1EE81F3C37E80002F91F /* Sources */,
 				969A1EE91F3C37E80002F91F /* Frameworks */,
 				969A1EEA1F3C37E80002F91F /* Resources */,
+				1362B53920FF09FD00C29F04 /* Embed Frameworks */,
+				3FBFF5F8ABFC8532F56A1536 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,7 +209,7 @@
 				TargetAttributes = {
 					968B56E01F55428B005F61BF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = W49XAY8UZ2;
+						DevelopmentTeam = HYUMRVJG68;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 969A1EEB1F3C37E80002F91F;
 					};
@@ -242,6 +261,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3FBFF5F8ABFC8532F56A1536 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JACategoryDemo/Pods-JACategoryDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JACategory/JACategory.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JACategory.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JACategoryDemo/Pods-JACategoryDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		79CAFDDD54ABFE3169BFC134 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,7 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = W49XAY8UZ2;
+				DEVELOPMENT_TEAM = HYUMRVJG68;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Jason/Developer/Me/Github/JACategory/JACategoryDemo/Pods/Headers/Public,
@@ -345,7 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = W49XAY8UZ2;
+				DEVELOPMENT_TEAM = HYUMRVJG68;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Jason/Developer/Me/Github/JACategory/JACategoryDemo/Pods/Headers/Public,
@@ -482,6 +519,7 @@
 			baseConfigurationReference = 1359543EEE9F53A78367DABF /* Pods-JACategoryDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYUMRVJG68;
@@ -491,7 +529,8 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"JACategory\"",
+					"-framework",
+					"\"JACategory\"",
 					"-framework",
 					"\"Foundation\"",
 					"-framework",
@@ -510,6 +549,7 @@
 			baseConfigurationReference = 75A137AA0A6C4AC592D3220D /* Pods-JACategoryDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HYUMRVJG68;
@@ -519,7 +559,8 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"JACategory\"",
+					"-framework",
+					"\"JACategory\"",
 					"-framework",
 					"\"Foundation\"",
 					"-framework",

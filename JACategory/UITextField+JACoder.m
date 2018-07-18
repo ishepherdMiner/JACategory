@@ -6,7 +6,7 @@
 //
 
 #import "UITextField+JACoder.h"
-#import "NSObject+JACoder.h"
+#import <JACategory/NSObject+JACoder.h>
 #import <objc/message.h>
 
 @implementation UITextField (JACoder)

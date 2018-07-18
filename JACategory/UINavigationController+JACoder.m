@@ -7,7 +7,7 @@
 //
 
 #import "UINavigationController+JACoder.h"
-#import "NSObject+JACoder.h"
+#import <JACategory/NSObject+JACoder.h>
 
 @implementation UINavigationController (JACoder)
 
