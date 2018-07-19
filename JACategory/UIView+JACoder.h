@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 #define fMidX(rect)     CGRectGetMidX(rect)
 #define fWidth(rect)    CGRectGetWidth(rect)
 #define fHeight(rect)   CGRectGetHeight(rect)
+#define fCenterFixedPaddingGetWidth(sumWidth,padding) (sumWidth - padding * 2) /// 已知左右边距要求居中 求宽度
+#define fCenterFixWidthGetPadding(sumWidth,width) ((sumWidth - width) * 0.5) /// 固定宽度要求居中 求左右边距
 
 @interface UIView (JACoder)
 

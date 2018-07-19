@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface UIButton (JACoder)
 
 + (UIImage *)ja_imageWithColor:(UIColor *)color;
@@ -17,10 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 本控件 来自Github上的 Demo_ButtonImageTitleEdgeInsets
 typedef NS_ENUM(NSInteger, JAMImagePosition) {
-    JAMImagePositionLeft = 0,              //图片在左，文字在右，默认
-    JAMImagePositionRight = 1,             //图片在右，文字在左
-    JAMImagePositionTop = 2,               //图片在上，文字在下
-    JAMImagePositionBottom = 3,            //图片在下，文字在上
+    JAMImagePositionLeft = 0,              // 图片在左，文字在右，默认
+    JAMImagePositionRight = 1,             // 图片在右，文字在左
+    JAMImagePositionTop = 2,               // 图片在上，文字在下
+    JAMImagePositionBottom = 3,            // 图片在下，文字在上
 };
 
 @interface UIButton (JAMImagePosition)

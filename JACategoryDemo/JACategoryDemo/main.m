@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#define CUSTOM_DEBUG 1
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {

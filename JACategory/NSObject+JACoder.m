@@ -40,12 +40,8 @@
     }
 }
 
-const void* propertiesKey = "com.coder.category.propertiesKey";
-const void* ivarKey = "com.coder.category.ivarKey";
-const void* methodKey = "com.coder.category.methodKey";
-
 - (NSArray *)ja_propertyList:(BOOL)recursive {
-    NSArray *glist = objc_getAssociatedObject([self class], propertiesKey);
+    NSArray *glist = objc_getAssociatedObject([self class], @selector(ja_propertyList:));
     
     return glist == nil ? ^{
         
@@ -63,7 +59,7 @@ const void* methodKey = "com.coder.category.methodKey";
             free(list);
             cls = [cls superclass];
         } while (cls && recursive);
-        objc_setAssociatedObject([self class],propertiesKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject([self class],@selector(ja_propertyList:), plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         
         NSLog(@"[JA]:Found %ld properties on %@",(unsigned long)plistM.count,[self class]);
         
@@ -74,7 +70,7 @@ const void* methodKey = "com.coder.category.methodKey";
 
 - (NSArray *)ja_ivarList:(BOOL)recursive{
     
-    NSArray *glist = objc_getAssociatedObject([self class], ivarKey);
+    NSArray *glist = objc_getAssociatedObject([self class], @selector(ja_ivarList:));
     
     return glist == nil ? ^{
         
@@ -95,14 +91,14 @@ const void* methodKey = "com.coder.category.methodKey";
         
         NSLog(@"[JA]:Found %ld ivar on %@",(unsigned long)plistM.count,[self class]);
         
-        objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject([self class],@selector(ja_ivarList:), plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         return plistM.copy;
         
     }() : glist;
 }
 
 - (NSArray *)ja_methodList:(BOOL)recursive {
-    NSArray *glist = objc_getAssociatedObject([self class], methodKey);
+    NSArray *glist = objc_getAssociatedObject([self class], @selector(ja_methodList:));
     
     return glist == nil ? ^{
         
@@ -131,7 +127,7 @@ const void* methodKey = "com.coder.category.methodKey";
         
         printf("Found %d methods on '%s'\n", methodCount, class_getName([self class]));
         
-        objc_setAssociatedObject([self class],ivarKey, plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject([self class],@selector(ja_methodList:), plistM, OBJC_ASSOCIATION_COPY_NONATOMIC);
         
         return plistM.copy;
         
@@ -164,7 +160,6 @@ const void* methodKey = "com.coder.category.methodKey";
             [dClasses addObject:className];
             
             NSLog(@"[JA]:%@", className);
-            
         }
         free(classes);
     }
@@ -172,6 +167,7 @@ const void* methodKey = "com.coder.category.methodKey";
 }
 
 #ifdef CUSTOM_DEBUG
+
 + (NSArray *)ja_developerClasses {
     NSMutableArray *dClasses = [NSMutableArray array];
     unsigned int count;
@@ -187,7 +183,7 @@ const void* methodKey = "com.coder.category.methodKey";
     classes = objc_copyClassNamesForImage(info.dli_fname, &count);
     
     for (int i = 0; i < count; i++) {
-        //3.遍历并打印，转换Objective-C的字符串
+        // 3.遍历并打印，转换Objective-C的字符串
         NSString *className = [NSString stringWithCString:classes[i] encoding:NSUTF8StringEncoding];        
         [dClasses addObject:className];
         
@@ -195,6 +191,7 @@ const void* methodKey = "com.coder.category.methodKey";
     }
     return [dClasses copy];
 }
+
 #endif
 
 @end

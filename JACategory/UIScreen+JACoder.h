@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+#define JA_SCREEN_WIDTH [UIScreen ja_width]
+#define JA_SCREEN_HEIGHT [UIScreen ja_height]
+
 @interface UIScreen (JACoder)
 
 + (CGFloat)ja_width;

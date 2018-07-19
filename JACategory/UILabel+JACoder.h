@@ -14,10 +14,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@protocol UILabelInterceptorDelegate <NSObject>
+
+@optional
+/**
+ UILabel的内间距
+
+ @return 内间距
+ */
+- (UIEdgeInsets)ja_edgeInsets;
+
+@end
+
 @interface UILabel (Interceptor)
 
 /// 设置拦截器
-- (void)setInterceptor:(id)interceptor;
+- (void)setInterceptor:(id<UILabelInterceptorDelegate>)interceptor;
 - (id)interceptor;
 
 @end

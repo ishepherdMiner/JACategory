@@ -1,0 +1,6 @@
+framework module Pods_JACategoryDemo {
+  umbrella header "Pods-JACategoryDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

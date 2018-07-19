@@ -9,6 +9,7 @@
 #import "UILabel+JACoder.h"
 #import <objc/message.h>
 #import <JACategory/NSObject+JACoder.h>
+#import <JACategory/NSString+JACoder.h>
 
 @implementation UILabel (JACoder)
 
@@ -18,22 +19,43 @@
 
 + (void)load {
     [UILabel ja_hookWithOriginSelector:@selector(textRectForBounds:limitedToNumberOfLines:) swizzledSelector:@selector(ja_textRectForBounds:limitedToNumberOfLines:)];
+    [UILabel ja_hookWithOriginSelector:@selector(drawTextInRect:) swizzledSelector:@selector(ja_drawTextInRect:)];
+        
 }
 
-static const char *interceptorLabelKey = "interceptorKey";
-- (void)setInterceptor:(id)interceptor {
-    objc_setAssociatedObject(self.class, interceptorLabelKey, interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setInterceptor:(id<UILabelInterceptorDelegate>)interceptor {
+    objc_setAssociatedObject(self,@selector(interceptor), interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (id)interceptor {
-    return objc_getAssociatedObject(self.class, interceptorLabelKey);
+    return objc_getAssociatedObject(self,@selector(interceptor));
 }
 
 /// 修改默认垂直居中时
 - (CGRect)ja_textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {
-    if ([[self interceptor] respondsToSelector:@selector(textRectForBounds:limitedToNumberOfLines:)]) {
-        return [[self interceptor] textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+    CGRect rect = bounds;
+    if ([[self interceptor] respondsToSelector:@selector(ja_edgeInsets)]) {
+        UIEdgeInsets insets = [[self interceptor] ja_edgeInsets];
+        rect = [self ja_textRectForBounds:UIEdgeInsetsInsetRect(bounds, insets) limitedToNumberOfLines:numberOfLines];
+        
+        rect.origin.x -= insets.left;
+        rect.origin.y -= insets.top;
+        rect.size.width += (insets.left + insets.right);
+        rect.size.height += (insets.top + insets.bottom);
+        
     }else {
-        return [self ja_textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+        rect = [self ja_textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+    }
+    
+    return rect;
+}
+
+
+- (void)ja_drawTextInRect:(CGRect)rect {
+    if ([[self interceptor] respondsToSelector:@selector(ja_edgeInsets)]) {
+        UIEdgeInsets insets = [[self interceptor] ja_edgeInsets];
+        [self ja_drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
+    }else {
+        [self ja_drawTextInRect:rect];
     }
 }
 

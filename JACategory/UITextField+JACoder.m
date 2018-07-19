@@ -87,12 +87,11 @@
     }
 }
 
-static const char *interceptorTextFieldKey = "interceptorKey";
-- (void)setInterceptor:(id)interceptor {
-    objc_setAssociatedObject(self.class, interceptorTextFieldKey, interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setInterceptor:(id<UITextFiledInterceptorDelegate>)interceptor {
+    objc_setAssociatedObject(self.class, @selector(interceptor), interceptor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (id)interceptor {
-    return objc_getAssociatedObject(self.class, interceptorTextFieldKey);
+    return objc_getAssociatedObject(self.class,  @selector(interceptor));
 }
 
 - (CGRect)ja_clearButtonRectForBounds:(CGRect)bounds {

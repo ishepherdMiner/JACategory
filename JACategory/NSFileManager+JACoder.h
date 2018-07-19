@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface NSFileManager (JACoder)
 
 /// shortcut
@@ -35,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return 文件路径
  */
 - (NSString *)ja_appendFilePathFormat:(NSString *)filePath
-                         directory:(NSString *)directory;
+                            directory:(NSString *)directory;
 
 /// 在docuement文件夹下创建文件夹，若已存在，则返回路径
 - (NSString *)ja_createDirectoryAtDocumentWithName:(NSString *)name;
