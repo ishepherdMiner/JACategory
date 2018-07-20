@@ -365,15 +365,3 @@
 
 
 @end
-
-@implementation NSString (JAConvenient)
-
-+ (BOOL)ja_valid:(id)instance {
-    if (instance && ![instance isKindOfClass:[NSNull class]] && [instance isKindOfClass:[NSString class]] && [instance length] && ![instance isEqualToString:@""]) {
-        return YES;
-    }else{
-        return NO;
-    }
-}
-
-@end

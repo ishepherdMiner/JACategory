@@ -73,12 +73,3 @@
 
 @end
 
-@implementation NSArray (JAConvenient)
-
-+ (BOOL)ja_valid:(id)instance {
-    if ([instance isKindOfClass:[NSArray class]] && [instance count] > 0) {
-        return YES;
-    }
-    return NO;
-}
-@end

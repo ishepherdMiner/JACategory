@@ -32,10 +32,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NSArray (JAConvenient)
-
-+ (BOOL)ja_valid:(id)instance;
-
-@end
-
 NS_ASSUME_NONNULL_END

@@ -294,17 +294,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /// JAFormatter JAUI JAHTTP JASecurity
-@interface NSString (JAConvenient)
-
-/**
- 快速判断是否一般有效的字符串对象
- 非空,非Null,是字符串,有长度,不是空字符串
- 
- @param instance 待判断的对象
- @return 是否是一般有效的字符串
- */
-+ (BOOL)ja_valid:(id)instance;
-
-@end
 
 NS_ASSUME_NONNULL_END

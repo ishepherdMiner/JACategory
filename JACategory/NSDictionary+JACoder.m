@@ -104,21 +104,3 @@
 }
 #endif
 @end
-
-@implementation NSDictionary (JAConvenient)
-
-/**
- 是否是有效的字典对象
- 是字典 && 长度非空
- 
- @param instance 待判断的对象
- @return 判断结果
- */
-+ (BOOL)ja_valid:(id)instance {
-    if ([instance isKindOfClass:[NSDictionary class]] && [instance count] > 0) {
-        return YES;
-    }
-    return NO;
-}
-
-@end
