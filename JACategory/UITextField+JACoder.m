@@ -11,13 +11,13 @@
 
 @implementation UITextField (JACoder)
 
-- (instancetype)ja_underlineWithColor:(UIColor *)color {
+- (UIView *)ja_underlineWithColor:(UIColor *)color {
     return [self ja_underlineWithColor:color
                           axisX:NSNotFound
                            size:CGSizeZero];
 }
 
-- (instancetype)ja_underlineWithColor:(UIColor *)color
+- (UIView *)ja_underlineWithColor:(UIColor *)color
                                 axisX:(NSUInteger)axisX
                                  size:(CGSize)size {
     
