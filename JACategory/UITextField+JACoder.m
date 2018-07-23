@@ -18,15 +18,15 @@
 }
 
 - (instancetype)ja_underlineWithColor:(UIColor *)color
-                                axisX:(CGFloat)axisX
+                                axisX:(NSUInteger)axisX
                                  size:(CGSize)size {
     
     UIView *underlineView = [[UIView alloc] init];
     
     CGFloat x = axisX == NSNotFound ? self.frame.origin.x : axisX;
-    CGFloat y = self.frame.size.height + 3;
-    CGFloat w = self.frame.size.width;
-    CGFloat h = 1;
+    CGFloat h = 0.5;
+    CGFloat y = self.bounds.size.height - h;
+    CGFloat w = self.bounds.size.width;
     if (!CGSizeEqualToSize(CGSizeZero, size)) {
         w = size.width;
         h = size.height;
@@ -36,7 +36,7 @@
     underlineView.backgroundColor = color;
     [self addSubview:underlineView];
     self.clipsToBounds = NO;
-    return self;
+    return underlineView;
 }
 
 @end

@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
  添加下划线视图
 
  @param color 颜色
- @return UITextField对象
+ @return 添加下划线视图对象
  */
-- (instancetype)ja_underlineWithColor:(UIColor *)color;
+- (UIView *)ja_underlineWithColor:(UIColor *)color;
 
 /**
  添加下划线视图
@@ -25,11 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
  @param color 颜色
  @param axisX 起始横坐标 传 NSNotFound 以UITextField的坐标为起始横坐标
  @param size 尺寸
- @return UITextField对象
+ @return 添加下划线的视图对象
  */
-- (instancetype)ja_underlineWithColor:(UIColor *)color
-                                axisX:(CGFloat)axisX
-                                 size:(CGSize)size;
+- (UIView *)ja_underlineWithColor:(UIColor *)color
+                            axisX:(NSUInteger)axisX
+                             size:(CGSize)size;
 
 @end
 

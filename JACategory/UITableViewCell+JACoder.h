@@ -15,18 +15,18 @@
  添加下划线视图
  
  @param color 颜色
- @return UITableView对象
+ @return 添加的下划线视图对象
  */
-- (instancetype)ja_underlineWithColor:(UIColor *)color;
+- (UIView *)ja_underlineWithColor:(UIColor *)color;
 
 /**
  添加下划线视图
  
  @param color 颜色
  @param frame 位置与坐标
- @return UITableView对象
+ @return 添加的下划线视图对象
  */
-- (instancetype)ja_underlineWithColor:(UIColor *)color
+- (UIView *)ja_underlineWithColor:(UIColor *)color
                                 frame:(CGRect)frame;
 
 @end

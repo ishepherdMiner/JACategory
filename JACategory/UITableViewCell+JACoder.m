@@ -10,12 +10,12 @@
 
 @implementation UITableViewCell (JACoder)
 
-- (instancetype)ja_underlineWithColor:(UIColor *)color {
+- (UIView *)ja_underlineWithColor:(UIColor *)color {
     return [self ja_underlineWithColor:color
                                  frame:CGRectZero];
 }
 
-- (instancetype)ja_underlineWithColor:(UIColor *)color
+- (UIView *)ja_underlineWithColor:(UIColor *)color
                                 frame:(CGRect)frame{
     
     UIView *underlineView = [[UIView alloc] init];
@@ -34,7 +34,7 @@
     underlineView.backgroundColor = color;
     [self addSubview:underlineView];
     
-    return self;
+    return underlineView;
 }
 
 @end
