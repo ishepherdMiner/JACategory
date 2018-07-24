@@ -22,17 +22,21 @@ NS_ASSUME_NONNULL_BEGIN
 #define fMidX(rect)     CGRectGetMidX(rect)
 #define fWidth(rect)    CGRectGetWidth(rect)
 #define fHeight(rect)   CGRectGetHeight(rect)
-#define fCenterFixedPaddingGetWidth(sumWidth,padding) (sumWidth - padding * 2) /// 已知左右边距要求居中 求宽度
-#define fCenterFixWidthGetPadding(sumWidth,width) ((sumWidth - width) * 0.5) /// 固定宽度要求居中 求左右边距
 
-@protocol JABuilder <NSObject>
+/// 已知左右边距要求居中 求宽度
+#define fCenterFixedPaddingGetWidth(sumWidth,padding) (sumWidth - padding * 2)
 
-+ (instancetype)ja_builder:(void(^)(id v))block;
-- (instancetype)ja_builder:(void(^)(id v))block;
+/// 固定宽度要求居中 求左右边距
+#define fCenterFixWidthGetPadding(sumWidth,width) ((sumWidth - width) * 0.5)
+
+@interface UIView (JABuilder)
+
++ (instancetype)ja_builder:(void (^)(UIView * _Nonnull make))block;
+- (instancetype)ja_builder:(void (^)(UIView * _Nonnull make))block;
 
 @end
 
-@interface UIView (JACoder) <JABuilder>
+@interface UIView (JACoder)
 
 /// frame setter & getter
 - (CGFloat)ja_width;
@@ -52,7 +56,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 水平居中(以父视图为准)
- *
  */
 - (void)ja_alignHor;
 
@@ -64,10 +67,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Return YES from the block to recurse into the subview.
  *  Set stop to YES to return the subview.
+ *
  *  回调中返回 YES 继续查找,返回 NO,去检查 stop 的值,如果stop 为 YES,
     则返回找到的那个视图
  */
-- (UIView*)ja_findViewRecursively:(BOOL(^)(UIView* subview, BOOL* stop))recurse;
+- (UIView *)ja_findViewRecursively:(BOOL(^)(UIView* subview, BOOL* stop))recurse;
 
 /**
  通过响应者链条获取view所在的控制器
@@ -75,6 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return view所在的控制器
  */
 - (UIViewController *)ja_parentController;
+
 @end
 
 NS_ASSUME_NONNULL_END

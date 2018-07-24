@@ -10,13 +10,13 @@
 
 @implementation UIView (JACoder)
 
-+ (instancetype)ja_builder:(void (^)(UIView * _Nonnull))block {
++ (instancetype)ja_builder:(void (^)(UIView * _Nonnull make))block {
     UIView *instance = [[self alloc] init];
     block(instance);
     return instance;
 }
 
-- (instancetype)ja_builder:(void (^)(UIView * _Nonnull))block {
+- (instancetype)ja_builder:(void (^)(UIView * _Nonnull make))block {
     block(self);
     return self;
 }

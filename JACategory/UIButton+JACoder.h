@@ -10,6 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface UIButton (JABuilder)
+
++ (instancetype)ja_builder:(void (^)(UIButton * _Nonnull make))block;
+- (instancetype)ja_builder:(void (^)(UIButton * _Nonnull make))block;
+
+@end
+
 @interface UIButton (JACoder)
 
 + (UIImage *)ja_imageWithColor:(UIColor *)color;

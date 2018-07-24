@@ -29,8 +29,13 @@ FOUNDATION_EXPORT const unsigned char JACategoryVersionString[];
 #import <JACategory/NSFileManager+JACoder.h>
 #import <JACategory/NSFileManager+JACoder.h>
 #import <JACategory/NSBundle+JACoder.h>
+#import <JACategory/UIControl+JACoder.h>
+#import <JACategory/UIScrollView+JACoder.h>
+#import <JACategory/UISlider+JACoder.h>
 #import <JACategory/UIImage+JACoder.h>
 #import <JACategory/UIScreen+JACoder.h>
+#import <JACategory/UIPickerView+JACoder.h>
+#import <JACategory/UIDatePicker+JACoder.h>
 #import <JACategory/UINavigationController+JACoder.h>
 #import <JACategory/UIButton+JACoder.h>
 #import <JACategory/UIViewController+JACoder.h>
