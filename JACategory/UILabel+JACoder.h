@@ -10,7 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UILabel (JACoder)
+@protocol JABuilder;
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
+
+@interface UILabel (JACoder) <JABuilder>
+
+#pragma clang diagnostic pop
+
+/// 
++ (instancetype)ja_builderLabel:(void (^)(UILabel *label))block;
 
 @end
 

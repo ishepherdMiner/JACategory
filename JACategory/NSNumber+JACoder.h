@@ -11,6 +11,15 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface NSNumber (JACoder)
 
+
+/**
+ create a random number between zero to one
+
+ @return a random number between zero to one
+ */
++ (instancetype)ja_randomeProbability;
++ (instancetype)ja_randomeProbabilityWithPrecision:(CGFloat)precision;
+
 /**
  *  create a random number between from with to number => [from,to]
  *
@@ -34,12 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  create an assign decimal number
  *
- *  @param price    which number
+ *  @param number    which number
  *  @param position decimal number
  *
  *  @return the assign decimal number
  */
-+ (instancetype)ja_notRounding:(CGFloat)price afterPoint:(int)position;
++ (instancetype)ja_notRounding:(CGFloat)number afterPoint:(int)position;
 
 @end
 NS_ASSUME_NONNULL_END

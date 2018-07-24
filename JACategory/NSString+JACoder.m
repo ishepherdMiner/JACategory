@@ -54,6 +54,17 @@
     return [self substringToIndex:(pointRange.location + 1 + pos)];
 }
 
+- (NSUInteger)ja_countOfChar:(unichar)c {
+    NSUInteger count = 0;
+    for (int i = 0; i < self.length; ++i) {
+        unichar sub = [self characterAtIndex:i];
+        if (sub == c) {
+            count++;
+        }
+    }
+    return count;
+}
+
 - (BOOL)ja_isValidIP {
     /// https://stackoverflow.com/questions/18477153/c-compiler-warning-unknown-escape-sequence-using-regex-for-c-program
     NSString *format = @"^((2[0-4]\\d|25[0-5]|[1-9]?\\d|1\\d{2})\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$";

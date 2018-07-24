@@ -34,6 +34,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)ja_trim;
 
+
+/**
+ 该字符串中有多少个指定的字符
+
+ @param c 指定的字符
+ @return 指定字符的数量
+ */
+- (NSUInteger)ja_countOfChar:(unichar)c;
+
 /**
  *  保留指定精度
  *

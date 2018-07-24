@@ -11,32 +11,43 @@
 
 @implementation UITextField (JACoder)
 
-- (UIView *)ja_underlineWithColor:(UIColor *)color {
-    return [self ja_underlineWithColor:color
-                          axisX:NSNotFound
-                           size:CGSizeZero];
+- (UIView *)ja_addUnderlineWithColor:(UIColor *)color {
+    return [self ja_addUnderlineWithColor:color
+                                    axisX:NSNotFound
+                                     size:CGSizeZero];
 }
 
-- (UIView *)ja_underlineWithColor:(UIColor *)color
-                                axisX:(NSUInteger)axisX
-                                 size:(CGSize)size {
-    
-    UIView *underlineView = [[UIView alloc] init];
-    
-    CGFloat x = axisX == NSNotFound ? self.frame.origin.x : axisX;
-    CGFloat h = 0.5;
-    CGFloat y = self.bounds.size.height - h;
-    CGFloat w = self.bounds.size.width;
-    if (!CGSizeEqualToSize(CGSizeZero, size)) {
-        w = size.width;
-        h = size.height;
+- (UIView *)ja_addUnderlineWithColor:(UIColor *)color
+                               axisX:(NSUInteger)axisX
+                                size:(CGSize)size {
+    UIView *underlineView = objc_getAssociatedObject(self, @selector(ja_addUnderlineWithColor:axisX:size:));
+    if (underlineView == nil) {
+        underlineView = [[UIView alloc] init];
+        
+        CGFloat x = axisX == NSNotFound ? self.bounds.origin.x : axisX;
+        CGFloat h = 0.5;
+        CGFloat y = self.bounds.size.height - h;
+        CGFloat w = self.bounds.size.width;
+        if (!CGSizeEqualToSize(CGSizeZero, size)) {
+            w = size.width;
+            h = size.height;
+        }
+        
+        underlineView.frame = CGRectMake(x, y, w, h);
+        underlineView.backgroundColor = color;
+        [self addSubview:underlineView];
+        self.clipsToBounds = NO;
+        objc_setAssociatedObject(self, @selector(ja_addUnderlineWithColor:axisX:size:), underlineView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    
-    underlineView.frame = CGRectMake(x, y, w, h);
-    underlineView.backgroundColor = color;
-    [self addSubview:underlineView];
-    self.clipsToBounds = NO;
     return underlineView;
+}
+
+- (void)ja_removeUnderline {
+    UIView *underlineView = objc_getAssociatedObject(self, @selector(ja_addUnderlineWithColor:axisX:size:));
+    if (underlineView) {
+        [underlineView removeFromSuperview];
+        objc_setAssociatedObject(self, @selector(ja_addUnderlineWithColor:axisX:size:), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
 }
 
 @end

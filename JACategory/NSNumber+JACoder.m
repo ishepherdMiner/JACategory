@@ -10,6 +10,15 @@
 
 @implementation NSNumber (JACoder)
 
++ (instancetype)ja_randomeProbability {
+    return @(arc4random() % 11 / 10.0);
+}
+
++ (instancetype)ja_randomeProbabilityWithPrecision:(CGFloat)precision {
+    int val = (int)pow(10, precision);
+    return @(arc4random() % val / (CGFloat)val);
+}
+
 + (instancetype)ja_randomNumber:(NSUInteger)from to:(NSUInteger)to {
     return @(from + (arc4random() % (to - from + 1)));
 }
@@ -25,13 +34,13 @@
 }
 
 /// 当我想要截取数值又不想采用截取字符串的方式时,找到的方法
-+ (instancetype)ja_notRounding:(CGFloat)price afterPoint:(int)position{
++ (instancetype)ja_notRounding:(CGFloat)number afterPoint:(int)position{
     
     NSDecimalNumberHandler* roundingBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:position raiseOnExactness:false raiseOnOverflow:false raiseOnUnderflow:false raiseOnDivideByZero:false];
     
     NSDecimalNumber *ouncesDecimal;
     NSDecimalNumber *roundedOunces;
-    ouncesDecimal = [[NSDecimalNumber alloc] initWithDouble:price];
+    ouncesDecimal = [[NSDecimalNumber alloc] initWithDouble:number];
     roundedOunces = [ouncesDecimal decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
     
     return roundedOunces;

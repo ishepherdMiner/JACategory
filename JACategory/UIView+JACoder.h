@@ -25,7 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 #define fCenterFixedPaddingGetWidth(sumWidth,padding) (sumWidth - padding * 2) /// 已知左右边距要求居中 求宽度
 #define fCenterFixWidthGetPadding(sumWidth,width) ((sumWidth - width) * 0.5) /// 固定宽度要求居中 求左右边距
 
-@interface UIView (JACoder)
+@protocol JABuilder <NSObject>
+
++ (instancetype)ja_builder:(void(^)(id v))block;
+- (instancetype)ja_builder:(void(^)(id v))block;
+
+@end
+
+@interface UIView (JACoder) <JABuilder>
 
 /// frame setter & getter
 - (CGFloat)ja_width;

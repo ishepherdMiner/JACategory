@@ -10,6 +10,17 @@
 
 @implementation UIView (JACoder)
 
++ (instancetype)ja_builder:(void (^)(UIView * _Nonnull))block {
+    UIView *instance = [[self alloc] init];
+    block(instance);
+    return instance;
+}
+
+- (instancetype)ja_builder:(void (^)(UIView * _Nonnull))block {
+    block(self);
+    return self;
+}
+
 - (UIView*)ja_findViewRecursively:(BOOL(^)(UIView* subview, BOOL* stop))recurse{
     for( UIView* subview in self.subviews ) {
         BOOL stop = true;

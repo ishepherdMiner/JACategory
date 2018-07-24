@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param color 颜色
  @return 添加下划线视图对象
  */
-- (UIView *)ja_underlineWithColor:(UIColor *)color;
+- (UIView *)ja_addUnderlineWithColor:(UIColor *)color;
 
 /**
  添加下划线视图
@@ -27,9 +27,15 @@ NS_ASSUME_NONNULL_BEGIN
  @param size 尺寸
  @return 添加下划线的视图对象
  */
-- (UIView *)ja_underlineWithColor:(UIColor *)color
-                            axisX:(NSUInteger)axisX
-                             size:(CGSize)size;
+- (UIView *)ja_addUnderlineWithColor:(UIColor *)color
+                               axisX:(NSUInteger)axisX
+                                size:(CGSize)size;
+
+
+/**
+ 移除下划线视图
+ */
+- (void)ja_removeUnderline;
 
 @end
 
