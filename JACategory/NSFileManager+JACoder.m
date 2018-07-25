@@ -94,21 +94,38 @@
     return directoryPath;
     
 }
++ (NSString *)ja_documentOfPath {
+    return [[NSFileManager defaultManager] ja_documentOfPath];
+}
 
 - (NSString *)ja_documentOfPath {
     return [[self ja_directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
+}
+
++ (NSString *)ja_libraryOfPath {
+    return [[NSFileManager defaultManager] ja_libraryOfPath];
 }
 
 - (NSString *)ja_libraryOfPath {
     return [[self ja_directoryPathWithType:NSLibraryDirectory] objectAtIndex:0];
 }
 
++ (NSString *)ja_cacheOfPath {
+    return [[NSFileManager defaultManager] ja_cacheOfPath];
+}
 - (NSString *)ja_cacheOfPath {
     return [[self ja_directoryPathWithType:NSCachesDirectory] objectAtIndex:0];
 }
 
++ (NSString *)ja_documentationOfPath {
+    return [[NSFileManager defaultManager] ja_documentationOfPath];
+}
 - (NSString *)ja_documentationOfPath {
     return [[self ja_directoryPathWithType:NSDocumentDirectory] objectAtIndex:0];
+}
+
++ (NSString *)ja_tmpOfPath {
+    return [[NSFileManager defaultManager] ja_tmpOfPath];
 }
 
 - (NSString *)ja_tmpOfPath {

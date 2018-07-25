@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextView (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UITextView * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UITextView * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UITextView * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UITextView * _Nonnull make))block;
 
 @end
 

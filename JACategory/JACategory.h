@@ -33,6 +33,7 @@ FOUNDATION_EXPORT const unsigned char JACategoryVersionString[];
 #import <JACategory/UIScrollView+JACoder.h>
 #import <JACategory/UISlider+JACoder.h>
 #import <JACategory/UIImage+JACoder.h>
+#import <JACategory/UIImageView+JACoder.h>
 #import <JACategory/UIScreen+JACoder.h>
 #import <JACategory/UIPickerView+JACoder.h>
 #import <JACategory/UIDatePicker+JACoder.h>
@@ -42,4 +43,5 @@ FOUNDATION_EXPORT const unsigned char JACategoryVersionString[];
 #import <JACategory/UITextField+JACoder.h>
 #import <JACategory/UITableViewCell+JACoder.h>
 #import <JACategory/UILabel+JACoder.h>
+#import <JACategory/UITableView+JACoder.h>
 

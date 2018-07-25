@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIScrollView (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UIScrollView * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UIScrollView * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIScrollView * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIScrollView * _Nonnull make))block;
 
 @end
 

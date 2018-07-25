@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIControl (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UIControl * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UIControl * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIControl * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIControl * _Nonnull make))block;
 
 @end
 

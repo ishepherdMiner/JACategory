@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 返回时间戳的字符串
  */
 + (NSInteger)ja_cTimestampFromString:(NSString *)timeStr
-                          format:(NSString *)format;
+                              format:(NSString *)format;
 
 /**
  *  NSDate转字符串

@@ -5,8 +5,9 @@
 //  Created by HZ-Jason on 03/07/2018.
 //
 
-#import "UITextField+JACoder.h"
+#import <JACategory/UITextField+JACoder.h>
 #import <JACategory/NSObject+JACoder.h>
+#import <JACategory/UIScreen+JACoder.h>
 #import <objc/message.h>
 
 @implementation UITextField (JACoder)

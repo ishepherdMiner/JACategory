@@ -18,12 +18,6 @@
 
 @implementation UILabel (Interceptor)
 
-+ (instancetype)ja_builder:(void (^)(UIView * _Nonnull))block {
-    UILabel *instance = [[UILabel alloc] init];
-    block(instance);
-    return instance;
-}
-
 + (void)load {
     [UILabel ja_hookWithOriginSelector:@selector(textRectForBounds:limitedToNumberOfLines:) swizzledSelector:@selector(ja_textRectForBounds:limitedToNumberOfLines:)];
     [UILabel ja_hookWithOriginSelector:@selector(drawTextInRect:) swizzledSelector:@selector(ja_drawTextInRect:)];

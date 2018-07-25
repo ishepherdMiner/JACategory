@@ -7,6 +7,7 @@
 //
 
 #import "UIView+JACoder.h"
+#import <objc/message.h>
 
 @implementation UIView (JACoder)
 

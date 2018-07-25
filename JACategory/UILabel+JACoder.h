@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Just for compiler
 @interface UILabel (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UILabel * _Nullable make))block;
-- (instancetype)ja_builder:(void (^)(UILabel * _Nullable make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UILabel * _Nullable make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UILabel * _Nullable make))block;
 
 @end
 

@@ -31,8 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UIView * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UIView * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIView * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIView * _Nonnull make))block;
 
 @end
 

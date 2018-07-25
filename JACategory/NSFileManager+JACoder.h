@@ -14,18 +14,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// shortcut
 /// .../sandbox/Document
++ (NSString *)ja_documentOfPath;
 - (NSString *)ja_documentOfPath;
 
 /// .../sandbox/Library
++ (NSString *)ja_libraryOfPath;
 - (NSString *)ja_libraryOfPath;
 
 /// .../sandbox/Library/Cache
++ (NSString *)ja_cacheOfPath;
 - (NSString *)ja_cacheOfPath;
 
 /// .../sandbox/tmp
++ (NSString *)ja_tmpOfPath;
 - (NSString *)ja_tmpOfPath;
 
 /// .../sandbox/Library/Documentation
++ (NSString *)ja_documentationOfPath;
 - (NSString *)ja_documentationOfPath;
 
 /**

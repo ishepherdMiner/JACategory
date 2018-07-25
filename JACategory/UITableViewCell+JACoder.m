@@ -8,6 +8,7 @@
 
 #import "UITableViewCell+JACoder.h"
 #import <objc/message.h>
+#import "UIScreen+JACoder.h"
 
 @implementation UITableViewCell (JACoder)
 
@@ -24,7 +25,7 @@
         underlineView = [[UIView alloc] init];
         
         CGFloat x = CGRectEqualToRect(CGRectZero, frame) ? self.bounds.origin.x : frame.origin.x;
-        CGFloat w = self.frame.size.width;
+        CGFloat w = JA_SCREEN_WIDTH;
         CGFloat h = 1;
         if (!CGSizeEqualToSize(CGSizeZero, frame.size)) {
             w = frame.size.width;

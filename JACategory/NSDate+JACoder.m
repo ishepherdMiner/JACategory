@@ -107,15 +107,17 @@ static NSDateFormatter *dateFormatter;
     [formater setDateFormat:@"yyyy-MM-dd"];
     NSString * curTime = [formater stringFromDate:curDate];
     
-    NSString *bid = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleIdentifier"];
-    NSString *currentDate = [[[NSUserDefaults alloc] initWithSuiteName:bid] objectForKey:@"currentDate"];
+//    NSString *bid = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleIdentifier"];
+    NSString *currentDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentDate"];
     
     // 首次
     if (currentDate == nil) {
-        [[[NSUserDefaults alloc] initWithSuiteName:bid] setObject:curTime forKey:@"currentDate"];
+        NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+        [standardDefaults setObject:curTime forKey:@"currentDate"];
+        [standardDefaults synchronize];
     }
     
-    // 是否是同一天
+    // 是同一天
     if ([curTime isEqualToString:currentDate]) {
         return false;
     }

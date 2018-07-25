@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UISlider (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UISlider * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UISlider * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UISlider * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UISlider * _Nonnull make))block;
 
 @end
 

@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UITextField * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UITextField * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UITextField * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UITextField * _Nonnull make))block;
 
 @end
 

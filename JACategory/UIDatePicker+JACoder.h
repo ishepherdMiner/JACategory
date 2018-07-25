@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDatePicker (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UIDatePicker * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UIDatePicker * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIDatePicker * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIDatePicker * _Nonnull make))block;
 
 @end
 

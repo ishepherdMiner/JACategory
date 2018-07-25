@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIPickerView (JABuilder)
 
-+ (instancetype)ja_builder:(void (^)(UIPickerView * _Nonnull make))block;
-- (instancetype)ja_builder:(void (^)(UIPickerView * _Nonnull make))block;
++ (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIPickerView * _Nonnull make))block;
+- (instancetype)ja_builder:(void (NS_NOESCAPE ^)(UIPickerView * _Nonnull make))block;
 
 @end
 
