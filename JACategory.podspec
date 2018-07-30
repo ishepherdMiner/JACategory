@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JACategory"
-  s.version      = "0.0.9.1"
+  s.version      = "0.0.9.2"
   s.summary      = "Category"
   s.description  = <<-DESC
   Daily collection of some categories
