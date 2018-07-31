@@ -20,6 +20,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)ja_bundleWithName:(NSString *)name;
 
 /**
+ 单例方式获取bundle
+ 默认以bundle结尾,自定义后缀时,name传全称
+ 
+ @param cls 关联的类
+ @param name bundle名
+ @return bundle
+ */
++ (instancetype)ja_sharedBundleForClass:(Class)cls
+                                   name:(NSString *)name;
+
+/**
  从bundle中加载图片对象
 
  @param name 图片名

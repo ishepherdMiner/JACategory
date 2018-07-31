@@ -12,7 +12,27 @@
 
 + (instancetype)ja_bundleWithName:(NSString *)name {
     NSBundle *b = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:name ofType:@"bundle"]];
+    
     return b;
+}
+
++ (instancetype)ja_sharedBundleForClass:(Class)cls
+                                   name:(NSString *)name {
+    
+    static id instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSBundle *b = [NSBundle bundleForClass:cls];
+        NSString *path = nil;
+        if ([name rangeOfString:@"."].location == NSNotFound) {
+            path = [b pathForResource:name ofType:@"bundle"];
+        }else {
+            path = [b pathForResource:name ofType:@""];
+        }
+        instance = [NSBundle bundleWithPath:path];
+    });
+    
+    return instance;
 }
 
 + (NSString *)ja_bundleId {
