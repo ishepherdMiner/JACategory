@@ -46,4 +46,5 @@ FOUNDATION_EXPORT const unsigned char JACategoryVersionString[];
 #import <JACategory/UITableView+JACoder.h>
 #import <JACategory/UICollectionView+JACoder.h>
 #import <JACategory/UIActivityIndicatorView+JACoder.h>
+#import <JACategory/UIResponder+JACoder.h>
 

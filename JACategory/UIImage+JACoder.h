@@ -42,6 +42,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIImage *)ja_cropImageWithSize:(CGSize)size
                             scale:(CGFloat)scale;
 
+/// 按比例裁剪图片
+- (UIImage *)ja_cropImageWithSizeAspectFit:(CGSize)size;
+
+/// wait to remove
++ (UIImage *)ja_handleImage:(UIImage *)originalImage
+                   withSize:(CGSize)size;
+
 /**
  旋转图片
  
