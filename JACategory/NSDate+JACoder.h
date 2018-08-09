@@ -43,6 +43,13 @@ NS_ASSUME_NONNULL_BEGIN
                         withDateFormat:(NSString *)format;
 
 /**
+ * 获得当天0点的时间戳
+
+ @return 当天0点的时间戳
+ */
++ (NSTimeInterval)ja_zeroOfCStampTime;
+
+/**
  *  字符串转时间戳
  *
  *  @param timeStr 字符串时间

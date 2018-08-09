@@ -64,7 +64,20 @@ static NSDateFormatter *dateFormatter;
 + (NSDateComponents *)ja_currentComponents {
     NSDate *now = [NSDate date];
     NSCalendar *cal = [NSCalendar currentCalendar];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    cal.timeZone = timeZone;
     return [cal components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:now];
+}
+
++ (NSTimeInterval)ja_zeroOfCStampTime{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    
+    NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
+    return ts;
 }
 
 + (NSData *)ja_dataWithHexString:(NSString *)str {
