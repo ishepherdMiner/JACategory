@@ -48,7 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return 当天0点的时间戳
  */
 + (NSTimeInterval)ja_zeroOfCStampTime;
-
++ (NSTimeInterval)ja_zeroOfCStampTimeWithDay:(NSInteger)day
+                                       month:(NSInteger)month;
 /**
  *  字符串转时间戳
  *
@@ -93,6 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return 是否是同一个天
  */
 + (BOOL)ja_isDiffDay;
++ (BOOL)ja_isDiffMonth;
 
 + (NSString *)ja_stringFromDate:(NSDate *)date
                  withDateFormat:(NSString *)format;

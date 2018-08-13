@@ -77,6 +77,22 @@ static NSDateFormatter *dateFormatter;
     components.second = 0;
     
     NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
+    
+    return ts;
+}
+
++ (NSTimeInterval)ja_zeroOfCStampTimeWithDay:(NSInteger)day
+                                       month:(NSInteger)month {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    components.month = month;
+    components.day = day;
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    
+    NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
     return ts;
 }
 
@@ -131,6 +147,36 @@ static NSDateFormatter *dateFormatter;
     }
     
     // 是同一天
+    if ([curTime isEqualToString:currentDate]) {
+        return false;
+    }
+    
+    return true;
+}
+
++ (BOOL)ja_isDiffMonth {
+    NSDateFormatter *formater = [[ NSDateFormatter alloc] init];
+    // http://www.skyfox.org/ios-formatter-daylight-saving-time.html
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    // NSTimeZone* timeZone = [NSTimeZone timeZoneForSecondsFromGMT:3600*8];
+    [formater setTimeZone:timeZone];
+    
+    // 获取当前日期
+    NSDate *curDate = [NSDate date];
+    [formater setDateFormat:@"yyyy-MM"];
+    NSString * curTime = [formater stringFromDate:curDate];
+    
+    //    NSString *bid = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleIdentifier"];
+    NSString *currentDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentMonth"];
+    
+    // 首次
+    if (currentDate == nil) {
+        NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+        [standardDefaults setObject:curTime forKey:@"currentMonth"];
+        [standardDefaults synchronize];
+    }
+    
+    // 是同一月
     if ([curTime isEqualToString:currentDate]) {
         return false;
     }
