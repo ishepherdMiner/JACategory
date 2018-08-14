@@ -63,8 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获得app所有的类名列表
 + (NSArray *)ja_allClasses;
-
-
++ (BOOL)ja_validateMehodCanRunWithTarget:(id)target selectorStr:(NSString *)selectorStr;
+- (id)ja_runSelector:(SEL)aSelector withObjects:(NSArray *)objects;
 
 #ifdef CUSTOM_DEBUG
 
