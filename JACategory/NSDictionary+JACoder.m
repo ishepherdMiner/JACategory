@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+JACoder.h"
+#import <objc/runtime.h>
 
 @implementation NSDictionary (JACoder)
 

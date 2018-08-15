@@ -18,9 +18,24 @@ NS_ASSUME_NONNULL_BEGIN
  @param fileName 文件名
  @return 字典对象
  */
-+ (NSDictionary*)ja_dictionaryWithFilename:(NSString *)fileName;
-+ (NSDictionary*)ja_dictionaryWithFilename:(NSString *)fileName
++ (instancetype)ja_dictionaryWithFilename:(NSString *)fileName;
++ (instancetype)ja_dictionaryWithFilename:(NSString *)fileName
                                     bundle:(nullable NSBundle*)bundle;
+
+
+/**
+ *  根据数据字典解析成对象
+ *
+ *  @param dict      数据字典
+ *  @param classname 对象名称
+ *
+ *  @return 解析成功的对象
+ */
+- (instancetype)ja_initWithDict:(id)dict
+                      className:(NSString*)classname;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

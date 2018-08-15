@@ -66,6 +66,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)ja_validateMehodCanRunWithTarget:(id)target selectorStr:(NSString *)selectorStr;
 - (id)ja_runSelector:(SEL)aSelector withObjects:(NSArray *)objects;
 
+/**
+ *  把NSObject转化为NSDictionary
+ *
+ *  @param obj object对象
+ *
+ *  @return NSDictionary
+ */
+- (NSDictionary *)ja_getDictionaryData:(id)obj;
+
 #ifdef CUSTOM_DEBUG
 
 /// 不支持C++的类的获取
