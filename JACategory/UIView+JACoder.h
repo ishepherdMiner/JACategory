@@ -79,6 +79,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return view所在的控制器
  */
 - (UIViewController *)ja_parentController;
+- (void)ja_drawCircleWithColor:(UIColor *)color
+                         width:(CGFloat)width;
 
 @end
 

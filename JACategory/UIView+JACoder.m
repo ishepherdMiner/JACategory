@@ -124,4 +124,15 @@
     return nil;
 }
 
+- (void)ja_drawCircleWithColor:(UIColor *)color
+                         width:(CGFloat)width {
+    
+    CGFloat min = MIN(self.bounds.size.width, self.bounds.size.height);
+    self.layer.cornerRadius = min * 0.5;
+    self.layer.masksToBounds = YES;
+    self.layer.borderWidth = width;
+    self.layer.borderColor = color.CGColor;
+    [self setNeedsDisplay];
+}
+
 @end
