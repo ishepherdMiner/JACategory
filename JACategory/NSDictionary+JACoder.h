@@ -23,18 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
                                     bundle:(nullable NSBundle*)bundle;
 
 
-/**
- *  根据数据字典解析成对象
- *
- *  @param dict      数据字典
- *  @param classname 对象名称
- *
- *  @return 解析成功的对象
- */
-- (instancetype)ja_initWithDict:(id)dict
-                      className:(NSString*)classname;
-
-
 
 @end
 
