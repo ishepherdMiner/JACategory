@@ -44,6 +44,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSUInteger)ja_countOfChar:(unichar)c;
 
 /**
+ 清除url中的空格,\\r,\\n
+
+ @return 清除后的字符串
+ */
+- (NSString *)ja_clearUrl;
+/**
  *  保留指定精度
  *
  *  @param value 要保留的小数点位数

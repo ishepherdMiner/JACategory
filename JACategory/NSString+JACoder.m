@@ -180,6 +180,13 @@
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
+- (NSString *)ja_clearUrl{
+    NSString *tmpStr = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return tmpStr;
+}
+
 #pragma mark - 散列函数
 - (NSString *)ja_md5String {
     const char *str = self.UTF8String;

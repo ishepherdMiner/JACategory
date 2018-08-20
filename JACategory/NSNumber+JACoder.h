@@ -50,5 +50,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)ja_notRounding:(CGFloat)number afterPoint:(int)position;
 
+/**
+ *    @brief 数字转换成中文数字
+ *
+ *    @param _i 要转换的数字
+ *
+ *    @return 数字转换成的中文
+ */
++ (NSString *)ja_numberToChineseNumber:(NSInteger)_i;
+
 @end
 NS_ASSUME_NONNULL_END
