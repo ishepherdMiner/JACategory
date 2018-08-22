@@ -41,9 +41,13 @@
             return [UIViewController findBestViewController:svc.selectedViewController];
         else
             return vc;
-    } else if ([vc.presentedViewController isKindOfClass:[UIAlertController class]]) {
-        return vc;
-    }else {
+    } else if (@available(iOS 8.0, *)) {
+        if(([vc.presentedViewController isKindOfClass:[UIAlertController class]])) {
+            return vc;
+        }else {
+            return vc;
+        }
+    } else {
         // Unknown view controller type, return last child view controller
         return vc;
     }

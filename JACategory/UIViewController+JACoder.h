@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (JACoder)
 
-+ (UIViewController*)ja_currentViewController;
++ (UIViewController*)ja_currentViewController NS_AVAILABLE_IOS(8.0);
 
 @end
 
