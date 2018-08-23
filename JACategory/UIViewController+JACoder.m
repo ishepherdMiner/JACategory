@@ -53,3 +53,15 @@
     }
 }
 @end
+
+@implementation UIViewController (JAKeyboard)
+
+- (void)ja_keyboardWillShow:(NSNotification *)aNotification {
+    
+}
+
+- (void)ja_keyboardWillHide:(NSNotification *)aNotification {
+    
+}
+
+@end

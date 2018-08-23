@@ -15,5 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ja_pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
 - (UIViewController *)ja_popViewControllerAnimated:(BOOL)animated;
 
+/// 找到UINavigationBar下面的线
+- (UIImageView *)ja_findHairlineImageViewUnder:(UIView *)view;
 @end
 NS_ASSUME_NONNULL_END

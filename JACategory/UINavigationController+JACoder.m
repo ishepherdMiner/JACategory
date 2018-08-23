@@ -37,4 +37,17 @@
     
     return [self ja_popViewControllerAnimated:true];
 }
+
+- (UIImageView *)ja_findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self ja_findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
 @end

@@ -16,4 +16,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIViewController (JAKeyboard)
+
+/**
+ 接收到键盘展示通知
+
+ @param aNotification 展示键盘通知
+ */
+- (void)ja_keyboardWillShow:(NSNotification *)aNotification;
+
+/**
+ 接收到键盘隐藏通知
+
+ @param aNotification 隐藏键盘通知
+ */
+- (void)ja_keyboardWillHide:(NSNotification*)aNotification;
+
+@end
+
 NS_ASSUME_NONNULL_END
