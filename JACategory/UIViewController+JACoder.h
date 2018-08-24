@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <objc/message.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UIViewController (JAKeyboard)
+
+- (void)ja_setKeyboardScrollView:(UIScrollView *)scrollView;
+- (UIScrollView *)ja_keyboardScrollView;
 
 /**
  接收到键盘展示通知
