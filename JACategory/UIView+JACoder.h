@@ -36,6 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIView (Shadow)
+
+- (void)makeInsetShadow;
+- (void)makeInsetShadowWithRadius:(float)radius Alpha:(float)alpha;
+- (void)makeInsetShadowWithRadius:(float)radius Color:(UIColor *)color Directions:(NSArray *)directions;
+
+@end
+
 @interface UIView (JACoder)
 
 /// frame setter & getter
