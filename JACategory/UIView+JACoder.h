@@ -90,6 +90,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ja_drawCircleWithColor:(UIColor *)color
                          width:(CGFloat)width;
 
+- (instancetype)ja_placeholder;
+
 @end
 
 NS_ASSUME_NONNULL_END

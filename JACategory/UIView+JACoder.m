@@ -125,6 +125,15 @@
     return nil;
 }
 
+- (instancetype)ja_placeholder {
+    if ([self isKindOfClass:[UILabel class]]) {
+        [(UILabel *)self setTextColor:[UIColor clearColor]];
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    }
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    return self;
+}
+
 - (void)ja_drawCircleWithColor:(UIColor *)color
                          width:(CGFloat)width {
     
