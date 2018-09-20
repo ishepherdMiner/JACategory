@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #define fRect(x,y,w,h)  CGRectMake(x,y,w,h)
+#define fEdgeInset(x,y,w,h) UIEdgeInsetsMake(x,y,w,h)
 #define fSize(w,h)      CGSizeMake(w,h)
 #define fPoint(x,y)     CGPointMake(x,y)
 #define fRange(loc,len) NSRangeMake(loc,len)
