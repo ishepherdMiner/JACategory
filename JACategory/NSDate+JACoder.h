@@ -98,5 +98,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)ja_stringFromDate:(NSDate *)date
                  withDateFormat:(NSString *)format;
+
+/// 时间戳可读
++ (NSString *)ja_readableWithTimeStamp:(NSInteger)timestamp;
+
 @end
 NS_ASSUME_NONNULL_END

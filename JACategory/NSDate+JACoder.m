@@ -192,4 +192,17 @@ static NSDateFormatter *dateFormatter;
     NSString *dateStringFormat = [dateFromat stringFromDate:date];
     return dateStringFormat;
 }
+
++ (NSString *)ja_readableWithTimeStamp:(NSInteger)timestamp {
+    NSString *r = @"";
+    if (timestamp >= 60) {
+        NSInteger min = timestamp / 60;
+        r = [r stringByAppendingString:@(min).stringValue];
+        [r stringByAppendingString:@":"];
+    }
+    
+    NSInteger second = timestamp % 60;
+    return nil;
+}
+
 @end
