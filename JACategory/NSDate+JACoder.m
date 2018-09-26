@@ -193,16 +193,32 @@ static NSDateFormatter *dateFormatter;
     return dateStringFormat;
 }
 
-+ (NSString *)ja_readableWithTimeStamp:(NSInteger)timestamp {
++ (NSString *)ja_timestamp2readable:(NSInteger)timestamp {
     NSString *r = @"";
+    if (timestamp <= 0) {
+        return @"00:00";
+    }
+    
+    if (timestamp >= 3600) {
+        NSInteger hour = timestamp / 3600;
+        r = [r stringByAppendingString:@(hour).stringValue];
+        r = [r stringByAppendingString:@":"];
+    }
+    
     if (timestamp >= 60) {
         NSInteger min = timestamp / 60;
         r = [r stringByAppendingString:@(min).stringValue];
-        [r stringByAppendingString:@":"];
+        r = [r stringByAppendingString:@":"];
     }
     
     NSInteger second = timestamp % 60;
-    return nil;
+    if (second >= 10) {
+        r = [r stringByAppendingString:@(second).stringValue];
+    }else {
+        r = [[r stringByAppendingString:@"0"] stringByAppendingString:@(second).stringValue];
+    }
+    // NSLog(@"%@",r);
+    return r;
 }
 
 @end

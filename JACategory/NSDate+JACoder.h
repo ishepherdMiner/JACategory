@@ -100,7 +100,7 @@ NS_ASSUME_NONNULL_BEGIN
                  withDateFormat:(NSString *)format;
 
 /// 时间戳可读
-+ (NSString *)ja_readableWithTimeStamp:(NSInteger)timestamp;
++ (NSString *)ja_timestamp2readable:(NSInteger)timestamp;
 
 @end
 NS_ASSUME_NONNULL_END
