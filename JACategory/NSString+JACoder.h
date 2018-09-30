@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (JACoder)
 
 /**
@@ -22,18 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  C语言字符串转换成OC字符串
  *
  *  @param cString c语言字符串
- *
  *  @return OC字符串
  */
 + (NSString *)ja_ocString:(const char*)cString;
 
 /**
  *  去除字符串两端空格后的字符串
- *
  *  @return 去除字符串两端空格后的字符串
  */
 - (NSString *)ja_trim;
-
 
 /**
  该字符串中有多少个指定的字符
@@ -74,6 +72,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 + (NSString *)ja_encodeToPercentEscapeString:(NSString *)input;
+
+/**
+ 随机生成指定长度的字符串
+ 
+ @param iLength 字符串长度
+ @return 指定长度的随机字符串
+ */
++ (NSString *)ja_generateRandomStringWithLength:(NSInteger)iLength;
 
 /**
  *  将已经编码后的特殊字符进行解码
@@ -148,6 +154,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param execBlock 执行回调,每次传递当前遍历的字符
  */
 - (void)ja_mapString:(void (^)(NSString *c))execBlock;
+
+#pragma mark - 加密 -
 
 /**
  *  返回base64编码的字符串内容

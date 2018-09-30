@@ -100,6 +100,20 @@
     return outputStr;
 }
 
++ (NSString *)ja_generateRandomStringWithLength:(NSInteger)iLength {
+    char data[iLength];
+    for (int x = 0; x < iLength; x++) {
+        int j = '0' + (arc4random_uniform(75));
+        if((j >= 58 && j <= 64) || (j >= 91 && j <= 96)){
+            --x;
+        }else{
+            data[x] = (char)j;
+        }
+    }
+    NSString *text = [[NSString alloc] initWithBytes:data length:iLength encoding:NSUTF8StringEncoding];
+    return text;
+}
+
 + (NSString *)ja_decodeToUrlString:(NSString *)input{
     NSMutableString *outputStr = [NSMutableString stringWithString:input];
     [outputStr replaceOccurrencesOfString:@"+"
