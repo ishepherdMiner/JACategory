@@ -24,6 +24,15 @@ NS_ASSUME_NONNULL_BEGIN
 #define fWidth(rect)    CGRectGetWidth(rect)
 #define fHeight(rect)   CGRectGetHeight(rect)
 
+#define fMaxY_E(view) CGRectGetMaxY(view.frame)
+#define fMaxX_E(view) CGRectGetMaxX(view.frame)
+#define fMinY_E(view) CGRectGetMinY(view.frame)
+#define fMinX_E(view) CGRectGetMinX(view.frame)
+#define fMidY_E(view) CGRectGetMidY(view.frame)
+#define fMidX_E(view) CGRectGetMidX(view.frame)
+#define fWidth_E(view)    CGRectGetWidth(view.frame)
+#define fHeight_E(view)   CGRectGetHeight(view.frame)
+
 /// 已知左右边距要求居中 求宽度
 #define fCenterFixedPaddingGetWidth(sumWidth,padding) (sumWidth - padding * 2)
 
