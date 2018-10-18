@@ -102,4 +102,8 @@
     }
 }
 
+- (BOOL)ja_isActive {
+    return (self.isViewLoaded && self.view.window);
+}
+
 @end

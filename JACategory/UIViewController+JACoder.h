@@ -36,6 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)ja_keyboardWillHide:(NSNotification*)aNotification;
 
+
+/**
+ 当前控制器是否被展示
+
+ @return 是/否 展示
+ */
+- (BOOL)ja_isActive;
+
 @end
 
 NS_ASSUME_NONNULL_END
