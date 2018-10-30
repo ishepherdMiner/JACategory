@@ -78,12 +78,12 @@
     int height = keyboardRect.size.height;
     UIView *firstResponder = [UIResponder ja_currentFirstResponder];
     CGFloat kNavHeight = 64;
-    CGFloat kScreenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGFloat JA_SCREEN_HEIGHT = [UIScreen mainScreen].bounds.size.height;
     if (firstResponder.ja_y - height < kNavHeight) {
         [[self ja_keyboardScrollView] setContentOffset:fPoint(0, firstResponder.ja_y - kNavHeight - 10)
                                               animated:YES];
-    }else if (firstResponder.ja_y >= kScreenHeight){
-        [[self ja_keyboardScrollView] setContentOffset:fPoint(0, height + fMaxY(firstResponder.frame) - kScreenHeight + 10)
+    }else if (firstResponder.ja_y >= JA_SCREEN_HEIGHT){
+        [[self ja_keyboardScrollView] setContentOffset:fPoint(0, height + fMaxY(firstResponder.frame) - JA_SCREEN_HEIGHT + 10)
                                               animated:YES];
     }else {
         [[self ja_keyboardScrollView] setContentOffset:fPoint(0, height)
