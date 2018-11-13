@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/*============================
- *           列表
- *============================
+/**
  * 交换方法
  * 属性列表
  * 变量列表
@@ -73,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)ja_getDictionaryData:(id)obj;
+- (NSDictionary *)ja_dictionaryWithObject:(id)obj;
 
 #ifdef CUSTOM_DEBUG
 

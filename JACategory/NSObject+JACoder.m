@@ -215,7 +215,7 @@
     return nil;
 }
 
-- (NSDictionary *)ja_getDictionaryData:(id)obj {
+- (NSDictionary *)ja_dictionaryWithObject:(id)obj {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     unsigned int propsCount;
     objc_property_t *props = class_copyPropertyList([obj class], &propsCount);
@@ -268,7 +268,7 @@
         }
         return dic;
     }
-    return [self ja_getDictionaryData:obj];
+    return [self ja_dictionaryWithObject:obj];
 }
 
 #ifdef CUSTOM_DEBUG

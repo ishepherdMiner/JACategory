@@ -199,6 +199,10 @@
     return newImage;
 }
 
++ (instancetype)ja_imageWithUIColor:(UIColor *)color {
+    return [self ja_imageWithUIColor:color size:CGSizeMake(1.0f, 1.0f)];
+}
+
 + (instancetype)ja_imageWithUIColor:(UIColor *)color size:(CGSize)size{
     return [self ja_imageWithCGColor:color.CGColor size:size];
 }

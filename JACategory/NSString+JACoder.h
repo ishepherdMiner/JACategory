@@ -42,12 +42,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSUInteger)ja_countOfChar:(unichar)c;
 
 /**
- 清除url中的空格,\\r,\\n
-
- @return 清除后的字符串
- */
-- (NSString *)ja_clearUrl;
-/**
  *  保留指定精度
  *
  *  @param value 要保留的小数点位数
@@ -55,13 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return double类型的数据
  */
 - (instancetype)ja_accuracyDigital:(NSUInteger)value;
-
-/**
- 是否是有效的IP地址
-
- @return 是否是有效的IP地址
- */
-- (BOOL)ja_isValidIP;
 
 /**
  *  对网络请求的特殊字符进行编码
@@ -316,6 +303,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// JAFormatter JAUI JAHTTP JASecurity
+#pragma mark - URL -
+/**
+ 网络URL相关的处理
+*/
+@interface NSString (JAURL)
+
+/**
+ 清除url中的空格,\\r,\\n
+ 
+ @return 清除后的字符串
+ */
+- (NSString *)ja_removeAssignCharactersInURL:(nullable NSArray *)characters;
+
+/**
+ 是否是有效的IP地址
+ 
+ @return 是否是有效的IP地址
+ */
+- (BOOL)ja_isIp;
+
+@end
 
 NS_ASSUME_NONNULL_END

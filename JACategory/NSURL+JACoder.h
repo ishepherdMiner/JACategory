@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface NSURL (JACoder)
 
 /**
@@ -16,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return URL的参数字典
  */
-- (NSDictionary *)ja_splitQuery;
+- (NSDictionary *)ja_queryPairs;
 
 @end
+
 NS_ASSUME_NONNULL_END

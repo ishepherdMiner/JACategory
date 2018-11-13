@@ -10,7 +10,7 @@
 
 @implementation NSURL (JACoder)
 
-- (NSDictionary *)ja_splitQuery {
+- (NSDictionary *)ja_queryPairs {
     NSArray *qS = [self.query componentsSeparatedByString:@"&"];
     
     NSMutableDictionary *qSDicM = [NSMutableDictionary dictionaryWithCapacity:qS.count];

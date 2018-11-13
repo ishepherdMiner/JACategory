@@ -65,13 +65,6 @@
     return count;
 }
 
-- (BOOL)ja_isValidIP {
-    /// https://stackoverflow.com/questions/18477153/c-compiler-warning-unknown-escape-sequence-using-regex-for-c-program
-    NSString *format = @"^((2[0-4]\\d|25[0-5]|[1-9]?\\d|1\\d{2})\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", format];
-    return [pred evaluateWithObject:self];
-}
-
 + (NSString *)ja_encodeToPercentEscapeString:(NSString *)input{
     
     // Encode all the reserved characters, per RFC 3986
@@ -192,13 +185,6 @@
 - (NSString *)ja_base64decode {
     NSData *data = [[NSData alloc] initWithBase64EncodedString:self options:0];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
-- (NSString *)ja_clearUrl{
-    NSString *tmpStr = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
-    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    return tmpStr;
 }
 
 #pragma mark - 散列函数
@@ -395,5 +381,25 @@
     return [self ja_stringWithBytes:buffer length:CC_SHA512_DIGEST_LENGTH];
 }
 
+
+@end
+
+@implementation NSString (JAURL)
+
+- (NSString *)ja_removeAssignCharactersInURL:(nullable NSArray *)characters {
+    NSString *originString = [self copy];
+    if (characters == nil) { characters = @[@" ",@"\r",@"\n"]; }
+    for (NSString *cs in characters) {
+        originString = [originString stringByReplacingOccurrencesOfString:cs withString:@""];
+    }
+    return originString;
+}
+
+- (BOOL)ja_isIp {
+    /// https://stackoverflow.com/questions/18477153/c-compiler-warning-unknown-escape-sequence-using-regex-for-c-program
+    NSString *format = @"^((2[0-4]\\d|25[0-5]|[1-9]?\\d|1\\d{2})\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", format];
+    return [pred evaluateWithObject:self];
+}
 
 @end

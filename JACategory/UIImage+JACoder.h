@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
  生成UIImage对象
 
  @param color 颜色值
+ @return UIImage对象
+ */
++ (instancetype)ja_imageWithUIColor:(UIColor *)color;
+
+/**
+ 生成UIImage对象
+
+ @param color 颜色值
  @param size 尺寸
  @return UIImage对象
  */

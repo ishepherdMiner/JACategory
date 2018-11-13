@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface NSData (JACoder)
 
 /**
@@ -18,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)ja_toString;
 
-/// =====================================================
 /**
  AES256加密
 
@@ -35,7 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSData *)ja_aes256DecryptWithKey:(NSString *)key;
 
-/// =====================================================
 /**
  十六进制字符串转换为NSData对象
 
@@ -53,4 +52,5 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)ja_convertDataToHex:(NSData *)data;
 
 @end
+
 NS_ASSUME_NONNULL_END

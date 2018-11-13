@@ -1,18 +1,18 @@
 Pod::Spec.new do |s|
-  s.name         = "JACategory"
-  s.version      = "0.0.9.4"
-  s.summary      = "Category"
+  s.name         = 'JACategory'
+  s.version      = '0.0.9.4'
+  s.summary      = 'Category'
   s.description  = <<-DESC
   Daily collection of some categories
                    DESC
-  s.homepage     = "https://github.com/ishepherdMiner/JACategory"
+  s.homepage     = 'https://github.com/ishepherdMiner/JACategory'
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-  s.license      = "MIT"
-  s.author       = { "Jason" => "iJason92@yahoo.com" }
-  s.platform     = :ios, "7.0" # #{s.version}
-  s.frameworks   = "UIKit","Foundation"
-  s.source       = { :git => "https://github.com/ishepherdMiner/JACategory.git", :tag => "#{s.version}" }
-  s.source_files = "JACategory/JACategory.h"
+  s.license      = 'MIT'
+  s.author       = { 'Jason' => 'iJason92@yahoo.com' }
+  s.platform     = :ios, '7.0' # #{s.version}
+  s.frameworks   = 'UIKit','Foundation'
+  s.source       = { :git => 'https://github.com/ishepherdMiner/JACategory.git', :tag => '#{s.version}' }
+  s.source_files = 'JACategory/JACategory.h'
   # "JACategory","JACategory/**/*.{h,m}"
   #s.public_header_files = "JACategory/**/*.h"  
   s.requires_arc = true
