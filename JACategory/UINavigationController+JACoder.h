@@ -17,5 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 找到UINavigationBar下面的线
 - (UIImageView *)ja_findHairlineImageViewUnder:(UIView *)view;
+/**
+ http://www.cocoachina.com/ios/20170331/18944.html
+ 导航栏背景透明度设置
+ */
+- (void)ja_setNeedsNavigationBackground:(CGFloat)alpha;
 @end
 NS_ASSUME_NONNULL_END

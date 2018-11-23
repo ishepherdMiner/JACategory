@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (JACoder)
 
+/**
+ 找出当前的控制器
+ */
 + (UIViewController*)ja_currentViewController NS_AVAILABLE_IOS(8.0);
 
 @end

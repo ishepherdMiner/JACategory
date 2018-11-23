@@ -54,6 +54,7 @@
         return vc;
     }
 }
+
 @end
 
 @implementation UIViewController (JAKeyboard)
