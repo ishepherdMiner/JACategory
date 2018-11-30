@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define JA_SCREEN_WIDTH [UIScreen ja_width]
 #define JA_SCREEN_HEIGHT [UIScreen ja_height]
 
+#define JA_SCREEN_W JA_SCREEN_WIDTH
+#define JA_SCREEN_H JA_SCREEN_HEIGHT
+
 @interface UIScreen (JACoder)
 
 + (CGFloat)ja_width;
