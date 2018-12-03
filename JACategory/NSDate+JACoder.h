@@ -80,13 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDateComponents *)ja_currentComponents;
 
 
-/**
- 将16进制的字符串转换为NSData对象
 
- @param str 16进制字符串
- @return NSData对象
- */
-+ (NSData *)ja_dataWithHexString:(NSString *)str;
 
 /**
  判断是否同一天(依赖本地时间)
@@ -101,6 +95,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 时间戳可读
 + (NSString *)ja_timestamp2readable:(NSInteger)timestamp;
+
+/// 中文日期
++ (NSString *)ja_chineseStringFromString:(NSDate *)date
+                          withDateFormat:(NSString *)format;
 
 @end
 NS_ASSUME_NONNULL_END
