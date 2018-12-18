@@ -15,6 +15,9 @@
 + (UIViewController *)ja_currentViewController {
     // Find best view controller
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if (viewController == nil) {
+        viewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    }
     return [UIViewController findBestViewController:viewController];
 }
 
